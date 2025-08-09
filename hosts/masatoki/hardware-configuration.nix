@@ -28,6 +28,10 @@
   fileSystems."/mnt/lsd4" = {
     device = "lsd4";
     fsType = "zfs";
+    options = [
+      "nofail"
+      "x-systemd.timeout=20"
+    ];
   };
 
   swapDevices = [ ];
