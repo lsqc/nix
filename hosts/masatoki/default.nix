@@ -15,6 +15,10 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "/dev/sda";
 
+  boot.kernelModules = [ "zfs" ];
+  
+  boot.zfs.extraPools = [ "lsd4" ];
+
   # network shit
   networking.hostName = "masatoki";
   networking.hostId = "9a1a84f2";
@@ -58,6 +62,7 @@
       neofetch
     ];
   };
+
   services.openssh = {
     enable = true;
     settings = {

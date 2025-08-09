@@ -24,6 +24,12 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  # zfs pool
+  fileSystems."/mnt/lsd4" = {
+    device = "lsd4";
+    fsType = "zfs";
+  };
+
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
