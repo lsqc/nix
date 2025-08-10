@@ -3,13 +3,24 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.masatoki = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, agenix, ... }@inputs: let 
+
       system = "x86_64-linux";
 
-      modules = [
+      commonModules = [
+        agenix.nixosModules.default
+      ];
+  in {
+    nixosConfigurations.masatoki = nixpkgs.lib.nixosSystem{
+      system = "x86_64-linux";
+
+      modules = commonModules ++ [
         ./hosts/masatoki
       ];
     };
@@ -17,7 +28,7 @@
     nixosConfigurations.postgresql-1 = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
 
-      modules = [
+      modules = commonModules ++ [
         ./hosts/postgresql-1
       ];
     };
