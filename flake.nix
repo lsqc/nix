@@ -39,5 +39,6 @@
       modules = [
         ./hosts/cookie
       ];
+    };
   };
 }

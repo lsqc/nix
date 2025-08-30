@@ -7,5 +7,6 @@ flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vo
 - `common/`: common configuration for all servers
 - `hosts/`
     - `masatoki`: storage server
+    - `cookie`: a minecraft server vm. 🍪
 
 - README.md: this piece of shit
