@@ -39,6 +39,7 @@
     curl
     git 
     jdk21_headless
+    screen
   ];
 
   system.stateVersion = "25.05"; 
