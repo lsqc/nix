@@ -36,7 +36,7 @@
     wget
     curl
     git 
-
+    jdk21_headless
   ];
 
   system.stateVersion = "25.05"; 
