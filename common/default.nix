@@ -34,6 +34,15 @@
       EDITOR = "nvim";
     };
 
+    # aliases
+    shellAliases = {
+      vim = "nvim";
+      vi = "nvim";
+      ls = "ls -lsah";
+      ll = "ls -l";
+      la = "ls -a";
+    };
+
     # package configuration
     systemPackages = with pkgs; [
       neovim
