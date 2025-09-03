@@ -23,6 +23,11 @@
 
   networking.hostName = "cookie"; # Define your hostname.
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 10690 6969 22 ];
+  };
+
   time.timeZone = "Europe/Berlin";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
