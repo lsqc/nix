@@ -1,3 +1,5 @@
+![img](assets/img.png)
+
 # nix
 
 flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
