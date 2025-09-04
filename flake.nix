@@ -29,7 +29,7 @@
       system = "x86_64-linux";
 
       modules = commonModules ++ [
-        ./hosts/postgresql-1
+        ./hosts/vm/postgresql-1
       ];
     };
 
@@ -37,14 +37,14 @@
       system = "x86_64-linux";
 
       modules = [
-        ./hosts/cookie
+        ./hosts/vm/cookie
       ];
     };
     
     nixosConfigurations.atm = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/atm
+        ./hosts/lxc/atm
       ];
     };
   };
