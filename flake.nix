@@ -40,5 +40,12 @@
         ./hosts/cookie
       ];
     };
+    
+    nixosConfigurations.atm = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/atm
+      ];
+    };
   };
 }
