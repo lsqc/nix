@@ -18,7 +18,7 @@
       ];
   in {
     nixosConfigurations.masatoki = nixpkgs.lib.nixosSystem{
-      system = "x86_64-linux";
+      inherit system; # system = "x86_64-linux";
 
       modules = commonModules ++ [
         ./hosts/masatoki
@@ -26,7 +26,7 @@
     };
     
     nixosConfigurations.postgresql-1 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system; # system = "x86_64-linux";
 
       modules = commonModules ++ [
         ./hosts/vm/postgresql-1
@@ -34,7 +34,7 @@
     };
 
     nixosConfigurations.cookie = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system; # system = "x86_64-linux";
 
       modules = [
         ./hosts/vm/cookie
@@ -42,7 +42,8 @@
     };
     
     nixosConfigurations.atm = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+      inherit system; # system = "x86_64-linux";
+
       modules = [
         ./hosts/lxc/atm
       ];
