@@ -10,7 +10,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "ivy";  
+  networking = {
+    hostName = "ivy";
+    nameservers = [ "10.42.101.1" "10.42.0.2" ];
+  };
 
   services.nfs.server = {
     enable = true;
