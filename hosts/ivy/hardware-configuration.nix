@@ -25,7 +25,7 @@
   };
 
   fileSystems."/mnt/nya" = {
-      device = "/dev/disk/by-uuid/7dde4001-c508-4b76-9143-5d4fe8633bd1";
+      device = "/dev/disk/by-label/NYA";
       fsType = "ext4";
   };
 
