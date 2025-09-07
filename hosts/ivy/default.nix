@@ -12,7 +12,13 @@
 
   networking.hostName = "ivy";  
 
-  system.stateVersion = "25.05"; 
+  services.nfs.server = {
+    enable = true;
+    exports = ''
+        /mnt/nya 10.42.100.0/22(rw,sync,no_subtree_check,no_root_squash)
+    '';
+  };
 
+  system.stateVersion = "25.05"; 
 }
 
