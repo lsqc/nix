@@ -24,6 +24,14 @@
         ./hosts/masatoki
       ];
     };
+ 
+    nixosConfigurations.ivy = nixpkgs.lib.nixosSystem{
+      inherit system; 
+
+      modules = commonModules ++ [
+        ./hosts/ivy
+      ];
+    };
     
     nixosConfigurations.postgresql-1 = nixpkgs.lib.nixosSystem {
       inherit system; # system = "x86_64-linux";
