@@ -27,6 +27,17 @@
     '';
   };
 
+  services.nginx = {
+    enable = true;
+    
+    virtualHosts."_" = {
+      root = "/mnt/nya/public";
+      extraConfig = ''
+        autoindex on;
+      '';
+    };
+  };
+
   system.stateVersion = "25.05"; 
 }
 
