@@ -13,6 +13,11 @@
   networking = {
     hostName = "ivy";
     nameservers = [ "10.42.101.1" "10.42.0.2" ];
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 443 6969 80 2049 ]; 
+    };
   };
 
   services.nfs.server = {
