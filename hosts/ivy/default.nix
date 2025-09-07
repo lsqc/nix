@@ -20,6 +20,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    stress-ng
+  ];
+
   services.nfs.server = {
     enable = true;
     exports = ''
@@ -34,6 +38,7 @@
       root = "/mnt/nya/public";
       extraConfig = ''
         autoindex on;
+        autoindex_exact_size off;
       '';
     };
   };
