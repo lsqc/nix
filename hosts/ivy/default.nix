@@ -36,6 +36,11 @@
     
     virtualHosts."_" = {
       root = "/mnt/nya/public";
+      
+      forceSSL = true; # security is nice i guess
+      sslCertificate = "/etc/ssl/nginx-cert.pem";
+      sslCertificateKey = "/etc/ssl/private/nginx-key.pem";
+
       extraConfig = ''
         autoindex on;
         autoindex_exact_size off;
