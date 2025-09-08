@@ -22,6 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     stress-ng
+    ipmitool
   ];
 
   services.nfs.server = {
