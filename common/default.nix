@@ -50,6 +50,7 @@
       wget
       git
       curl
+      tmux
   
       btop
       neofetch
