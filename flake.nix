@@ -17,44 +17,59 @@
         agenix.nixosModules.default
       ];
   in {
-    nixosConfigurations.masatoki = nixpkgs.lib.nixosSystem{
-      inherit system; # system = "x86_64-linux";
+    nixosConfigurations = {
 
-      modules = commonModules ++ [
-        ./hosts/masatoki
-      ];
+      masatoki = nixpkgs.lib.nixosSystem{
+        inherit system; # system = "x86_64-linux";
+  
+        modules = commonModules ++ [
+          ./hosts/masatoki
+        ];
+      };
+   
+      ivy = nixpkgs.lib.nixosSystem{
+        inherit system; 
+  
+        modules = commonModules ++ [
+          ./hosts/ivy
+        ];
+      };
+      
+      postgresql-1 = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = commonModules ++ [
+          ./hosts/vm/postgresql-1
+        ];
+      };
+  
+      cookie = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = [
+          ./hosts/vm/cookie
+        ];
+      };
+      
+      atm = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = [
+          ./hosts/lxc/atm
+        ];
+      };
     };
- 
-    nixosConfigurations.ivy = nixpkgs.lib.nixosSystem{
-      inherit system; 
+    colmena = {
+      meta = {
+        nixpkgs = import nixpkgs { system = "x86_64-linux"; };
+      };
 
-      modules = commonModules ++ [
-        ./hosts/ivy
-      ];
-    };
-    
-    nixosConfigurations.postgresql-1 = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
+      cookie = {
+        imports = [ ./hosts/vm/cookie/default.nix ];
+        targetHost = "cookie.proxima-centauri.nya.vodka";
+        targetUser = "root";
+      };
 
-      modules = commonModules ++ [
-        ./hosts/vm/postgresql-1
-      ];
-    };
-
-    nixosConfigurations.cookie = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = [
-        ./hosts/vm/cookie
-      ];
-    };
-    
-    nixosConfigurations.atm = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = [
-        ./hosts/lxc/atm
-      ];
     };
   };
 }
