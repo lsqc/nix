@@ -49,6 +49,21 @@
     };
   };
 
+  services.minecraft-server = {
+    enable = true;
+    eula = true; 
+    openFirewall = true;
+    declarative = true;
+
+    package = pkgs.papermc;
+
+    serverProperties = {
+      max-players = 50;
+    };
+
+    jvmOpts = "-Xms8G -Xmx8G";
+  };
+
   system.stateVersion = "25.05"; 
 }
 
