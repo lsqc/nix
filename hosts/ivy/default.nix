@@ -16,7 +16,7 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 443 6969 80 2049 ]; 
+      allowedTCPPorts = [ 22 443 6969 80 2049 25565 ]; 
     };
   };
 
