@@ -60,6 +60,8 @@
 
     serverProperties = {
       max-players = 50;
+      online-mode = false;
+
     };
 
     jvmOpts = "-Xms8G -Xmx8G";
