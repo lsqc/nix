@@ -54,6 +54,7 @@
     eula = true; 
     openFirewall = true;
     declarative = true;
+    dataDir = "/mnt/nya/minecraft";
 
     package = pkgs.papermc;
 
