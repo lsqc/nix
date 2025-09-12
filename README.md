@@ -15,5 +15,6 @@ flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vo
         - `cookie`: a minecraft server vm. 🍪
     - `masatoki`: storage server (hardware)
     - `ivy`: my r720 
+    - `t500`: a lenovo t500
 
 - README.md: this piece of shit

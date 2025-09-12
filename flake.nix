@@ -56,5 +56,13 @@
         ./hosts/lxc/atm
       ];
     };
+
+    nixosConfigurations.t500 = nixpkgs.lib.nixosSystem {
+      inherit system; # system = "x86_64-linux";
+
+      modules = [
+        ./hosts/t500
+      ];
+    };
   };
 }
