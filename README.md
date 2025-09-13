@@ -2,7 +2,7 @@
 
 # nix
 
-flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
+flake for my personal NixOS hosts and infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
 
 ## overview 
 
@@ -15,6 +15,6 @@ flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vo
         - `cookie`: a minecraft server vm. 🍪
     - `masatoki`: storage server (hardware)
     - `ivy`: my r720 
-    - `t500`: a lenovo t500
+    - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
 
 - README.md: this piece of shit
