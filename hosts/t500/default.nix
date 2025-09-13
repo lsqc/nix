@@ -22,6 +22,7 @@
       dmenu 
       i3status
       i3blocks
+      networkmanagerapplet
     ];
   };
   
@@ -81,7 +82,7 @@
     TERMINAL= "alacritty";
   };
 
-  fonts.fonts = with pkgs; [ dejavu_fonts ];
+  fonts.packages = with pkgs; [ dejavu_fonts ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
 
