@@ -69,7 +69,9 @@
       feh
 
       marp-cli
-
+ 
+      sl
+      keepassxc
   #    tree
     ];
   };
@@ -81,12 +83,6 @@
       neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       hyfetch
-  
-      git
-      curl
-      sl
-      keepassxc
-      
       pkgs.xorg.xinit
     ];
   
