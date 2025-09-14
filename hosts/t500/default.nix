@@ -68,29 +68,36 @@
       dig
       feh
 
+      marp-cli
+
   #    tree
     ];
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    neofetch
+  environment = {
+    systemPackages = with pkgs; [
+      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      hyfetch
+  
+      git
+      curl
+      sl
+      
+      pkgs.xorg.xinit
+    ];
+  
+    shellAliases = {
+      neofetch = "hyfetch";
+    };
 
-    git
-    curl
-    sl
-    
-    pkgs.xorg.xinit
-
-  ];
-
-  environment.variables = {
-    EDITOR = "nvim";
-    BROWSER = "librewolf";
-    TERMINAL= "alacritty";
+    variables = {
+      EDITOR = "nvim";
+      BROWSER = "librewolf";
+      TERMINAL= "alacritty";
+    };
   };
 
   fonts.packages = with pkgs; [ dejavu_fonts ];
