@@ -24,7 +24,6 @@
       i3blocks
       networkmanagerapplet
       rofi
-      alacritty-theme
     ];
   };
  
@@ -63,6 +62,12 @@
 
       signal-desktop
       wireguard-tools
+      nerd-fonts.comic-shanns-mono
+
+      traceroute
+      dig
+      feh
+
   #    tree
     ];
   };
