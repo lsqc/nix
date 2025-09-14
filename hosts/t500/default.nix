@@ -85,6 +85,7 @@
       git
       curl
       sl
+      keepassxc
       
       pkgs.xorg.xinit
     ];
