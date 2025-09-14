@@ -23,9 +23,11 @@
       i3status
       i3blocks
       networkmanagerapplet
+      rofi
+      alacritty-theme
     ];
   };
-  
+ 
   services.xserver.xkb.layout = "eu";
 
   services.pipewire = {
@@ -58,6 +60,9 @@
     packages = with pkgs; [
       alacritty
       librewolf
+
+      signal-desktop
+      wireguard-tools
   #    tree
     ];
   };
@@ -74,6 +79,7 @@
     sl
     
     pkgs.xorg.xinit
+
   ];
 
   environment.variables = {
