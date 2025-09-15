@@ -76,6 +76,10 @@
       nfs-utils
       clang
       rustc
+
+      inkscape
+      gimp
+      libreoffice
   #    tree
     ];
   };
