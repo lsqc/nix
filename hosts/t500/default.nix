@@ -62,6 +62,7 @@
 
       signal-desktop
       wireguard-tools
+      betterlockscreen
       nerd-fonts.comic-shanns-mono
 
       traceroute
@@ -72,6 +73,9 @@
  
       sl
       keepassxc
+      nfs-utils
+      clang
+      rustc
   #    tree
     ];
   };
