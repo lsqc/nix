@@ -33,13 +33,21 @@
     enable = true;
     pulse.enable = true;
   };
+  
+  programs = {
+  
+    ssh.extraConfig = ''
+      Host git.proxima-centauri.lsdevcloud.net
+          PreferredAuthentications publickey
+	  IdentityFile ~/.ssh/gitkey
+    '';
 
-  programs.ssh.extraConfig = ''
-    Host git.proxima-centauri.lsdevcloud.net
-        PreferredAuthentications publickey
-	IdentityFile ~/.ssh/gitkey
-  '';
-
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+      xwayland.enable = true;
+    };
+  };
   #programs.git = {
     #enable = true;
     #config = {
@@ -80,6 +88,7 @@
       inkscape
       gimp
       libreoffice
+      openjdk21
   #    tree
     ];
   };
