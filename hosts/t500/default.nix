@@ -89,6 +89,7 @@
       gimp
       libreoffice
       openjdk21
+      jdt-language-server
   #    tree
     ];
   };
