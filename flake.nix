@@ -7,9 +7,10 @@
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
+    disko.url = "github:nix-community/disko";
   };
 
-  outputs = { self, nixpkgs, agenix, ... }@inputs: let 
+  outputs = { self, nixpkgs, agenix, disko, ... }@inputs: let 
 
       system = "x86_64-linux";
 
@@ -29,7 +30,10 @@
       inherit system; 
 
       modules = commonModules ++ [
+        disko.nixosModules.disko
+
         ./hosts/ivy
+        ./hosts/ivy/disko-config.nix
       ];
     };
     
