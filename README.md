@@ -18,3 +18,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
     - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
 
 - README.md: this piece of shit
+
+---
+
+`nixos-anywhere --flake .#host root@ip --generate-hardware-config nixos-generate-config ./hosts/host/hardware-configuration.nix --phases disko,install` -> shamelessly stolen from https://git.heroin.trade/xqtc/ryuko-nix 
