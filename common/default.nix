@@ -56,6 +56,8 @@
       neofetch
     
       dig
+
+      nixos-anywhere
     ];
   };
 
