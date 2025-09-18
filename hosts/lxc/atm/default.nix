@@ -4,7 +4,9 @@
   imports = 
     [ 
       (modulesPath + "/virtualisation/proxmox-lxc.nix")
+
       ../../../common
+      ./minecraft.nix
     ];
 
   nix.settings = { sandbox = false; };
