@@ -20,7 +20,8 @@
     enable = true;
     description = "Forge Minecraft Server";
     serviceConfig = {
-      ExecStart = "${pkgs.openjdk17}/bin/java -Xms1G -Xmx8G -jar ./forge.jar nogui";
+      #ExecStart = "${pkgs.openjdk17}/bin/java -Xms1G -Xmx8G -jar ./forge.jar nogui";
+      ExecStart = "./run.sh";
       WorkingDirectory = "${config.users.extraUsers.minecraft.home}/forge";
       Restart = "always";
       RestartSec = 60;
