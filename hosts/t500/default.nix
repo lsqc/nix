@@ -90,6 +90,7 @@
       libreoffice
       openjdk21
       jdt-language-server
+      maven
   #    tree
     ];
   };
