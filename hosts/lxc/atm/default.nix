@@ -15,6 +15,10 @@
     privileged = false;
   };
 
+  environment.systemPackages = with pkgs; [
+    openjdk21
+  ];
+
   # security.pam.services.sshd.allowNullPassword = true;
   system.stateVersion = "25.05";
 }
