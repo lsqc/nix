@@ -98,10 +98,9 @@
 
   environment = {
     systemPackages = with pkgs; [
-      neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
       wget
       hyfetch
-      pkgs.xorg.xinit
+      # pkgs.xorg.xinit
     ];
   
     shellAliases = {
@@ -115,7 +114,12 @@
     };
   };
 
-  fonts.packages = with pkgs; [ dejavu_fonts ];
+  fonts.packages = with pkgs; [ 
+    dejavu_fonts
+
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.comic-shanns-mono
+  ];
 
   system.stateVersion = "25.11"; # Did you read the comment?
 
