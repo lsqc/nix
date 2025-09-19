@@ -94,6 +94,7 @@
 
       openscad
       netsurf.browser
+      prusa-slicer
   #    tree
     ];
   };
