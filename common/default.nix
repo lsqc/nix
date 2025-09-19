@@ -56,6 +56,7 @@
       neofetch
     
       dig
+      file
 
       nixos-anywhere
     ];
