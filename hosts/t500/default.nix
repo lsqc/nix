@@ -91,6 +91,8 @@
       openjdk21
       jdt-language-server
       maven
+
+      openscad
   #    tree
     ];
   };
