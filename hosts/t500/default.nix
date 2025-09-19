@@ -93,6 +93,7 @@
       maven
 
       openscad
+      netsurf.browser
   #    tree
     ];
   };
