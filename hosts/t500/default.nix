@@ -95,6 +95,8 @@
       openscad
       netsurf.browser
       prusa-slicer
+
+      vesktop
   #    tree
     ];
   };
