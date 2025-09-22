@@ -10,24 +10,33 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-  networking.hostName = "t500"; # Define your hostname.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking = {
+    hostName = "t500";
+    networkmanager.enable = true;
+    resolvconf.enable = true;
+  };
 
   time.timeZone = "Europe/Berlin";
 
-  services.xserver.enable = true;
-  services.xserver.windowManager.i3 = {
+  services.xserver = {
+  
     enable = true;
-    extraPackages = with pkgs; [
-      dmenu 
-      i3status
-      i3blocks
-      networkmanagerapplet
-      rofi
-    ];
+
+    xkb.layout = "eu";
+    displayManager.startx.enable = true;
+
+    videoDrivers = [ "modesetting" ];
+
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        i3status
+        i3blocks
+        networkmanagerapplet
+        rofi
+      ];
+    };
   };
- 
-  services.xserver.xkb.layout = "eu";
 
   services.pipewire = {
     enable = true;
@@ -80,6 +89,7 @@
       traceroute
       dig
       feh
+      killall
 
       marp-cli
  
@@ -92,6 +102,7 @@
       inkscape
       gimp
       libreoffice
+
       openjdk21
       jdt-language-server
       maven
@@ -100,9 +111,14 @@
       netsurf.browser
       prusa-slicer
 
+      # cute discord >w<
       vesktop
 
       prismlauncher
+     
+      # screenshot stuff
+      xclip
+      pngquant
   #    tree
     ];
   };
@@ -113,6 +129,7 @@
     systemPackages = with pkgs; [
       wget
       hyfetch
+      scrot
       # pkgs.xorg.xinit
     ];
   
