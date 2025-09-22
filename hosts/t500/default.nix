@@ -97,6 +97,8 @@
       prusa-slicer
 
       vesktop
+
+      prismlauncher
   #    tree
     ];
   };
