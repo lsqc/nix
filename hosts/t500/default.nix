@@ -69,7 +69,11 @@
       librewolf
 
       signal-desktop
+      telegram-desktop
+
       wireguard-tools
+      openvpn
+
       betterlockscreen
       nerd-fonts.comic-shanns-mono
 
