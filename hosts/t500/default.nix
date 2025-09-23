@@ -18,6 +18,11 @@
 
   time.timeZone = "Europe/Berlin";
 
+  services.logind = {
+    lidSwitch = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
+
   services.xserver = {
   
     enable = true;
@@ -76,6 +81,7 @@
     packages = with pkgs; [
       alacritty
       librewolf
+      tor-browser
 
       signal-desktop
       telegram-desktop
