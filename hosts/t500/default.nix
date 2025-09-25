@@ -83,9 +83,6 @@
       librewolf
       tor-browser
 
-      signal-desktop
-      telegram-desktop
-
       wireguard-tools
       openvpn
 
@@ -100,6 +97,10 @@
       marp-cli
  
       sl
+      lolcat
+      asciiquarium
+      whois
+
       keepassxc
       nfs-utils
       clang
@@ -119,12 +120,21 @@
 
       # cute discord >w<
       vesktop
+      thunderbird
+      signal-desktop
+      telegram-desktop
+
+      pavucontrol
 
       prismlauncher
      
       # screenshot stuff
       xclip
       pngquant
+
+      # notifications
+      libnotify
+      dunst
   #    tree
     ];
   };
