@@ -13,7 +13,7 @@
   networking = {
     hostName = "t500";
     networkmanager.enable = true;
-    resolvconf.enable = true;
+#    resolvconf.enable = true;
   };
 
   time.timeZone = "Europe/Berlin";
@@ -23,6 +23,12 @@
     lidSwitchExternalPower = "ignore";
   };
 
+  services.resolved = {
+
+    enable = true;
+    domains = [ "~." ];
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+  };
   services.xserver = {
   
     enable = true;
