@@ -100,6 +100,7 @@
       nerd-fonts.comic-shanns-mono
 
       traceroute
+      macchanger
       dig
       feh
       killall
