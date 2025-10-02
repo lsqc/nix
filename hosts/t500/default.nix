@@ -23,6 +23,10 @@
     lidSwitchExternalPower = "ignore";
   };
 
+  services.printing = {
+    enable = true;
+  };
+
   services.resolved = {
 
     enable = true;
@@ -112,6 +116,11 @@
       clang
       rustc
 
+      yazi
+      xfce.thunar
+      adapta-gtk-theme
+      paper-icon-theme
+
       inkscape
       gimp
       libreoffice
@@ -131,6 +140,8 @@
       telegram-desktop
 
       pavucontrol
+
+      angryipscanner
 
       prismlauncher
      
