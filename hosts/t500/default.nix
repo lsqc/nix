@@ -143,6 +143,7 @@
       pavucontrol
 
       angryipscanner
+      arandr
 
       prismlauncher
      
