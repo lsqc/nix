@@ -165,6 +165,8 @@
       wget
       hyfetch
       scrot
+      wireshark
+      tcpdump
       # pkgs.xorg.xinit
     ];
   
