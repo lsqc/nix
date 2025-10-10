@@ -72,19 +72,7 @@
       xwayland.enable = true;
     };
   };
-  #programs.git = {
-    #enable = true;
-    #config = {
-      #user.name = "lsqc";
-      #user.email = "lsqc@nya.vodka";
-#
-      #gpg.format = "ssh";
-#
-      #user.signingKey = "/home/lsqc/.ssh/gitkey";
-      #commit.gpgsign = true;
-    #};
-  #};
-  #
+  
   users.users.lsqc = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
