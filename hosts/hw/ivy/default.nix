@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ./minecraft-server.nix
 
-      ../../common
+      ../../../common
     ];
 
   boot.loader.systemd-boot.enable = true;

@@ -4,7 +4,7 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../common
+      ../../../common
     ];
 
   boot.loader.grub.enable = true;
@@ -57,6 +57,8 @@
     enable = true;
     pulse.enable = true;
   };
+  programs.nix-ld.enable = true;
+
   
   programs = {
   
@@ -155,6 +157,7 @@
       scrot
       wireshark
       tcpdump
+      nix-ld
       # pkgs.xorg.xinit
     ];
   

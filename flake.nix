@@ -22,7 +22,7 @@
       inherit system; # system = "x86_64-linux";
 
       modules = commonModules ++ [
-        ./hosts/masatoki
+        ./hosts/hw/masatoki
       ];
     };
  
@@ -32,8 +32,8 @@
       modules = commonModules ++ [
         disko.nixosModules.disko
 
-        ./hosts/ivy
-        ./hosts/ivy/disko-config.nix
+        ./hosts/hw/ivy
+        ./hosts/hw/ivy/disko-config.nix
       ];
     };
     
@@ -65,7 +65,7 @@
       inherit system; # system = "x86_64-linux";
 
       modules = [
-        ./hosts/t500
+        ./hosts/hw/t500
       ];
     };
   };
