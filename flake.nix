@@ -13,9 +13,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, agenix, disko, ... }@inputs: let 
+  outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs: let 
 
       system = "x86_64-linux";
+      commonHome = ./common/home;
 
       commonModules = [
         agenix.nixosModules.default
@@ -69,6 +70,12 @@
 
       modules = [
         ./hosts/hw/t500
+        home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.lsqc= ./common/home/lsqc.nix;
+          }
       ];
     };
   };
