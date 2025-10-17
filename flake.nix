@@ -8,6 +8,9 @@
     agenix.inputs.nixpkgs.follows = "nixpkgs";
 
     disko.url = "github:nix-community/disko";
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, agenix, disko, ... }@inputs: let 
