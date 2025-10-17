@@ -9,7 +9,7 @@
 
     disko.url = "github:nix-community/disko";
 
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
@@ -70,12 +70,12 @@
 
       modules = [
         ./hosts/hw/t500
-        home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.lsqc= ./common/home/lsqc.nix;
-          }
+#        home-manager.nixosModules.home-manager
+#          {
+#            home-manager.useGlobalPkgs = true;
+#            home-manager.useUserPackages = true;
+#            home-manager.users.lsqc= ./common/home/lsqc.nix;
+#          }
       ];
     };
 
