@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+
+  imports = 
+    [
+      ./desktop.nix
+    ];
+
   home.username = "lsqc";
   home.homeDirectory = "/home/lsqc";
   home.stateVersion = "25.05";
