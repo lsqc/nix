@@ -22,61 +22,64 @@
         agenix.nixosModules.default
       ];
   in {
-    nixosConfigurations.masatoki = nixpkgs.lib.nixosSystem{
-      inherit system; # system = "x86_64-linux";
-
-      modules = commonModules ++ [
-        ./hosts/hw/masatoki
-      ];
-    };
- 
-    nixosConfigurations.ivy = nixpkgs.lib.nixosSystem{
-      inherit system; 
-
-      modules = commonModules ++ [
-        disko.nixosModules.disko
-
-        ./hosts/hw/ivy
-        ./hosts/hw/ivy/disko-config.nix
-      ];
-    };
-    
-    nixosConfigurations.postgresql-1 = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = commonModules ++ [
-        ./hosts/vm/postgresql-1
-      ];
-    };
-
-    nixosConfigurations.cookie = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = [
-        ./hosts/vm/cookie
-      ];
-    };
-    
-    nixosConfigurations.atm = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = [
-        ./hosts/lxc/atm
-      ];
-    };
-
-    nixosConfigurations.t500 = nixpkgs.lib.nixosSystem {
-      inherit system; # system = "x86_64-linux";
-
-      modules = [
-        ./hosts/hw/t500
-#        home-manager.nixosModules.home-manager
-#          {
-#            home-manager.useGlobalPkgs = true;
-#            home-manager.useUserPackages = true;
-#            home-manager.users.lsqc= ./common/home/lsqc.nix;
-#          }
-      ];
+    nixosConfigurations = {
+  
+      masatoki = nixpkgs.lib.nixosSystem{
+        inherit system; # system = "x86_64-linux";
+  
+        modules = commonModules ++ [
+          ./hosts/hw/masatoki
+        ];
+      };
+   
+      ivy = nixpkgs.lib.nixosSystem{
+        inherit system; 
+  
+        modules = commonModules ++ [
+          disko.nixosModules.disko
+  
+          ./hosts/hw/ivy
+          ./hosts/hw/ivy/disko-config.nix
+        ];
+      };
+      
+      postgresql-1 = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = commonModules ++ [
+          ./hosts/vm/postgresql-1
+        ];
+      };
+  
+      cookie = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = [
+          ./hosts/vm/cookie
+        ];
+      };
+      
+      atm = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = [
+          ./hosts/lxc/atm
+        ];
+      };
+  
+      t500 = nixpkgs.lib.nixosSystem {
+        inherit system; # system = "x86_64-linux";
+  
+        modules = [
+          ./hosts/hw/t500
+  #        home-manager.nixosModules.home-manager
+  #          {
+  #            home-manager.useGlobalPkgs = true;
+  #            home-manager.useUserPackages = true;
+  #            home-manager.users.lsqc= ./common/home/lsqc.nix;
+  #          }
+        ];
+      };
     };
 
     homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
