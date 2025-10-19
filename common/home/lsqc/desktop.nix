@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let 
+  themeSettings = import ./theme-settings.nix;
+in
 {
   home.packages = with pkgs; [
     adapta-gtk-theme
@@ -19,8 +22,13 @@
       package = pkgs.paper-icon-theme;
     };
 
+    cursorTheme = {
+      name = "default";
+    };
+
     gtk3.extraConfig = { 
       gtk-application-prefer-dark-theme = true;
+      gtk-font-name = "Sans ${toString themeSettings.fontSize}";
     };
   };
 }
