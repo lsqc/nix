@@ -16,7 +16,6 @@
   outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs: let 
 
       system = "x86_64-linux";
-      commonHome = ./common/home;
 
       commonModules = [
         agenix.nixosModules.default
@@ -78,6 +77,17 @@
   #            home-manager.useUserPackages = true;
   #            home-manager.users.lsqc= ./common/home/lsqc.nix;
   #          }
+        ];
+      };
+
+      cerberus = nixpkgs.lib.nixosSystem {
+        inherit system;
+   
+        modules = commonModules ++ [
+          disko.nixosModules.disko
+  
+          ./hosts/vm/cerberus
+          ./hosts/vm/cerberus/disko-config.nix
         ];
       };
     };
