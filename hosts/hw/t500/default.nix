@@ -167,7 +167,7 @@
     ];
   
     shellAliases = {
-      neofetch = "hyfetch";
+      #neofetch = "hyfetch";
     };
 
     variables = {
