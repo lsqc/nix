@@ -81,7 +81,7 @@
 
     homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ ./common/home/lsqc.nix ];
+      modules = [ ./common/home/lsqc ];
     };
   };
 }
