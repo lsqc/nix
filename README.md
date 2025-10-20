@@ -32,7 +32,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
 ## Custom ISO
 
 - latest file: https://files.nya.vodka/pub/nix/iso/latest.iso
-- build: `nix build .#nixosConfigurations.live.config.system.build.isoImage`
+- build: `nix build .#nixosConfigurations.live.config.system.build.isoImage` *or* `nix run .#buildIso`
 
 **TODO: create lxc template**
 
