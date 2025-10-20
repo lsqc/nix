@@ -5,6 +5,7 @@
   imports = 
     [
       ./desktop.nix
+      ./programs.nix
     ];
 
   home.username = "lsqc";
@@ -23,7 +24,6 @@
     enable = true;
 
     history.size = 20000;
-
    
     shellAliases = {
       la = "ls -ah";
