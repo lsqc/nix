@@ -31,8 +31,9 @@
     };
   };
 
-  # home.packages = [
-  #   pkgs.htop
-  #   pkgs.neovim
-  # ];
+  home.packages = [
+    pkgs.htop
+    pkgs.neovim
+    pkgs.playerctl
+  ];
 }
