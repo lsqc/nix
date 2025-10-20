@@ -5,14 +5,19 @@
     enable = true;
     virtualHosts = {
 
-      "lsdevcloud.net".extraConfig = ''
-        reverse_proxy https://prce-public-1.lsdevcloud.net
-      '';
+      "lsdevcloud.net" = {
+        extraConfig = ''
+          reverse_proxy https://prce-public-1.lsdevcloud.net
+        '';
 
-      "nya.vodka".extraConfig = ''
-        reverse_proxy https://prce-public-2.lsdevcloud.net
-      '';
+        serverAliases = [ "www.lsdevcloud.net" ];
+      };
 
+      "nya.vodka" = {
+        extraConfig = ''
+          reverse_proxy https://prce-public-2.lsdevcloud.net
+        '';
+      };
     };
   };
 }
