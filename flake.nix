@@ -96,7 +96,7 @@
         system = "x86_64-linux";
         modules = [
           (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-          ./common/users.nix
+          ./hosts/live
         ];
       };
     };
