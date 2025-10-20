@@ -90,6 +90,15 @@
           ./hosts/vm/cerberus/disko-config.nix
         ];
       };
+
+      # custom live cd with ssh keys 
+      live = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+          ./common/users.nix
+        ];
+      };
     };
 
     homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {

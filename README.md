@@ -26,7 +26,12 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
 
 - `nixos-anywhere --flake .#<host> root@<ip> --generate-hardware-config nixos-generate-config ./hosts/<type>/<host>/hardware-configuration.nix --phases disko,install` -> shamelessly stolen from https://git.heroin.trade/xqtc/ryuko-nix 
 
-custom ISO file: https://files.nya.vodka/pub/nix-iso/nix-iso-latest.iso
+---
+
+## Custom ISO
+
+- latest file: https://files.nya.vodka/pub/nix-iso/nix-iso-latest.iso
+- build: `nix build .#nixosConfigurations.live.config.system.build.isoImage`
 
 ---
 
