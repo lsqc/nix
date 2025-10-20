@@ -12,13 +12,14 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
     - `hw/`: configurations for non-virtual hosts
         - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
         - `masatoki`: storage server
-        - `ivy`: my r720 (old)
+        - *`ivy`: my r720 (old)*
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
     - `vm/`: configurations for Proxmox VMS
         - `postgresql-1`: *a postgres container that is not functional yet :3*
         - `cookie`: a minecraft server vm. 🍪
         - `cerberus`: soon-to-be configuraton for `cerberus-v2.lsdevcloud.net`
+        - `IIvy`: replacement for original ivy host
 
 ---
 
@@ -32,6 +33,8 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
 
 - latest file: https://files.nya.vodka/pub/nix-iso/nix-iso-latest.iso
 - build: `nix build .#nixosConfigurations.live.config.system.build.isoImage`
+
+**TODO: create lxc template**
 
 ---
 
