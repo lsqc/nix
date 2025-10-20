@@ -54,7 +54,7 @@
       cookie = nixpkgs.lib.nixosSystem {
         inherit system; # system = "x86_64-linux";
   
-        modules = [
+        modules = commonModules ++ [
           ./hosts/vm/cookie
         ];
       };
@@ -62,7 +62,7 @@
       atm = nixpkgs.lib.nixosSystem {
         inherit system; # system = "x86_64-linux";
   
-        modules = [
+        modules = commonModules ++ [
           ./hosts/lxc/atm
         ];
       };
@@ -89,6 +89,17 @@
   
           ./hosts/vm/cerberus
           ./hosts/vm/cerberus/disko-config.nix
+        ];
+      };
+
+      IIvy = nixpkgs.lib.nixosSystem {
+        inherit system;
+
+        modules = commonModules ++ [
+          disko.nixosModules.disko
+
+          ./hosts/vm/IIvy
+          ./hosts/vm/IIvy/disko-config.nix
         ];
       };
 
