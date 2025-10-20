@@ -8,9 +8,5 @@
       "privacy.clearOnShutdown.history" = false;
       "privacy.clearOnShutdown.cookies" = false;
     };
-
-    preferences = {
-      
-    };
   };
 }
