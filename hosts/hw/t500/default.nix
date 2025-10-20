@@ -7,8 +7,10 @@
       ../../../common
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+  };
 
   networking = {
     hostName = "t500";
@@ -18,54 +20,58 @@
 
   # bluetooth
   hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   # time shit
   time.timeZone = "Europe/Berlin";
 
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchExternalPower = "ignore";
-  };
+  services = {
+ 
+    blueman.enable = true;
 
-  services.printing = {
-    enable = true;
-  };
-
-  services.resolved = {
-
-    enable = true;
-    domains = [ "~." ];
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  };
-  services.xserver = {
+    logind = {
+      lidSwitch = "ignore";
+      lidSwitchExternalPower = "ignore";
+    };
   
-    enable = true;
-
-    xkb.layout = "eu";
-    displayManager.startx.enable = true;
-
-    videoDrivers = [ "modesetting" ];
-
-    windowManager.i3 = {
+    printing = {
       enable = true;
-      extraPackages = with pkgs; [
-        i3status
-        i3blocks
-        networkmanagerapplet
-        rofi
-      ];
+    };
+  
+    resolved = {
+  
+      enable = true;
+      domains = [ "~." ];
+      fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    };
+
+    xserver = {
+    
+      enable = true;
+  
+      xkb.layout = "eu";
+      displayManager.startx.enable = true;
+  
+      videoDrivers = [ "modesetting" ];
+
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          i3status
+          i3blocks
+          networkmanagerapplet
+          rofi
+        ];
+      };
+    };
+  
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
     };
   };
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-  programs.nix-ld.enable = true;
-
   
   programs = {
+    nix-ld.enable = true;
   
     ssh.extraConfig = ''
       Host git.proxima-centauri.lsdevcloud.net
@@ -152,8 +158,6 @@
   #    tree
     ];
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment = {
     systemPackages = with pkgs; [
