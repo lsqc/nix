@@ -20,8 +20,6 @@
   networking.hostName = "masatoki";
   networking.hostId = "9a1a84f2";
 
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
   environment = {
     
     systemPackages = with pkgs; [
@@ -47,4 +45,3 @@
   system.stateVersion = "25.05";
 
 }
-
