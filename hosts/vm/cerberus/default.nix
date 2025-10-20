@@ -5,20 +5,10 @@
     [ 
       ./hardware-configuration.nix
       ../../../common
+      ../../../common/grub-uefi.nix
       
       ./modules
     ];
-
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
-    };
-    grub = {
-       efiSupport = true;
-       device = "nodev";
-    };
-  };
 
   networking = {
     hostName = "cerberus";
