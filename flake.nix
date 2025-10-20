@@ -16,6 +16,7 @@
   outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs: let 
 
       system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
 
       commonModules = [
         agenix.nixosModules.default
@@ -99,6 +100,13 @@
           ./hosts/live
         ];
       };
+    };
+
+    apps.x86_64-linux.buildIso = {
+      type = "app";
+      program = toString (pkgs.writeShellScript "build-iso" ''
+        nix build .#nixosConfigurations.live.config.system.build.isoImage
+      '');
     };
 
     homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
