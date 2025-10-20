@@ -6,9 +6,12 @@
       ../../common/users.nix
     ];
 
+  system.stateVersion = "25.05";
+
   # use faster compression
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";
 
+  # uefi support
   isoImage.makeEfiBootable = true;
   isoImage.makeUsbBootable = true;
 
