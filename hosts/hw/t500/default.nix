@@ -167,6 +167,7 @@
       wireshark
       tcpdump
       nix-ld
+      pulseaudio
       # pkgs.xorg.xinit
     ];
   
