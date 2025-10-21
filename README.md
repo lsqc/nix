@@ -9,6 +9,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
     - `{keys,users}.nix`: user and ssh key config
 
 - `hosts/`
+    - `live/`: configuration for the custom iso image
     - `hw/`: configurations for non-virtual hosts
         - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
         - `masatoki`: storage server
