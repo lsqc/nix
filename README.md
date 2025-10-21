@@ -12,7 +12,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
     - `hw/`: configurations for non-virtual hosts
         - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
         - `masatoki`: storage server
-        - *`ivy`: my r720 (old)*
+        - ~`ivy`: my r720 (old)~
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
     - `vm/`: configurations for Proxmox VMS
