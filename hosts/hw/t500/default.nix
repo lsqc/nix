@@ -1,7 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ../../../common ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../../common
+    ../../../common/desktop.nix
+  ];
 
   boot.loader.grub = {
     enable = true;
