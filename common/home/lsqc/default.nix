@@ -2,11 +2,7 @@
 
 {
 
-  imports = 
-    [
-      ./desktop.nix
-      ./programs.nix
-    ];
+  imports = [ ./desktop.nix ./programs.nix ];
 
   home.username = "lsqc";
   home.homeDirectory = "/home/lsqc";
@@ -20,20 +16,6 @@
     userName = "lsqc";
   };
 
-  programs.zsh = {
-    enable = true;
-
-    history.size = 20000;
-   
-    shellAliases = {
-      la = "ls -ah";
-      ll = "ls -ah";
-    };
-  };
-
-  home.packages = [
-    pkgs.htop
-    pkgs.neovim
-    pkgs.playerctl
-  ];
+  home.packages =
+    [ pkgs.htop pkgs.neovim pkgs.playerctl pkgs.google-java-format ];
 }
