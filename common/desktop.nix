@@ -1,23 +1,26 @@
 { lib, pkgs, ... }:
 
 {
+
+  programs = { seahorse = { enable = true; }; };
+
   environment.systemPackages = with pkgs; [
 
     gimp
     inkscape
 
     librewolf
-    keepasscx
+    keepassxc
 
     vesktop
     openscad
-    
+
     telegram-desktop
     signal-desktop
     thunderbird
     pidgin
 
-    prusaslicer
+    prusa-slicer
     tor-browser
 
     pavucontrol
@@ -26,4 +29,9 @@
     yazi
 
   ];
+
+  # keyring
+  services = { gnome.gnome-keyring = { enable = true; }; };
+
+  security.pam.services.login.enableGnomeKeyring = true;
 }
