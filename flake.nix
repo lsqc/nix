@@ -13,7 +13,16 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs: let 
+  outputs =
+    {
+      self,
+      nixpkgs,
+      agenix,
+      disko,
+      home-manager,
+      ...
+    }@inputs:
+    let
 
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -21,108 +30,111 @@
       commonModules = [
         agenix.nixosModules.default
       ];
-  in {
-    nixosConfigurations = {
-  
-      masatoki = nixpkgs.lib.nixosSystem{
-        inherit system; # system = "x86_64-linux";
-  
-        modules = commonModules ++ [
-          ./hosts/hw/masatoki
-        ];
-      };
-   
-      ivy = nixpkgs.lib.nixosSystem{
-        inherit system; 
-  
-        modules = commonModules ++ [
-          disko.nixosModules.disko
-  
-          ./hosts/hw/ivy
-          ./hosts/hw/ivy/disko-config.nix
-        ];
-      };
-      
-      postgresql-1 = nixpkgs.lib.nixosSystem {
-        inherit system; # system = "x86_64-linux";
-  
-        modules = commonModules ++ [
-          ./hosts/vm/postgresql-1
-        ];
-      };
-  
-      cookie = nixpkgs.lib.nixosSystem {
-        inherit system; # system = "x86_64-linux";
-  
-        modules = commonModules ++ [
-          ./hosts/vm/cookie
-        ];
-      };
-      
-      atm = nixpkgs.lib.nixosSystem {
-        inherit system; # system = "x86_64-linux";
-  
-        modules = commonModules ++ [
-          ./hosts/lxc/atm
-        ];
-      };
-  
-      t500 = nixpkgs.lib.nixosSystem {
-        inherit system; # system = "x86_64-linux";
-  
-        modules = [
-          ./hosts/hw/t500
-  #        home-manager.nixosModules.home-manager
-  #          {
-  #            home-manager.useGlobalPkgs = true;
-  #            home-manager.useUserPackages = true;
-  #            home-manager.users.lsqc= ./common/home/lsqc.nix;
-  #          }
-        ];
+    in
+    {
+      nixosConfigurations = {
+
+        masatoki = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [
+            ./hosts/hw/masatoki
+          ];
+        };
+
+        ivy = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/ivy
+            ./hosts/hw/ivy/disko-config.nix
+          ];
+        };
+
+        postgresql-1 = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [
+            ./hosts/vm/postgresql-1
+          ];
+        };
+
+        cookie = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [
+            ./hosts/vm/cookie
+          ];
+        };
+
+        atm = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [
+            ./hosts/lxc/atm
+          ];
+        };
+
+        t500 = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = [
+            ./hosts/hw/t500
+            #        home-manager.nixosModules.home-manager
+            #          {
+            #            home-manager.useGlobalPkgs = true;
+            #            home-manager.useUserPackages = true;
+            #            home-manager.users.lsqc= ./common/home/lsqc.nix;
+            #          }
+          ];
+        };
+
+        cerberus = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/vm/cerberus
+            ./hosts/vm/cerberus/disko-config.nix
+          ];
+        };
+
+        IIvy = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/vm/IIvy
+            ./hosts/vm/IIvy/disko-config.nix
+          ];
+        };
+
+        # custom live cd with ssh keys
+        live = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+            ./hosts/live
+          ];
+        };
       };
 
-      cerberus = nixpkgs.lib.nixosSystem {
-        inherit system;
-   
-        modules = commonModules ++ [
-          disko.nixosModules.disko
-  
-          ./hosts/vm/cerberus
-          ./hosts/vm/cerberus/disko-config.nix
-        ];
+      apps.x86_64-linux.buildIso = {
+        type = "app";
+        program = toString (
+          pkgs.writeShellScript "build-iso" ''
+            nix build .#nixosConfigurations.live.config.system.build.isoImage
+          ''
+        );
       };
 
-      IIvy = nixpkgs.lib.nixosSystem {
-        inherit system;
-
-        modules = commonModules ++ [
-          disko.nixosModules.disko
-
-          ./hosts/vm/IIvy
-          ./hosts/vm/IIvy/disko-config.nix
-        ];
-      };
-
-      # custom live cd with ssh keys 
-      live = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-          ./hosts/live
-        ];
+      homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./common/home/lsqc ];
       };
     };
-
-    apps.x86_64-linux.buildIso = {
-      type = "app";
-      program = toString (pkgs.writeShellScript "build-iso" ''
-        nix build .#nixosConfigurations.live.config.system.build.isoImage
-      '');
-    };
-
-    homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      modules = [ ./common/home/lsqc ];
-    };
-  };
 }
