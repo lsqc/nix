@@ -17,7 +17,7 @@
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
-        plugins = [ "git" "directory-history" ];
+        plugins = [ "git" ];
       };
     };
 
