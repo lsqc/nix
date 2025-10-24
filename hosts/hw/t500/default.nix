@@ -1,11 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ../../../common
-    ];
+  imports = [ ./hardware-configuration.nix ../../../common ];
 
   boot.loader.grub = {
     enable = true;
@@ -15,7 +11,7 @@
   networking = {
     hostName = "t500";
     networkmanager.enable = true;
-#    resolvconf.enable = true;
+    #    resolvconf.enable = true;
   };
 
   # bluetooth
@@ -25,32 +21,30 @@
   time.timeZone = "Europe/Berlin";
 
   services = {
- 
+
     blueman.enable = true;
 
     logind = {
       lidSwitch = "ignore";
       lidSwitchExternalPower = "ignore";
     };
-  
-    printing = {
-      enable = true;
-    };
-  
+
+    printing = { enable = true; };
+
     resolved = {
-  
+
       enable = true;
       domains = [ "~." ];
       fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
     };
 
     xserver = {
-    
+
       enable = true;
-  
+
       xkb.layout = "eu";
       displayManager.startx.enable = true;
-  
+
       videoDrivers = [ "modesetting" ];
 
       windowManager.i3 = {
@@ -63,20 +57,20 @@
         ];
       };
     };
-  
+
     pipewire = {
       enable = true;
       pulse.enable = true;
     };
   };
-  
+
   programs = {
     nix-ld.enable = true;
-  
+
     ssh.extraConfig = ''
-      Host git.proxima-centauri.lsdevcloud.net
-          PreferredAuthentications publickey
-	  IdentityFile ~/.ssh/gitkey
+            Host git.proxima-centauri.lsdevcloud.net
+                PreferredAuthentications publickey
+      	  IdentityFile ~/.ssh/gitkey
     '';
 
     hyprland = {
@@ -85,7 +79,7 @@
       xwayland.enable = true;
     };
   };
-  
+
   users.users.lsqc = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -107,7 +101,7 @@
       killall
 
       marp-cli
- 
+
       sl
       lolcat
       asciiquarium
@@ -118,7 +112,6 @@
       clang
       rustc
 
-      yazi
       xfce.thunar
       adapta-gtk-theme
       paper-icon-theme
@@ -147,7 +140,7 @@
       arandr
 
       prismlauncher
-     
+
       # screenshot stuff
       xclip
       pngquant
@@ -155,7 +148,7 @@
       # notifications
       libnotify
       dunst
-  #    tree
+      #    tree
     ];
   };
 
@@ -170,19 +163,19 @@
       pulseaudio
       # pkgs.xorg.xinit
     ];
-  
+
     shellAliases = {
       #neofetch = "hyfetch";
     };
 
     variables = {
-      EDITOR = "nvim";
+      # EDITOR = "nvim";
       BROWSER = "librewolf";
-      TERMINAL= "alacritty";
+      TERMINAL = "alacritty";
     };
   };
 
-  fonts.packages = with pkgs; [ 
+  fonts.packages = with pkgs; [
     dejavu_fonts
 
     nerd-fonts.fantasque-sans-mono
