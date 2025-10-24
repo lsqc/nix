@@ -52,7 +52,10 @@
 
         keys = {
           normal = {
+
+            esc = [ "collapse_selection" "keep_primary_selection" ];
             space.space = "file_picker";
+
             space.w = ":w";
             space.q = ":q";
           };
@@ -77,6 +80,10 @@
         catppuccin_frappe_transparent = {
           "inherits" = "catppuccin_frappe";
           "ui.background" = { };
+          "ui.linenr.selected" = {
+            # fg = "#4a269e";
+            modifiers = [ "bold" ];
+          };
         };
       };
     };
