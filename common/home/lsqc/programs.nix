@@ -89,5 +89,7 @@
         };
       };
     };
+
+    element-desktop = { enable = true; };
   };
 }
