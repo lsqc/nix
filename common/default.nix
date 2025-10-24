@@ -2,10 +2,7 @@
 
 {
 
-  imports = 
-    [
-      ./users.nix
-    ];
+  imports = [ ./users.nix ];
 
   # enable flakes and new cli
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -28,11 +25,9 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment = {
-    
+
     # set vim as default editor because who the fuck uses nano
-    variables = {
-      EDITOR = "nvim";
-    };
+    variables = { EDITOR = "hx"; };
 
     # aliases
     shellAliases = {
@@ -46,15 +41,15 @@
     # package configuration
     systemPackages = with pkgs; [
       neovim
-  
+
       wget
       git
       curl
       tmux
-  
+
       btop
       neofetch
-    
+
       dig
       file
 
