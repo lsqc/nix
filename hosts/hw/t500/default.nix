@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+
     ../../../common
     ../../../common/desktop.nix
   ];
@@ -70,12 +71,6 @@
 
   programs = {
     nix-ld.enable = true;
-
-    ssh.extraConfig = ''
-            Host git.proxima-centauri.lsdevcloud.net
-                PreferredAuthentications publickey
-      	  IdentityFile ~/.ssh/gitkey
-    '';
 
     hyprland = {
       enable = true;
@@ -165,28 +160,9 @@
       tcpdump
       nix-ld
       pulseaudio
-      # pkgs.xorg.xinit
     ];
-
-    shellAliases = {
-      #neofetch = "hyfetch";
-    };
-
-    variables = {
-      # EDITOR = "nvim";
-      BROWSER = "librewolf";
-      TERMINAL = "alacritty";
-    };
   };
-
-  fonts.packages = with pkgs; [
-    dejavu_fonts
-
-    nerd-fonts.fantasque-sans-mono
-    nerd-fonts.comic-shanns-mono
-  ];
 
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-

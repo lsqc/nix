@@ -1,37 +1,52 @@
 { lib, pkgs, ... }:
 
 {
-
   programs = { seahorse = { enable = true; }; };
 
-  environment.systemPackages = with pkgs; [
+  environment = {
 
-    gimp
-    inkscape
+    variables = {
+      BROWSER = "librewolf";
+      TERMINAL = "alacritty";
+    };
 
-    librewolf
-    keepassxc
+    systemPackages = with pkgs; [
 
-    vesktop
-    openscad
+      gimp
+      inkscape
 
-    telegram-desktop
-    signal-desktop
-    thunderbird
-    pidgin
+      librewolf
+      keepassxc
 
-    prusa-slicer
-    tor-browser
+      vesktop
+      openscad
 
-    pavucontrol
-    alacritty
+      telegram-desktop
+      signal-desktop
+      thunderbird
+      pidgin
 
-    yazi
+      prusa-slicer
+      tor-browser
 
-  ];
+      pavucontrol
+      alacritty
+
+      yazi
+
+    ];
+  };
 
   # keyring
   services = { gnome.gnome-keyring = { enable = true; }; };
 
   security.pam.services.login.enableGnomeKeyring = true;
+
+  # fonts
+  fonts.packages = with pkgs; [
+    dejavu_fonts
+
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.comic-shanns-mono
+  ];
 }
