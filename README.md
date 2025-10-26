@@ -17,7 +17,6 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
     - `vm/`: configurations for Proxmox VMS
-        - `postgresql-1`: *a postgres container that is not functional yet :3*
         - `cookie`: a minecraft server vm. 🍪
         - `cerberus`: soon-to-be configuraton for `cerberus-v2.lsdevcloud.net`
         - `IIvy`: replacement for original ivy host
