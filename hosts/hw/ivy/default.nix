@@ -4,7 +4,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../common
+      ./minecraft-server.nix
+
+      ../../../common
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -16,12 +18,13 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 443 6969 80 2049 ]; 
+      allowedTCPPorts = [ 22 443 6969 80 2049 25565 ]; 
     };
   };
 
   environment.systemPackages = with pkgs; [
     stress-ng
+    ipmitool
   ];
 
   services.nfs.server = {

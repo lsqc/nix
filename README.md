@@ -1,19 +1,44 @@
-![img](assets/img.png)
-
 # nix
 
-flake for my private NixOS infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
+flake for my personal NixOS hosts and infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
 
 ## overview 
 
-- `common/`: common configuration for all servers
+- `common/`: 
+    - `home/`: home-manager configurations
+    - `{keys,users}.nix`: user and ssh key config
+
 - `hosts/`
+    - `live/`: configuration for the custom iso image
+    - `hw/`: configurations for non-virtual hosts
+        - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
+        - `masatoki`: storage server
+        - ~`ivy`: my r720 (old)~
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
     - `vm/`: configurations for Proxmox VMS
-        - `postgresql-1`: a postgres container that is not functional yet :3
+        - `postgresql-1`: *a postgres container that is not functional yet :3*
         - `cookie`: a minecraft server vm. 🍪
-    - `masatoki`: storage server (hardware)
-    - `ivy`: my r720 
+        - `cerberus`: soon-to-be configuraton for `cerberus-v2.lsdevcloud.net`
+        - `IIvy`: replacement for original ivy host
 
-- README.md: this piece of shit
+---
+
+## Remote install:
+
+- `nixos-anywhere --flake .#<host> root@<ip> --generate-hardware-config nixos-generate-config ./hosts/<type>/<host>/hardware-configuration.nix --phases disko,install` -> shamelessly stolen from https://git.heroin.trade/xqtc/ryuko-nix 
+
+---
+
+## Custom ISO
+
+- latest file: https://files.nya.vodka/pub/nix/iso/latest.iso
+- build: `nix build .#nixosConfigurations.live.config.system.build.isoImage` *or* `nix run .#buildIso`
+
+**TODO: create lxc template**
+
+---
+
+## Remote rebuild:
+
+- `nixos-rebuild switch --flake .#<host> --target-host root@<ip> --build-host root@<ip>`
