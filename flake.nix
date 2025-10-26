@@ -13,33 +13,20 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      agenix,
-      disko,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs:
     let
 
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
-      commonModules = [
-        agenix.nixosModules.default
-      ];
-    in
-    {
+      commonModules = [ agenix.nixosModules.default ];
+    in {
       nixosConfigurations = {
 
         masatoki = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [
-            ./hosts/hw/masatoki
-          ];
+          modules = commonModules ++ [ ./hosts/hw/masatoki ];
         };
 
         ivy = nixpkgs.lib.nixosSystem {
@@ -53,28 +40,16 @@
           ];
         };
 
-        postgresql-1 = nixpkgs.lib.nixosSystem {
-          inherit system; # system = "x86_64-linux";
-
-          modules = commonModules ++ [
-            ./hosts/vm/postgresql-1
-          ];
-        };
-
         cookie = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [
-            ./hosts/vm/cookie
-          ];
+          modules = commonModules ++ [ ./hosts/vm/cookie ];
         };
 
         atm = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [
-            ./hosts/lxc/atm
-          ];
+          modules = commonModules ++ [ ./hosts/lxc/atm ];
         };
 
         t500 = nixpkgs.lib.nixosSystem {
@@ -117,7 +92,8 @@
         live = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+            (nixpkgs
+              + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
             ./hosts/live
           ];
         };
@@ -125,11 +101,9 @@
 
       apps.x86_64-linux.buildIso = {
         type = "app";
-        program = toString (
-          pkgs.writeShellScript "build-iso" ''
-            nix build .#nixosConfigurations.live.config.system.build.isoImage
-          ''
-        );
+        program = toString (pkgs.writeShellScript "build-iso" ''
+          nix build .#nixosConfigurations.live.config.system.build.isoImage
+        '');
       };
 
       homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
