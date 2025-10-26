@@ -12,7 +12,7 @@
     home-manager.url = "github:nix-community/home-manager/release-25.05"; 
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     
-    colmena.url = "github:zhaofengli/colmena";
+    colmena.url = "github:zhaofengli/colmena/v0.4.0";
   };
 
   outputs = { self, nixpkgs, colmena, agenix, disko, home-manager, ... }:
@@ -32,6 +32,10 @@
       
         masatoki = { name, nodes, ... }: {
           imports = commonModules ++ [ ./hosts/hw/masatoki ];
+
+          deployment = {
+            tags = [ "hw" ];
+          };
         };
       
         ivy = { name, nodes, ... }: {
@@ -44,6 +48,10 @@
       
         cookie = { name, nodes, ... }: {
           imports = commonModules ++ [ ./hosts/vm/cookie ];
+
+          deployment = {
+            tags = [ "vm" ];
+          };
         };
       
         atm = { name, nodes, ... }: {
@@ -52,6 +60,10 @@
       
         t500 = { name, nodes, ... }: {
           imports = [ ./hosts/hw/t500 ];
+
+          deployment = {
+            tags = [ "hw" ];
+          };
         };
       
         cerberus = { name, nodes, ... }: {
@@ -60,6 +72,14 @@
             ./hosts/vm/cerberus
             ./hosts/vm/cerberus/disko-config.nix
           ];
+
+          deployment = {
+            targetHost = "cerberus-v2.lsdevcloud.net";
+            targetUser = "root";
+
+            tags = [ "vm" ];
+          };
+ 
         };
       
         IIvy = { name, nodes, ... }: {
@@ -68,6 +88,11 @@
             ./hosts/vm/IIvy
             ./hosts/vm/IIvy/disko-config.nix
           ];
+
+          deployment = {
+            tags = [ "vm" ];
+          };
+ 
         };
       
         live = { name, nodes, ... }: {
