@@ -10,6 +10,12 @@
       TERMINAL = "alacritty";
     };
 
+    shellAliases = {
+      nvim = lib.mkForce "hx";
+      vi = lib.mkForce "hx";
+      vim = lib.mkForce "hx";
+    };
+
     systemPackages = with pkgs; [
 
       gimp
