@@ -40,6 +40,18 @@
           ];
         };
 
+        gemini = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/gemini
+            ./hosts/hw/gemini/disko-config.nix
+          ];
+        };
+
+
         cookie = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
