@@ -78,10 +78,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      alacritty
-      librewolf
-      tor-browser
-
       wireguard-tools
       openvpn
 
@@ -90,7 +86,6 @@
 
       traceroute
       macchanger
-      dig
       feh
       killall
 
@@ -101,17 +96,12 @@
       asciiquarium
       whois
 
-      keepassxc
       nfs-utils
       clang
       rustc
 
       xfce.thunar
-      adapta-gtk-theme
-      paper-icon-theme
 
-      inkscape
-      gimp
       libreoffice
 
       openjdk21
@@ -120,13 +110,9 @@
 
       openscad
       netsurf.browser
-      prusa-slicer
 
       # cute discord >w<
       vesktop
-      thunderbird
-      signal-desktop
-      telegram-desktop
 
       pavucontrol
 

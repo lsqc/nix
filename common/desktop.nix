@@ -15,6 +15,8 @@
       gimp
       inkscape
 
+      alacritty
+
       librewolf
       keepassxc
 
