@@ -32,6 +32,7 @@
 
         key = "~/.ssh/gitkey";
       };
+
       aliases = {
         st = "status";
         c = "commit";
@@ -40,6 +41,8 @@
         b = "branch";
         co = "checkout";
       };
+
+      extraConfig = { init = { defaultBranch = "main"; }; };
     };
 
     yazi = { enable = true; };
