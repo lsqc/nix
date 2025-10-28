@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 
 {
   # required for cuda shit
@@ -13,8 +13,9 @@
   services.ollama = {
     enable = true;
     host = "0.0.0.0";
-#    acceleration = "vulkan";
+    #    acceleration = "vulkan";
 
-    loadModels = [ "llama2-uncensored" "deepseek-r1:1.5b" ];
+    loadModels =
+      [ "llama2-uncensored" "deepseek-r1:1.5b" "dolphin3" "dolphin-mixtral" ];
   };
 }
