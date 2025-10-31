@@ -16,6 +16,13 @@
     userName = "lsqc";
   };
 
-  home.packages =
-    [ pkgs.htop pkgs.neovim pkgs.playerctl pkgs.google-java-format ];
+  home.packages = with pkgs; [
+    htop
+    neovim
+    playerctl
+    google-java-format
+
+    ipcalc
+    calc
+  ];
 }
