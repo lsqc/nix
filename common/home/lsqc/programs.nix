@@ -82,6 +82,8 @@
             esc = [ "collapse_selection" "keep_primary_selection" ];
             space.space = "file_picker";
 
+            space.v = [ ":vsplit-new" "file_picker" ];
+            space.H = [ ":hsplit-new" "file_picker" ];
             space.w = ":w";
             space.q = ":q";
           };
