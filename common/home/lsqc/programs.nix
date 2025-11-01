@@ -14,11 +14,10 @@
     # shell
     zsh = {
       enable = true;
-      oh-my-zsh = {
-        enable = true;
-        theme = "robbyrussell";
-        plugins = [ "git" ];
-      };
+
+      initContent = ''
+        PROMPT="%F{147}%n%F{122}::%F{61}%m %F{255}∈ %F{69}%~%F{14}%f %F{79}λ %F{255}"
+      '';
     };
 
     git = {
@@ -86,6 +85,7 @@
             space.H = [ ":hsplit-new" "file_picker" ];
             space.w = ":w";
             space.q = ":q";
+            space.Q = ":q!";
           };
         };
       };
@@ -109,8 +109,8 @@
           "inherits" = "catppuccin_frappe";
           "ui.background" = { };
           "ui.linenr.selected" = {
-            # fg = "#4a269e";
-            modifiers = [ "bold" ];
+            fg = "#FB508F";
+            # modifiers = [ "bold" ];
           };
         };
       };
