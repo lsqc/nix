@@ -51,7 +51,6 @@
           ];
         };
 
-
         cookie = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
@@ -69,12 +68,15 @@
 
           modules = [
             ./hosts/hw/t500
-            #        home-manager.nixosModules.home-manager
-            #          {
-            #            home-manager.useGlobalPkgs = true;
-            #            home-manager.useUserPackages = true;
-            #            home-manager.users.lsqc= ./common/home/lsqc.nix;
-            #          }
+          ];
+        };
+
+        t540p = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            ./hosts/hw/t540p
+            ./hosts/hw/t540p/disko-config.nix
           ];
         };
 
