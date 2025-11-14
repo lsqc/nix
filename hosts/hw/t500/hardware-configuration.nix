@@ -8,25 +8,23 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ata_generic" "uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "ata_generic" "uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" "aesni_intel" "cryptd" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ba89cba7-a7b0-46a1-a6b5-410de70e5efe";
+    { device = "/dev/disk/by-uuid/df10c045-7ac8-4eec-9c2a-30792447b2c6";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/2b35d2df-4d0a-4c0e-bf61-9e0ee526f72d";
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/14c53a19-2c3b-4c15-8985-b081c8047df7";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/bcb50d6b-dc6e-46b5-9cfb-1b76d79e2699";
-      fsType = "ext4";
+    { device = "/dev/disk/by-uuid/B3B7-966F";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
-
-  swapDevices = [ { device = "/swapfile"; size = 10000; } ];
-
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
