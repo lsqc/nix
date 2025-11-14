@@ -78,7 +78,6 @@
         keys = {
           normal = {
 
-            esc = [ "collapse_selection" "keep_primary_selection" ];
             space.space = "file_picker";
 
             space.v = [ ":vsplit-new" "file_picker" ];
