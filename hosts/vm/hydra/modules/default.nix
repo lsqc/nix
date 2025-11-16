@@ -3,7 +3,6 @@
 {
   imports = 
     [
-      ./caddy.nix
       ./hydra.nix
     ];
 }
