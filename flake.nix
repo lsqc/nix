@@ -63,21 +63,16 @@
           modules = commonModules ++ [ ./hosts/lxc/atm ];
         };
 
-        t500 = nixpkgs.lib.nixosSystem {
+        w500 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = [
-            ./hosts/hw/t500
-          ];
+          modules = [ ./hosts/hw/w500 ];
         };
 
         t540p = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          modules = [
-            ./hosts/hw/t540p
-            ./hosts/hw/t540p/disko-config.nix
-          ];
+          modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
         };
 
         cerberus = nixpkgs.lib.nixosSystem {

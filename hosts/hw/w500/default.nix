@@ -14,7 +14,7 @@
   };
 
   networking = {
-    hostName = "t500";
+    hostName = "w500";
     networkmanager.enable = true;
     #    resolvconf.enable = true;
   };
