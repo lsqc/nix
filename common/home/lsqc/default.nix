@@ -24,5 +24,11 @@
 
     ipcalc
     calc
+
+    niri
+    scrcpy
+
+    fuzzel
+    swaylock
   ];
 }
