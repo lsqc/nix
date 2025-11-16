@@ -86,6 +86,17 @@
           ];
         };
 
+        hydra = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/vm/hydra
+            ./hosts/vm/hydra/disko-config.nix
+          ];
+        };
+
         IIvy = nixpkgs.lib.nixosSystem {
           inherit system;
 
