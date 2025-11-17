@@ -1,3 +1,6 @@
+# TODO: move all this shit into modules
+# ---
+
 { config, pkgs, lib, ... }:
 
 {
