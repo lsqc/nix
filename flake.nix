@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     agenix.url = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
@@ -11,9 +12,14 @@
 
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, disko, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, agenix, disko, home-manager, niri, ... }@inputs:
     let
 
       system = "x86_64-linux";
@@ -66,7 +72,7 @@
         w500 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = [ ./hosts/hw/w500 ];
+          modules = [ niri.nixosModules.niri ./hosts/hw/w500 ];
         };
 
         t540p = nixpkgs.lib.nixosSystem {
