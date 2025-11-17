@@ -1,6 +1,18 @@
 { lib, pkgs, ... }:
 
 {
+
+  # boot = {
+
+  #   # show shonk on boot :3
+  #   plymouth = {
+  #     enable = true;
+
+  #     theme = "blahaj";
+  #     themePackages = with pkgs; [ plymouth-blahaj-theme ];
+  #   };
+  # };
+
   programs = { seahorse = { enable = true; }; };
 
   environment = {
