@@ -2,7 +2,7 @@
 
 {
 
-  imports = [ ./desktop.nix ./programs.nix ];
+  imports = [ ./desktop.nix ./programs.nix ./modules ];
 
   home.username = "lsqc";
   home.homeDirectory = "/home/lsqc";
