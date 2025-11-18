@@ -13,7 +13,10 @@
   #   };
   # };
 
-  programs = { seahorse = { enable = true; }; };
+  programs = {
+    thunar = { enable = true; };
+    seahorse = { enable = true; };
+  };
 
   environment = {
 
@@ -55,8 +58,6 @@
       yazi
     ];
   };
-
-  # networking.nameservers = [ ];
 
   # keyring
   services = { gnome.gnome-keyring = { enable = true; }; };

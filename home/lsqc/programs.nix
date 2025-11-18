@@ -6,6 +6,7 @@
 {
 
   programs = {
+
     yazi = { enable = true; };
 
     # web browser
