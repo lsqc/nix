@@ -86,7 +86,7 @@
 
           modules = [
             disko.nixosModules.disko
-            
+
             ./hosts/hw/antlia
             ./hosts/hw/antlia/modules/disko.nix
           ];
@@ -145,7 +145,7 @@
 
       homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./common/home/lsqc ];
+        modules = [ ./home/lsqc ];
       };
     };
 }
