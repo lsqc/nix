@@ -4,11 +4,11 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
 
 ## overview 
 
-- `common/`: 
-    - `home/`: home-manager configurations
+- `./common/`: 
     - `{keys,users}.nix`: user and ssh key config
 
-- `hosts/`
+- `./home/`: home-manager configurations
+- `./hosts/`
     - `live/`: configuration for the custom iso image
     - `hw/`: configurations for non-virtual hosts
         - `w500`: a lenovo w500 <br>![img](assets/thinkpad.jpg)
