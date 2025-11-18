@@ -11,7 +11,8 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
 - `hosts/`
     - `live/`: configuration for the custom iso image
     - `hw/`: configurations for non-virtual hosts
-        - `t500`: a lenovo t500 <br>![img](assets/thinkpad.jpg)
+        - `w500`: a lenovo w500 <br>![img](assets/thinkpad.jpg)
+        - `antlia`: my desktop
         - `masatoki`: storage server
         - `gemini`: an old Acer Predator G3-710 used to play around with AI
         - ~`ivy`: my r720 (old)~
@@ -21,6 +22,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
         - `cookie`: a minecraft server vm. 🍪
         - `cerberus`: soon-to-be configuraton for `cerberus-v2.lsdevcloud.net`
         - `IIvy`: replacement for original ivy host
+        - `hydra`: a vm running my [Hydra](https://github.com/NixOS/hydra) instance.
 
 ---
 
