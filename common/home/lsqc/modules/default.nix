@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./fnott.nix ./swaylock.nix ];
+  imports = [ ./git.nix ./zsh.nix ./tmux.nix ./fnott.nix ./swaylock.nix ];
 }
