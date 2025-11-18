@@ -23,22 +23,7 @@
       xkb.layout = "eu";
       displayManager.startx.enable = true;
 
-      videoDrivers = [ "modesetting" ];
-
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          i3status
-          i3blocks
-          networkmanagerapplet
-          rofi
-        ];
-      };
-    };
-
-    pipewire = {
-      enable = true;
-      pulse.enable = true;
+  #    videoDrivers = [ "modesetting" ];
     };
   };
 
@@ -50,64 +35,6 @@
       withUWSM = true;
       xwayland.enable = true;
     };
-  };
-
-  users.users.lsqc = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      wireguard-tools
-      openvpn
-
-      betterlockscreen
-      nerd-fonts.comic-shanns-mono
-
-      traceroute
-      macchanger
-      feh
-      killall
-
-      marp-cli
-
-      sl
-      lolcat
-      asciiquarium
-      whois
-
-      nfs-utils
-      clang
-      rustc
-
-      xfce.thunar
-
-      libreoffice
-
-      openjdk21
-      jdt-language-server
-      maven
-
-      openscad
-      netsurf.browser
-
-      # cute discord >w<
-      vesktop
-
-      pavucontrol
-
-      angryipscanner
-      arandr
-
-      prismlauncher
-
-      # screenshot stuff
-      xclip
-      pngquant
-
-      # notifications
-      libnotify
-      dunst
-      #    tree
-    ];
   };
 
   environment = {
