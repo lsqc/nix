@@ -30,5 +30,7 @@
 
     fuzzel
     swaylock
+
+    prismlauncher
   ];
 }
