@@ -75,10 +75,21 @@
           modules = [ niri.nixosModules.niri ./hosts/hw/w500 ];
         };
 
-        t540p = nixpkgs.lib.nixosSystem {
+        # t540p = nixpkgs.lib.nixosSystem {
+        #   inherit system;
+
+        #   modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
+        # };
+
+        antlia = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
+          modules = [
+            disko.nixosModules.disko
+            
+            ./hosts/hw/antlia
+            ./hosts/hw/antlia/modules/disko.nix
+          ];
         };
 
         cerberus = nixpkgs.lib.nixosSystem {
