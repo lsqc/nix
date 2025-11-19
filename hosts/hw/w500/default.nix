@@ -132,6 +132,7 @@
       libnotify
       dunst
       #    tree
+      waybar
     ];
   };
 
