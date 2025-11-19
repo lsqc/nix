@@ -6,6 +6,8 @@
 
     ../../../common
     ../../../common/desktop.nix
+
+    ../../../common/gc.nix
   ];
 
   boot.loader.grub = {
