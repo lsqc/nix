@@ -1,5 +1,10 @@
 { ... }:
 
 {
-  programs.yazi = { enable = true; };
+  programs.yazi = {
+    enable = true;
+    settings = {
+      # theme = "";
+    };
+  };
 }
