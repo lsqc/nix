@@ -2,7 +2,7 @@
 
 {
 
-  imports = [ ./users.nix ./packages.nix ];
+  imports = [ ./ssh.nix ./users.nix ./packages.nix ];
 
   # enable flakes and new cli
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -26,7 +26,7 @@
 
   environment = {
 
-    # set vim as default editor because who the fuck uses nano
+    # set helix as default editor because who the fuck uses nano
     variables = { EDITOR = "hx"; };
 
     # aliases
@@ -41,14 +41,5 @@
     };
   };
 
-  # ssh server 
-  services.openssh = {
-    enable = true;
-    settings = {
-      X11Forwarding = true;
-      PermitRootLogin = "prohibit-password";
-      PasswordAuthentication = false;
-    };
-  };
 }
 
