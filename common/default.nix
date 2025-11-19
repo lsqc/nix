@@ -2,7 +2,7 @@
 
 {
 
-  imports = [ ./users.nix ];
+  imports = [ ./users.nix ./packages.nix ];
 
   # enable flakes and new cli
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -31,30 +31,14 @@
 
     # aliases
     shellAliases = {
-      vim = "nvim";
-      vi = "nvim";
+      vim = "hx";
+      vi = "hx";
+      nvim = "hx";
       ls = "ls -lsah";
       ll = "ls -l";
       la = "ls -a";
+      cat = "bat";
     };
-
-    # package configuration
-    systemPackages = with pkgs; [
-      neovim
-
-      wget
-      git
-      curl
-      tmux
-
-      btop
-      neofetch
-
-      dig
-      file
-
-      nixos-anywhere
-    ];
   };
 
   # ssh server 
