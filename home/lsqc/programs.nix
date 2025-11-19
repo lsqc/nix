@@ -7,8 +7,6 @@
 
   programs = {
 
-    yazi = { enable = true; };
-
     # web browser
     librewolf = {
       enable = true;

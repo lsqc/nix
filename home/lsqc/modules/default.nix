@@ -9,5 +9,6 @@
     ./tmux.nix
     ./fnott.nix
     ./swaylock.nix
+    ./yazi.nix
   ];
 }
