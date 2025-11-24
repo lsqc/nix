@@ -5,6 +5,9 @@
     enable = true;
 
     shellAliases = {
+
+      ls = "ls -lsa --color";
+
       zi = "yazi";
       ed = "hx";
       vi = "hx";
