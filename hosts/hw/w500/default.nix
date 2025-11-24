@@ -8,13 +8,9 @@
     ../../../common/desktop.nix
 
     ../../../common/gc.nix
-  ];
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda";
-    enableCryptodisk = true;
-  };
+    ./modules
+  ];
 
   networking = {
     hostName = "w500";
