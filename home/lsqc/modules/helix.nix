@@ -30,6 +30,8 @@
           space.q = ":q";
           space.Q = ":q!";
         };
+
+        insert = { "C-c" = "normal_mode"; };
       };
     };
 
