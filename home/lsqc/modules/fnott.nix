@@ -11,9 +11,9 @@
       };
 
       low = {
-        timeout = 5;
+        # timeout = 5;
         title-font = "unifont";
-        title-color = "ffffff";
+        title-color = "ffffffff";
       };
     };
   };
