@@ -15,6 +15,7 @@
       nvim = "hx";
 
       g = "git";
+      cg = "cargo";
 
     };
 

@@ -32,5 +32,6 @@
     swaylock
 
     prismlauncher
+    cargo
   ];
 }
