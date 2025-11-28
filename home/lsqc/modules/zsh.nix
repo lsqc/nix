@@ -16,7 +16,7 @@
 
       g = "git";
       cg = "cargo";
-
+      cr = "cargo run";
     };
 
     initContent = ''
