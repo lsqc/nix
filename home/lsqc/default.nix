@@ -33,5 +33,7 @@
 
     prismlauncher
     cargo
+    rustfmt
+    rust-analyzer
   ];
 }
