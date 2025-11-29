@@ -17,6 +17,8 @@
       g = "git";
       cg = "cargo";
       cr = "cargo run";
+
+      cat = "bat";
     };
 
     initContent = ''
