@@ -114,6 +114,17 @@
           ];
         };
 
+        torrent = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/vm/torrent
+            ./hosts/vm/torrent/disko-config.nix
+          ];
+        };
+
         IIvy = nixpkgs.lib.nixosSystem {
           inherit system;
 
