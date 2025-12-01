@@ -29,34 +29,9 @@
     in {
       nixosConfigurations = {
 
-        masatoki = nixpkgs.lib.nixosSystem {
-          inherit system; # system = "x86_64-linux";
-
-          modules = commonModules ++ [ ./hosts/hw/masatoki ];
-        };
-
-        ivy = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          modules = commonModules ++ [
-            disko.nixosModules.disko
-
-            ./hosts/hw/ivy
-            ./hosts/hw/ivy/disko-config.nix
-          ];
-        };
-
-        gemini = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          modules = commonModules ++ [
-            disko.nixosModules.disko
-
-            ./hosts/hw/gemini
-            ./hosts/hw/gemini/disko-config.nix
-          ];
-        };
-
+        #
+        # Configurations for vms and lxcs
+        # 
         cookie = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
@@ -67,29 +42,6 @@
           inherit system; # system = "x86_64-linux";
 
           modules = commonModules ++ [ ./hosts/lxc/atm ];
-        };
-
-        w500 = nixpkgs.lib.nixosSystem {
-          inherit system; # system = "x86_64-linux";
-
-          modules = [ niri.nixosModules.niri ./hosts/hw/w500 ];
-        };
-
-        # t540p = nixpkgs.lib.nixosSystem {
-        #   inherit system;
-
-        #   modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
-        # };
-
-        antlia = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          modules = [
-            disko.nixosModules.disko
-
-            ./hosts/hw/antlia
-            ./hosts/hw/antlia/modules/disko.nix
-          ];
         };
 
         cerberus = nixpkgs.lib.nixosSystem {
@@ -136,12 +88,84 @@
           ];
         };
 
-        # custom live cd with ssh keys
+        #
+        # Configurations for non-virtualized systems
+        # 
+        masatoki = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [ ./hosts/hw/masatoki ];
+        };
+
+        ivy = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/ivy
+            ./hosts/hw/ivy/disko-config.nix
+          ];
+        };
+
+        gemini = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/gemini
+            ./hosts/hw/gemini/disko-config.nix
+          ];
+        };
+
+        testbox = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/testbox
+            ./hosts/hw/testbox/disko-config.nix
+          ];
+        };
+
+        w500 = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = [
+            niri.nixosModules.niri
+
+            ./hosts/hw/w500
+          ];
+        };
+
+        # t540p = nixpkgs.lib.nixosSystem {
+        #   inherit system;
+
+        #   modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
+        # };
+
+        antlia = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = [
+            disko.nixosModules.disko
+
+            ./hosts/hw/antlia
+            ./hosts/hw/antlia/modules/disko.nix
+          ];
+        };
+
+        #
+        # Configuration for the custom live cd
+        # 
         live = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             (nixpkgs
               + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+
             ./hosts/live
           ];
         };
