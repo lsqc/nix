@@ -9,14 +9,7 @@
     ./modules
   ];
 
-  networking = {
-    hostName = "torrent";
-
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 22 80 443 8112 ];
-    };
-  };
+  networking = { hostName = "torrent"; };
 
   time.timeZone = "Europe/Berlin";
 
