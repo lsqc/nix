@@ -1,14 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ../../../common
-      ../../../common/grub-uefi.nix
-      
-      ./modules
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../../common
+    ../../../common/grub-uefi.nix
+
+    ./modules
+  ];
 
   networking = {
     hostName = "cerberus";
@@ -21,6 +20,6 @@
 
   time.timeZone = "Europe/Berlin";
 
-  system.stateVersion = "25.05"; 
+  # system.stateVersion = "25.05"; 
 }
 

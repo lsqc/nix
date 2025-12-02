@@ -1,13 +1,12 @@
-{ config, modulesPath, pkgs, lib, ...}:
+{ config, modulesPath, pkgs, lib, ... }:
 
 {
-  imports = 
-    [ 
-      (modulesPath + "/virtualisation/proxmox-lxc.nix")
+  imports = [
+    (modulesPath + "/virtualisation/proxmox-lxc.nix")
 
-      ../../../common
-      ./minecraft.nix
-    ];
+    ../../../common
+    ./minecraft.nix
+  ];
 
   nix.settings = { sandbox = false; };
   proxmoxLXC = {
@@ -15,11 +14,9 @@
     privileged = false;
   };
 
-  environment.systemPackages = with pkgs; [
-    openjdk21
-  ];
+  environment.systemPackages = with pkgs; [ openjdk21 ];
 
   # security.pam.services.sshd.allowNullPassword = true;
-  system.stateVersion = "25.05";
+  system.stateVersion = lib.mkForce "25.05";
 }
 

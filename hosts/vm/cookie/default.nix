@@ -1,19 +1,18 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ../../../common
+  imports = [
+    ./hardware-configuration.nix
+    ../../../common
 
-      ./users.nix
-    ];
+    ./users.nix
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "cookie"; 
+  networking.hostName = "cookie";
 
   networking.firewall = {
     enable = true;
@@ -23,10 +22,10 @@
   time.timeZone = "Europe/Berlin";
 
   environment.systemPackages = with pkgs; [
-    neovim 
+    neovim
     wget
     curl
-    git 
+    git
     jdk21_headless
     screen
   ];
@@ -38,8 +37,9 @@
     wantedBy = [ "default.target" ];
 
     serviceConfig = {
-      ExecStart = ''/run/current-system/sw/bin/screen -DmS mc-folia /home/minecraft/minecraft-1.21/start.sh'';
-      ExecStop = ''/run/current-system/sw/bin/screen -S mc-folia -X quit'';
+      ExecStart =
+        "/run/current-system/sw/bin/screen -DmS mc-folia /home/minecraft/minecraft-1.21/start.sh";
+      ExecStop = "/run/current-system/sw/bin/screen -S mc-folia -X quit";
       WorkingDirectory = "/home/minecraft/minecraft-1.21";
       User = "minecraft";
       Restart = "on-failure";
@@ -47,6 +47,6 @@
     };
   };
 
-  system.stateVersion = "25.05"; 
+  # system.stateVersion = "25.05"; 
 }
 

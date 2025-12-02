@@ -1,12 +1,11 @@
-{ config, modulesPath, pkgs, lib, ...}:
+{ config, modulesPath, pkgs, lib, ... }:
 
 {
-  imports = 
-    [ 
-      (modulesPath + "/virtualisation/proxmox-lxc.nix")
+  imports = [
+    (modulesPath + "/virtualisation/proxmox-lxc.nix")
 
-      ../../../common
-    ];
+    ../../../common
+  ];
 
   nix.settings = { sandbox = false; };
   proxmoxLXC = {
@@ -25,12 +24,12 @@
         "ubuntu-latest:docker://node:16-bullseye"
         "ubuntu-22.04:docker://node:16-bullseye"
         "ubuntu-20.04:docker://node:16-bullseye"
-        "ubuntu-18.04:docker://node:16-buster"     
+        "ubuntu-18.04:docker://node:16-buster"
       ];
     };
   };
 
   # security.pam.services.sshd.allowNullPassword = true;
-  system.stateVersion = "25.05";
+  system.stateVersion = lib.mkForce "25.05";
 }
 
