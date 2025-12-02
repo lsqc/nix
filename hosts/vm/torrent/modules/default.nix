@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./torrent.nix ];
+  imports = [ ./torrent.nix ./flood.nix ];
 }
