@@ -56,6 +56,7 @@
       alacritty
 
       yazi
+      nmap
     ];
   };
 
