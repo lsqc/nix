@@ -16,13 +16,15 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
         - `masatoki`: storage server
         - `gemini`: an old Acer Predator G3-710 used to play around with AI
         - ~`ivy`: my r720 (old)~
+        - `testbox`: a random thingy used for testing
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
     - `vm/`: configurations for Proxmox VMS
         - `cookie`: a minecraft server vm. 🍪
-        - `cerberus`: soon-to-be configuraton for `cerberus-v2.lsdevcloud.net`
+        - `cerberus`: (soon-to-be) configuraton for `cerberus-v2.lsdevcloud.net`
         - `IIvy`: replacement for original ivy host
         - `hydra`: a vm running my [Hydra](https://github.com/NixOS/hydra) instance.
+        - `torrent`: rtorrent server w/ flood frontend [fucking broken]
 
 ---
 
