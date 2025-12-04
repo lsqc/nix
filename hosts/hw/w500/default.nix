@@ -108,7 +108,7 @@
       maven
 
       openscad
-      netsurf.browser
+      netsurf-browser
 
       # cute discord >w<
       vesktop
