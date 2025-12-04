@@ -16,9 +16,9 @@
 
     hostName = "testbox";
 
-    # firewall = {
-    #   enable = true;
-    #   allowedTCPPorts = [ 22 80 443 8080 ];
-    # };
+    firewall = {
+      enable = false;
+      # allowedTCPPorts = [ 22 80 443 8080 ];
+    };
   };
 }
