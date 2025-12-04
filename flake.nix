@@ -2,7 +2,7 @@
   description = "flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     agenix.url = "github:ryantm/agenix";
@@ -85,6 +85,17 @@
 
             ./hosts/vm/IIvy
             ./hosts/vm/IIvy/disko-config.nix
+          ];
+        };
+
+        mail = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/vm/mail
+            ./hosts/vm/mail/disko-config.nix
           ];
         };
 
