@@ -6,8 +6,8 @@
 
     zones = {
       "pc.nya.vodka" = {
-        master = true;
-        slaves = [ "10.42.0.5" ];
+        master = false;
+        masters = [ "10.42.0.4" ];
         allowQuery = [ "10.0.0.0/8" ];
         file = let
           zoneTemplate = ../../../dns/pc.nya.vodka.zone;
