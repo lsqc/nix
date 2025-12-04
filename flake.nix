@@ -23,6 +23,7 @@
     let
 
       system = "x86_64-linux";
+      hostPlatform = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
       commonModules = [ agenix.nixosModules.default ];

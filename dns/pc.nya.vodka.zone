@@ -1,19 +1,23 @@
 $TTL 3600
 $ORIGIN pc.nya.vodka.
 
-@       IN      SOA     dns-4.pc.nya.vodka. admin.pc.nya.vodka.
-(
+@       IN      SOA     dns-4.pc.nya.vodka. admin.pc.nya.vodka. (
         serial-number
         3600
         1800
         604800
-        86400
-)
+        86400 )
 
+@       IN      NS      dns-1.pc.nya.vodka.
+@       IN      NS      dns-2.pc.nya.vodka.
+@       IN      NS      dns-3.pc.nya.vodka.
 @       IN      NS      dns-4.pc.nya.vodka.
 @       IN      NS      dns-5.pc.nya.vodka.
 @       IN      NS      dns-6.pc.nya.vodka.
 
-dns-4   IN      A       10.42.0.6
-dns-5   IN      A       10.42.0.7
-dns-6   IN      A       10.42.0.8
+dns-1   IN      A       10.42.0.2
+dns-2   IN      A       10.42.0.3
+dns-3   IN      A       10.42.0.4
+dns-4   IN      A       10.42.0.5
+dns-5   IN      A       10.42.0.6
+dns-6   IN      A       10.42.0.7

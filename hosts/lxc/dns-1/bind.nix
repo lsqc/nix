@@ -1,17 +1,35 @@
-{ pkgs, ... }:
+{ config, lib, inputs, pkgs, ... }:
 
 {
   services.bind = {
+    enable = true;
+
     zones = {
       "pc.nya.vodka" = {
         master = true;
+        allowQuery = [ "10.0.0.0/8" ];
         file = let
-          content = builtins.readFile ../../../common/dns/pc.nya.vodka.zone;
-          zone =
-            builtins.replaceStrings [ "serial-number" ] [ builtins.currentTime ]
+          zoneTemplate = ../../../dns/pc.nya.vodka.zone;
+          serialTimestamp = lib.strings.trim (builtins.readFile
+            (pkgs.runCommand "zone-serial" { } ''
+              date +%s > $out
+            ''));
+
+          content = builtins.readFile zoneTemplate;
+          updatedZone =
+            builtins.replaceStrings [ "serial-number" ] [ serialTimestamp ]
             content;
-        in pkgs.writeText "pc.nya.vodka.zone" zone;
+
+          finalZone = updatedZone + "\n";
+
+        in pkgs.writeText "pc.nya.vodka.zone" finalZone;
       };
     };
   };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 22 53 ];
+    allowedUDPPorts = [ 53 ];
+  };
 }
+
