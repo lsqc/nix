@@ -10,12 +10,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.git = {
-    enable = true;
-    userEmail = "lsqc@nya.vodka";
-    userName = "lsqc";
-  };
-
   home.packages = with pkgs; [
     htop
     neovim

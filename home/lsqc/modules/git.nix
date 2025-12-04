@@ -3,8 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "lsqc@nya.vodka";
-    userName = "lsqc";
 
     signing = {
       format = "ssh";
@@ -13,15 +11,22 @@
       key = "~/.ssh/gitkey";
     };
 
-    aliases = {
-      st = "status";
-      c = "commit";
-      me = "merge";
-      cp = "cherry-pick";
-      b = "branch";
-      co = "checkout";
+    settings = {
+      user = {
+        email = "lsqc@nya.vodka";
+        name = "lsqc";
+      };
+      alias = {
+        st = "status";
+        c = "commit";
+        me = "merge";
+        cp = "cherry-pick";
+        b = "branch";
+        co = "checkout";
+      };
+      init = { defaultBranch = "main"; };
     };
 
-    extraConfig = { init = { defaultBranch = "main"; }; };
+    # extraConfig = { init = { defaultBranch = "main"; }; };
   };
 }
