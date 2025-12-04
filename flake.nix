@@ -48,7 +48,7 @@
         dns-1 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [ ./hosts/lxc/dns-1 ];
+          modules = commonModules ++ [ ./hosts/lxc/dns/dns-1 ];
         };
 
         cerberus = nixpkgs.lib.nixosSystem {
