@@ -8,7 +8,7 @@
 
       ls = "ls -lsa --color";
 
-      zi = "yazi";
+      zi = "EDITOR=hx yazi";
       ed = "hx";
       vi = "hx";
       vim = "hx";
