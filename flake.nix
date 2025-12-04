@@ -10,7 +10,7 @@
 
     disko.url = "github:nix-community/disko";
 
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     niri = {
@@ -45,16 +45,22 @@
           modules = commonModules ++ [ ./hosts/lxc/atm ];
         };
 
-        dns-1 = nixpkgs.lib.nixosSystem {
+        dns1 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [ ./hosts/lxc/dns/dns-1 ];
+          modules = commonModules ++ [ ./hosts/lxc/dns/dns1 ];
         };
 
-        dns-2 = nixpkgs.lib.nixosSystem {
+        dns2 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [ ./hosts/lxc/dns/dns-2 ];
+          modules = commonModules ++ [ ./hosts/lxc/dns/dns2 ];
+        };
+
+        dns3 = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [ ./hosts/lxc/dns/dns3 ];
         };
 
         cerberus = nixpkgs.lib.nixosSystem {
