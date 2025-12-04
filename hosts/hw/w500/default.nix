@@ -29,8 +29,12 @@
     blueman.enable = true;
 
     logind = {
-      lidSwitch = "ignore";
-      lidSwitchExternalPower = "ignore";
+      settings = {
+        Login = {
+          HandleLidSwitch = false;
+          HandleLidSwitchExternalPower = false;
+        };
+      };
     };
 
     printing = { enable = true; };
