@@ -7,6 +7,7 @@
     ../../../../common
 
     ./bind.nix
+    ../bind-common.nix
   ];
 
   nix.settings = { sandbox = false; };

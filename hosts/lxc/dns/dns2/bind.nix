@@ -2,8 +2,6 @@
 
 {
   services.bind = {
-    enable = true;
-
     zones = {
       "pc.nya.vodka" = {
         master = false;
@@ -26,11 +24,6 @@
         in pkgs.writeText "pc.nya.vodka.zone" finalZone;
       };
     };
-  };
-
-  networking.firewall = {
-    allowedTCPPorts = [ 22 53 ];
-    allowedUDPPorts = [ 53 ];
   };
 }
 
