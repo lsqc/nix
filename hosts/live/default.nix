@@ -1,12 +1,9 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, ... }:
 
 {
-  imports = 
-    [
-      ../../common/users.nix
-    ];
+  imports = [ ../../common/users.nix ];
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   # use faster compression
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";
