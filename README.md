@@ -19,6 +19,9 @@ flake for my personal NixOS hosts and infrastructure hosted in the `proxima-cent
         - `testbox`: a random thingy used for testing
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
+        - `dns`: parent directory for all dns servers
+            - `dns-1`: primary dns server
+            - `dns-{2-3}`: secondary dns server
     - `vm/`: configurations for Proxmox VMS
         - `cookie`: a minecraft server vm. 🍪
         - `cerberus`: (soon-to-be) configuraton for `cerberus-v2.lsdevcloud.net`
