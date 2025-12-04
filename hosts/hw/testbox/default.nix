@@ -10,6 +10,8 @@
     ./modules
   ];
 
+  environment.systemPackages = with pkgs; [ iperf3 ];
+
   networking = {
 
     hostName = "testbox";
