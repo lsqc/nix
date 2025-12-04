@@ -4,7 +4,7 @@
   imports = [
     (modulesPath + "/virtualisation/proxmox-lxc.nix")
 
-    ../../../common
+    ../../../../common
 
     ./bind.nix
   ];

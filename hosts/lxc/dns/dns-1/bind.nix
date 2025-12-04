@@ -7,10 +7,10 @@
     zones = {
       "pc.nya.vodka" = {
         master = true;
-        slaves = [ "10.42.0.5" ];
+        slaves = [ "10.42.0.6" ];
         allowQuery = [ "10.0.0.0/8" ];
         file = let
-          zoneTemplate = ../../../dns/pc.nya.vodka.zone;
+          zoneTemplate = ../../../../dns/pc.nya.vodka.zone;
           serialTimestamp = lib.strings.trim (builtins.readFile
             (pkgs.runCommand "zone-serial" { } ''
               date +%s > $out
