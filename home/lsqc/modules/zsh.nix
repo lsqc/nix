@@ -19,6 +19,8 @@
       cr = "cargo run";
 
       cat = "bat";
+
+      nef = "neofetch";
     };
 
     initContent = ''

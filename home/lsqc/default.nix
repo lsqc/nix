@@ -35,5 +35,6 @@
     cargo
     rustfmt
     rust-analyzer
+    onefetch
   ];
 }
