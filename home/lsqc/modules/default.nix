@@ -11,5 +11,6 @@
     ./swaylock.nix
     ./yazi.nix
     ./firefox.nix
+    ./xdg.nix
   ];
 }
