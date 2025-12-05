@@ -25,7 +25,7 @@ dns-6    IN      A       10.42.0.7
 docker-1 IN      A       10.42.0.31
 docker-2 IN      A       10.42.0.32
 
-forgjeo  IN      A       10.42.0.71
+forgejo  IN      A       10.42.0.71
 hydra    IN      A       10.42.0.103
 
 jellyfin IN      A       10.42.0.252
