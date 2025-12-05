@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -10,5 +10,6 @@
     ./fnott.nix
     ./swaylock.nix
     ./yazi.nix
+    ./firefox.nix
   ];
 }

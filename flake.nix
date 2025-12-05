@@ -17,9 +17,14 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, agenix, disko, home-manager, niri, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, agenix, disko, home-manager, niri, ... }:
     let
 
       system = "x86_64-linux";
@@ -27,6 +32,7 @@
       pkgs = import nixpkgs { inherit system; };
 
       commonModules = [ agenix.nixosModules.default ];
+
     in {
       nixosConfigurations = {
 
@@ -210,7 +216,7 @@
 
       homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./home/lsqc ];
+        modules = [ { _module.args.inputs = inputs; } ./home/lsqc ];
       };
     };
 }
