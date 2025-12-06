@@ -119,7 +119,7 @@
 
       pavucontrol
 
-      angryipscanner
+      # angryipscanner
       arandr
 
       prismlauncher
