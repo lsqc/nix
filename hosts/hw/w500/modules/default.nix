@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./nfs.nix ./bootloader.nix ];
+  imports = [ ./nfs.nix ./bootloader.nix ./adb.nix ];
 }
