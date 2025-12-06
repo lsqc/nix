@@ -2,21 +2,10 @@
 
 {
 
-  imports = [ ./ssh.nix ./users.nix ./packages.nix ];
+  imports = [ ./ssh.nix ./users.nix ./packages.nix ./dns.nix ];
 
   # enable flakes and new cli
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  networking = {
-    nameservers = [
-      "10.42.0.2"
-      "10.42.0.3"
-      "10.42.0.4"
-      # "10.42.101.1" # brokey brokey
-      "10.1.0.1"
-      "10.1.0.2"
-    ];
-  };
 
   # timezone
   time.timeZone = "Europe/Berlin";
