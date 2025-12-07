@@ -29,3 +29,5 @@ forgejo  IN      A       10.42.0.71
 hydra    IN      A       10.42.0.103
 
 jellyfin IN      A       10.42.0.252
+
+git      IN      CNAME   forgejo
