@@ -1,6 +1,6 @@
 # nix
 
-flake for my personal NixOS hosts and infrastructure hosted in the `proxima-centauri.nya.vodka` and `catbox.nya.vodka` clusters.
+flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka` and `catbox.nya.vodka` clusters.
 
 ## overview 
 
