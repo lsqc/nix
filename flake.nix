@@ -196,13 +196,13 @@
         #
         # Configuration for the custom live cd
         # 
-        live = nixpkgs.lib.nixosSystem {
+        liveIso = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             (nixpkgs
               + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
 
-            ./hosts/live
+            ./hosts/live/iso
           ];
         };
       };
@@ -210,7 +210,7 @@
       apps.x86_64-linux.buildIso = {
         type = "app";
         program = toString (pkgs.writeShellScript "build-iso" ''
-          nix build .#nixosConfigurations.live.config.system.build.isoImage
+          nix build .#nixosConfigurations.liveIso.config.system.build.isoImage
         '');
       };
 
