@@ -15,6 +15,8 @@ $ORIGIN pc.nya.vodka.
 @        IN      NS      dns-5.pc.nya.vodka.
 @        IN      NS      dns-6.pc.nya.vodka.
 
+opnsense IN      A       10.42.0.1
+
 dns-1    IN      A       10.42.0.2
 dns-2    IN      A       10.42.0.3
 dns-3    IN      A       10.42.0.4
@@ -22,12 +24,26 @@ dns-4    IN      A       10.42.0.5
 dns-5    IN      A       10.42.0.6
 dns-6    IN      A       10.42.0.7
 
+panel    IN      A       10.42.0.10
+
+vpn1     IN      A       10.42.0.19
+vpn2     IN      A       10.42.0.20
+
+db1      IN      A       10.42.0.21
+db2      IN      A       10.42.0.22
+db3      IN      A       10.42.0.23
+
 docker-1 IN      A       10.42.0.31
 docker-2 IN      A       10.42.0.32
+
+mc-prod  IN      A       10.42.0.40
+mc-test  IN      A       10.42.0.41
+
+jellyfin IN      A       10.42.0.52
 
 forgejo  IN      A       10.42.0.71
 hydra    IN      A       10.42.0.103
 
-jellyfin IN      A       10.42.0.252
+mail     IN      A       10.42.1.58
 
 git      IN      CNAME   forgejo
