@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../../common
+    ../../../common/vm.nix
 
     ./users.nix
   ];

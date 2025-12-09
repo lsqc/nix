@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../../common
+    ../../../common/vm.nix
     ../../../common/grub-uefi.nix
 
     ./modules
