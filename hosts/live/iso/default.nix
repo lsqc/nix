@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ../../common/users.nix ];
+  imports = [ ../../../common/users.nix ];
 
   system.stateVersion = "25.11";
 
