@@ -28,7 +28,9 @@
       # log = { enabled = false; };
       mgr = {
         show_hidden = true;
-        sort_by = "mtime";
+        linemode = "size";
+        # mouse_events = ;
+        # sort_by = "mtime";
         # sort_dir_first = true;
         # sort_reverse = false;
       };
