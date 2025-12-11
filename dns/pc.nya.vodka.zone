@@ -26,6 +26,11 @@ dns-6    IN      A       10.42.0.7
 
 panel    IN      A       10.42.0.10
 
+alpha    IN      A       10.42.0.11
+beta     IN      A       10.42.0.12
+gamma    IN      A       10.42.0.13
+delta    IN      A       10.42.0.14
+
 vpn1     IN      A       10.42.0.19
 vpn2     IN      A       10.42.0.20
 
