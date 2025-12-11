@@ -1,13 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let 
-  themeSettings = import ./theme-settings.nix;
-in
-{
-  home.packages = with pkgs; [
-    adapta-gtk-theme
-    paper-icon-theme
-  ];
+let themeSettings = import ./theme-settings.nix;
+in {
+  home.packages = with pkgs; [ adapta-gtk-theme paper-icon-theme ];
 
   gtk = {
     enable = true;
@@ -18,15 +13,13 @@ in
     };
 
     iconTheme = {
-      name = "Paper"; 
+      name = "Paper";
       package = pkgs.paper-icon-theme;
     };
 
-    cursorTheme = {
-      name = "default";
-    };
+    cursorTheme = { name = "default"; };
 
-    gtk3.extraConfig = { 
+    gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
       gtk-font-name = "Sans ${toString themeSettings.fontSize}";
     };
