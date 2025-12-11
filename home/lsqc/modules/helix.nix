@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   programs.helix = {
@@ -9,8 +9,9 @@
       editor = {
 
         mouse = false;
+
+        true-color = true;
         line-number = "relative";
-        lsp.display-messages = true;
 
         inline-diagnostics = {
           cursor-line = "hint";
@@ -22,6 +23,21 @@
           insert = "bar";
           select = "underline";
         };
+
+        lsp = {
+          display-messages = true;
+          display-progress-messages = true;
+        };
+
+        end-of-line-diagnostics = "hint";
+
+        statusline = { separator = "|"; };
+
+        bufferline = "multiple";
+        cursorline = true;
+        auto-save = true;
+
+        whitespace = { render = "all"; };
       };
 
       keys = {
@@ -53,11 +69,15 @@
           formatter.command =
             "${pkgs.google-java-format}/bin/google-java-format";
         }
-
         {
           name = "rust";
           auto-format = true;
           formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+        }
+        {
+          name = "markdown";
+          auto-format = true;
+          language-servers = [ "typos" ];
         }
       ];
 
@@ -69,6 +89,9 @@
             cargo = { features = "all"; };
           };
         };
+        nixd = { command = "${lib.getExe pkgs.nixd}"; };
+
+        typos = { command = "${lib.getExe pkgs.typos-lsp}"; };
       };
     };
 

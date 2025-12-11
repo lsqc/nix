@@ -30,5 +30,6 @@
     rustfmt
     rust-analyzer
     onefetch
+    typos-lsp
   ];
 }
