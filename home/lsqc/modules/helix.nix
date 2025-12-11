@@ -52,7 +52,10 @@
           space.Q = ":q!";
         };
 
-        insert = { "C-c" = "normal_mode"; };
+        insert = {
+          "C-c" = "normal_mode";
+          "C-h" = "hover";
+        };
       };
     };
 
