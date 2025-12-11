@@ -66,8 +66,7 @@
         {
           name = "java";
           auto-format = true;
-          formatter.command =
-            "${pkgs.google-java-format}/bin/google-java-format";
+          formatter.command = "${lib.getExe pkgs.google-java-format}";
         }
         {
           name = "rust";
@@ -92,6 +91,9 @@
         nixd = { command = "${lib.getExe pkgs.nixd}"; };
 
         typos = { command = "${lib.getExe pkgs.typos-lsp}"; };
+
+        jdtls = { command = "${lib.getExe pkgs.jdt-language-server}"; };
+
       };
     };
 
