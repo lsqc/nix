@@ -25,7 +25,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
             - `dns-{2-3}`: secondary dns server
     - `vm/`: configurations for Proxmox VMS
         - `cookie`: a minecraft server vm. 🍪
-        - `cerberus`: (soon-to-be) configuraton for `cerberus-v2.lsdevcloud.net`
+        - `cerberus`: (soon-to-be) configuration for `cerberus-v2.lsdevcloud.net`
         - `IIvy`: replacement for original ivy host
         - `hydra`: a vm running my [Hydra](https://github.com/NixOS/hydra) instance.
         - `torrent`: rtorrent server w/ flood frontend [fucking broken]
