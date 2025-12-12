@@ -31,5 +31,8 @@
     rust-analyzer
     onefetch
     typos-lsp
+
+    cmake
+    speedtest-cli
   ];
 }
