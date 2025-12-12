@@ -16,6 +16,11 @@
   programs = {
     thunar = { enable = true; };
     seahorse = { enable = true; };
+
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
   };
 
   environment = {
