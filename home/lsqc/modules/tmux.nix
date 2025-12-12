@@ -9,6 +9,19 @@
     historyLimit = 1000000;
     plugins = with pkgs; [ tmuxPlugins.catppuccin ];
 
-    #    extraConfig = '''';
+    extraConfig = ''
+      setw -g mode-keys vi
+
+      # set prefix
+      unbind C-b
+      set-option -g prefix C-s
+      bind-key C-s send-prefix
+
+      # window splitting
+      bind | split-window -h
+      bind - split-window -v
+      unbind '"'
+      unbind %
+    '';
   };
 }
