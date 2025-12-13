@@ -166,6 +166,16 @@
           ];
         };
 
+        cheese = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+            disko.nixosModules.disko
+
+            ./hosts/hw/cheese
+            ./hosts/hw/cheese/disko-config.nix
+          ];
+        };
         w500 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
