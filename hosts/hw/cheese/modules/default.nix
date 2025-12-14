@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./motd.nix ];
+  imports = [ ./motd.nix ./nginx.nix ];
 }
