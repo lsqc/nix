@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -6,8 +6,6 @@
 
     ../../../common
     ../../../common/desktop.nix
-
-    ../../../common/gc.nix
 
     ./modules
   ];

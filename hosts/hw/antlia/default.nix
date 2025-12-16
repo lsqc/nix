@@ -2,7 +2,7 @@
 
 {
   imports = [
-#    ./hardware-configuration.nix
+    #    ./hardware-configuration.nix
 
     ../../../common
     ../../../common/desktop.nix
@@ -23,7 +23,7 @@
       xkb.layout = "eu";
       displayManager.startx.enable = true;
 
-  #    videoDrivers = [ "modesetting" ];
+      #    videoDrivers = [ "modesetting" ];
     };
   };
 
