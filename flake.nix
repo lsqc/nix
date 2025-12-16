@@ -69,6 +69,12 @@
           modules = commonModules ++ [ ./hosts/lxc/dns/dns3 ];
         };
 
+        immich = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [ ./hosts/lxc/immich ];
+        };
+
         cerberus = nixpkgs.lib.nixosSystem {
           inherit system;
 
@@ -226,7 +232,11 @@
 
       homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ { _module.args.inputs = inputs; } ./home/lsqc ];
+        modules = [
+          { _module.args.inputs = inputs; }
+          niri.nixosModules.niri
+          ./home/lsqc
+        ];
       };
     };
 }
