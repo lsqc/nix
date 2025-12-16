@@ -1,14 +1,14 @@
-{ config, lib, inputs, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   services.bind = {
 
     zones = {
-      "pc.nya.vodka" = {
+      "pc.ip.nya.vodka" = {
         master = true;
         slaves = [ "10.42.0.6" "10.42.0.7 " ];
         file = let
-          zoneTemplate = ../../../../dns/pc.nya.vodka.zone;
+          zoneTemplate = ../../../../dns/pc.ip.nya.vodka.zone;
           serialTimestamp = lib.strings.trim (builtins.readFile
             (pkgs.runCommand "zone-serial" { } ''
               date +%s > $out
@@ -21,7 +21,7 @@
 
           finalZone = updatedZone + "\n";
 
-        in pkgs.writeText "pc.nya.vodka.zone" finalZone;
+        in pkgs.writeText "pc.ip.nya.vodka.zone" finalZone;
       };
     };
   };

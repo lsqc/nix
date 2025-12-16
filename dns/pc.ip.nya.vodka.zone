@@ -1,19 +1,19 @@
 $TTL 3600
-$ORIGIN pc.nya.vodka.
+$ORIGIN pc.ip.nya.vodka.
 
-@        IN      SOA     dns-4.pc.nya.vodka. admin.pc.nya.vodka. (
+@        IN      SOA     dns-4.pc.ip.nya.vodka. admin.nya.vodka. (
          serial-number
          3600
          1800
          604800
          86400 )
 
-@        IN      NS      dns-1.pc.nya.vodka.
-@        IN      NS      dns-2.pc.nya.vodka.
-@        IN      NS      dns-3.pc.nya.vodka.
-@        IN      NS      dns-4.pc.nya.vodka.
-@        IN      NS      dns-5.pc.nya.vodka.
-@        IN      NS      dns-6.pc.nya.vodka.
+@        IN      NS      dns-1.pc.ip.nya.vodka.
+@        IN      NS      dns-2.pc.ip.nya.vodka.
+@        IN      NS      dns-3.pc.ip.nya.vodka.
+@        IN      NS      dns-4.pc.ip.nya.vodka.
+@        IN      NS      dns-5.pc.ip.nya.vodka.
+@        IN      NS      dns-6.pc.ip.nya.vodka.
 
 opnsense IN      A       10.42.0.1
 
@@ -45,6 +45,8 @@ mc-prod  IN      A       10.42.0.40
 mc-test  IN      A       10.42.0.41
 
 jellyfin IN      A       10.42.0.52
+
+immich   IN      A       10.42.0.55
 
 forgejo  IN      A       10.42.0.71
 hydra    IN      A       10.42.0.103

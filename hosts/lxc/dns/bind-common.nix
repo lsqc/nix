@@ -4,7 +4,7 @@
   services.bind = {
     enable = true;
 
-    zones = { "pc.nya.vodka" = { allowQuery = [ "10.0.0.0/8" ]; }; };
+    zones = { "pc.ip.nya.vodka" = { allowQuery = [ "10.0.0.0/8" ]; }; };
 
     forward = "first";
     forwarders = [ "10.42.0.2" "10.42.0.3" "10.42.0.4" ];
