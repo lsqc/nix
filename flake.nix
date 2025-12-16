@@ -31,7 +31,7 @@
       hostPlatform = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
-      commonModules = [ agenix.nixosModules.default ];
+      commonModules = [ agenix.nixosModules.default disko.nixosModules.disko ];
 
     in {
       nixosConfigurations = {
@@ -79,7 +79,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/vm/cerberus
             ./hosts/vm/cerberus/disko-config.nix
@@ -90,7 +89,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/vm/hydra
             ./hosts/vm/hydra/disko-config.nix
@@ -101,7 +99,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/vm/torrent
             ./hosts/vm/torrent/disko-config.nix
@@ -112,7 +109,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/vm/IIvy
             ./hosts/vm/IIvy/disko-config.nix
@@ -123,7 +119,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/vm/mail
             ./hosts/vm/mail/disko-config.nix
@@ -143,7 +138,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/hw/ivy
             ./hosts/hw/ivy/disko-config.nix
@@ -154,7 +148,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/hw/gemini
             ./hosts/hw/gemini/disko-config.nix
@@ -165,7 +158,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/hw/testbox
             ./hosts/hw/testbox/disko-config.nix
@@ -176,7 +168,6 @@
           inherit system;
 
           modules = commonModules ++ [
-            disko.nixosModules.disko
 
             ./hosts/hw/cheese
             ./hosts/hw/cheese/disko-config.nix
@@ -185,7 +176,7 @@
         w500 = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = [
+          modules = commonModules ++ [
             niri.nixosModules.niri
 
             ./hosts/hw/w500
@@ -201,8 +192,7 @@
         antlia = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          modules = [
-            disko.nixosModules.disko
+          modules = commonModules ++ [
 
             ./hosts/hw/antlia
             ./hosts/hw/antlia/modules/disko.nix
