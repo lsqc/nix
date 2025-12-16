@@ -81,7 +81,6 @@
           modules = commonModules ++ [
 
             ./hosts/vm/cerberus
-            ./hosts/vm/cerberus/disko-config.nix
           ];
         };
 
@@ -91,7 +90,6 @@
           modules = commonModules ++ [
 
             ./hosts/vm/hydra
-            ./hosts/vm/hydra/disko-config.nix
           ];
         };
 
@@ -101,7 +99,6 @@
           modules = commonModules ++ [
 
             ./hosts/vm/torrent
-            ./hosts/vm/torrent/disko-config.nix
           ];
         };
 
@@ -111,7 +108,6 @@
           modules = commonModules ++ [
 
             ./hosts/vm/IIvy
-            ./hosts/vm/IIvy/disko-config.nix
           ];
         };
 
@@ -121,7 +117,6 @@
           modules = commonModules ++ [
 
             ./hosts/vm/mail
-            ./hosts/vm/mail/disko-config.nix
           ];
         };
 
@@ -150,7 +145,6 @@
           modules = commonModules ++ [
 
             ./hosts/hw/gemini
-            ./hosts/hw/gemini/disko-config.nix
           ];
         };
 
@@ -160,7 +154,6 @@
           modules = commonModules ++ [
 
             ./hosts/hw/testbox
-            ./hosts/hw/testbox/disko-config.nix
           ];
         };
 
@@ -170,7 +163,6 @@
           modules = commonModules ++ [
 
             ./hosts/hw/cheese
-            ./hosts/hw/cheese/disko-config.nix
           ];
         };
         w500 = nixpkgs.lib.nixosSystem {
@@ -195,7 +187,6 @@
           modules = commonModules ++ [
 
             ./hosts/hw/antlia
-            ./hosts/hw/antlia/modules/disko.nix
           ];
         };
 
