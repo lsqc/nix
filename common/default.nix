@@ -2,7 +2,8 @@
 
 {
 
-  imports = [ ./ssh.nix ./users.nix ./packages.nix ./dns.nix ./gc.nix ];
+  imports =
+    [ ./ssh.nix ./users.nix ./packages.nix ./dns.nix ./gc.nix ./secrets.nix ];
 
   # enable flakes and new cli
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
