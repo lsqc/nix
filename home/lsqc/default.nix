@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
@@ -34,5 +34,8 @@
 
     cmake
     speedtest-cli
+
+    timer
+    clock-rs
   ];
 }

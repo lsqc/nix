@@ -135,7 +135,6 @@
           modules = commonModules ++ [
 
             ./hosts/hw/ivy
-            ./hosts/hw/ivy/disko-config.nix
           ];
         };
 
