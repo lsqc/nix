@@ -11,7 +11,7 @@
   ];
 
   networking = {
-    hostName = "w500";
+    hostName = "uwubox";
     networkmanager.enable = true;
     #    resolvconf.enable = true;
   };
@@ -46,7 +46,7 @@
       xkb.layout = "eu";
       displayManager.startx.enable = true;
 
-      videoDrivers = [ "modesetting" ];
+      videoDrivers = [ "nvidia" ];
 
       windowManager.i3 = {
         enable = true;

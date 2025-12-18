@@ -164,7 +164,7 @@
             ./hosts/hw/cheese
           ];
         };
-        w500 = nixpkgs.lib.nixosSystem {
+        uwubox = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
           modules = commonModules ++ [
