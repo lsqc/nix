@@ -12,7 +12,9 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
 - `./hosts/`
     - `live/`: configuration for the custom iso image
     - `hw/`: configurations for non-virtual hosts
-        - `w500`: a lenovo w500 <br>![img](assets/thinkpad.jpg)
+        - ~`w500`: a lenovo w500~ (so long, my friend)
+        - `t420`: my lenovo t420
+        - `uwubox`: second installation on my Predator G3-710
         - `antlia`: my desktop
         - `masatoki`: storage server
         - `gemini`: an old Acer Predator G3-710 used to play around with AI
