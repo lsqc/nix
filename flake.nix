@@ -170,7 +170,7 @@
           modules = commonModules ++ [
             niri.nixosModules.niri
 
-            ./hosts/hw/w500
+            ./hosts/hw/uwubox
           ];
         };
 
