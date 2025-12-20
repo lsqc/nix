@@ -8,5 +8,6 @@
     ./logind.nix
     ./audio.nix
     ./printing.nix
+    ./bootloader.nix
   ];
 }

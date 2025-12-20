@@ -8,24 +8,10 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "ata_generic" "uhci_hcd" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ba89cba7-a7b0-46a1-a6b5-410de70e5efe";
-      fsType = "ext4";
-    };
-
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/2b35d2df-4d0a-4c0e-bf61-9e0ee526f72d";
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/bcb50d6b-dc6e-46b5-9cfb-1b76d79e2699";
-      fsType = "ext4";
-    };
-
-  swapDevices = [ { device = "/swapfile"; size = 10000; } ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -33,7 +19,8 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp0s25.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wls1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wwp0s29u1u4i6.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

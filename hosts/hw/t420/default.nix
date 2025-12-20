@@ -6,6 +6,9 @@
 
     ../../../common
     ../../../common/desktop.nix
+
+    ./modules
+
   ];
 
   networking = {
@@ -26,6 +29,4 @@
       xwayland.enable = true;
     };
   };
-
-  system.stateVersion = "25.05";
 }

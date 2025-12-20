@@ -174,6 +174,15 @@
           ];
         };
 
+        t420 = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [
+
+            ./hosts/hw/t420
+            ./hosts/hw/t420/disko-config.nix
+          ];
+        };
         # t540p = nixpkgs.lib.nixosSystem {
         #   inherit system;
 
