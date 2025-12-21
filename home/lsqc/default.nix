@@ -42,7 +42,12 @@
     xclip
     scrot
     betterlockscreen
+
     playerctl
     pamixer
+
+    wireguard-tools
+    traceroute
+
   ];
 }
