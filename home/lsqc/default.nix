@@ -37,5 +37,11 @@
 
     timer
     clock-rs
+
+    pngquant
+    xclip
+    scrot
+    betterlockscreen
+
   ];
 }
