@@ -49,5 +49,7 @@
     wireguard-tools
     traceroute
 
+    scrcpy
+
   ];
 }
