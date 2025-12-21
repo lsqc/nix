@@ -85,9 +85,9 @@
 
       language-server = {
         rust-analyzer = {
-          command = "${pkgs.rust-analyzer}/bin/rust-analyzer";
+          command = "${lib.getExe pkgs.rust-analyzer}";
           config = {
-            check = { command = "${pkgs.clippy}/bin/cargo-clippy"; };
+            check = { command = "${lib.getExe pkgs.clippy}"; };
             cargo = { features = "all"; };
           };
         };
@@ -104,10 +104,7 @@
       catppuccin_frappe_transparent = {
         "inherits" = "catppuccin_frappe";
         "ui.background" = { };
-        "ui.linenr.selected" = {
-          fg = "#FB508F";
-          # modifiers = [ "bold" ];
-        };
+        "ui.linenr.selected" = { fg = "#FB508F"; };
       };
     };
   };
