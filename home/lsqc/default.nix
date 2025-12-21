@@ -42,6 +42,7 @@
     xclip
     scrot
     betterlockscreen
-
+    playerctl
+    pamixer
   ];
 }
