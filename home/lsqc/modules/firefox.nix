@@ -31,6 +31,7 @@
 
           user-agent-string-switcher
           darkreader
+          # firefox-color
 
           vimium
         ];
@@ -57,11 +58,13 @@
 
       settings = {
         "privacy.donotttrackheader.enabled" = true;
-        "browser.theme.content-theme" = "0";
-        "browser.theme.toolbar-theme" = "0";
+        "browser.theme.content-theme" = "dark";
+        "browser.theme.browser-theme" = "dark";
         "browser.newtabpage.activity-stream.showSponsored" = false;
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
       };
+
+      userChrome = builtins.readFile ../../../assets/firefox-theme.css;
 
       search.engines = {
         nix-packages = {
