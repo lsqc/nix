@@ -98,7 +98,13 @@
           definedAliases = [ "@nw" ];
         };
 
-        bing.metaData.hidden = true;
+        yt = {
+          name = "YouTube";
+          urls = [{ template = "https://youtube.com/search?q={searchTerms}"; }];
+          # iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+          definedAliases = [ "@yt" ];
+        };
+
         google.metaData.alias = "@g";
       };
     };
