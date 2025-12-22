@@ -50,6 +50,6 @@
     traceroute
 
     scrcpy
-
+    openvpn
   ];
 }
