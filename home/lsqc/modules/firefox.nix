@@ -98,10 +98,24 @@
           definedAliases = [ "@nw" ];
         };
 
+        nix-dev = {
+          urls = [{
+            template = "https://nix.dev/search.html";
+            params = [{
+              name = "q";
+              value = "{searchTerms}";
+            }];
+          }];
+          icon =
+            "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "@nd" ];
+        };
+
         yt = {
           name = "YouTube";
           urls = [{ template = "https://youtube.com/search?q={searchTerms}"; }];
           # iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+          iconUpdateUrl = "https://youtube.com/favicon.ico";
           definedAliases = [ "@yt" ];
         };
 
