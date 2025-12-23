@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
-
-  services.rtorrent = {
+  services.transmission = {
     enable = true;
-    port = 51412;
-    package = pkgs.rtorrent;
-    openFirewall = true;
+
+    settings = {
+      rpc-bind-address = "127.0.0.1";
+      download-dir = "/mnt/torrents";
+    };
   };
 
   systemd.services.flood.serviceConfig.SupplementaryGroups =
-    [ config.services.rtorrent.group ];
+    [ config.services.transmission.group ];
 }
