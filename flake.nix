@@ -99,6 +99,7 @@
           modules = commonModules ++ [
 
             ./hosts/vm/torrent
+            ./hosts/vm/torrent/disko-config.nix
           ];
         };
 
