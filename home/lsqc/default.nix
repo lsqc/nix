@@ -51,5 +51,8 @@
 
     scrcpy
     openvpn
+
+    whois
+    killall
   ];
 }
