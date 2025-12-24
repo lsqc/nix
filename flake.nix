@@ -127,7 +127,8 @@
         masatoki = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules ++ [ ./hosts/hw/masatoki ];
+          modules = commonModules
+            ++ [ ./hosts/hw/masatoki ./hosts/hw/masatoki/disko-config.nix ];
         };
 
         ivy = nixpkgs.lib.nixosSystem {
