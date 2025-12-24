@@ -1,38 +1,28 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../../common
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../../common
+    ../../../common/grub-uefi.nix
 
-  # bootloader 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "/dev/sda";
-
-  boot.kernelModules = [ "zfs" ];
-  
-  boot.zfs.extraPools = [ "lsd4" ];
+    ./zfs.nix
+  ];
 
   # network shit
   networking.hostName = "masatoki";
   networking.hostId = "9a1a84f2";
+  boot.supportedFilesystems = [ "zfs" ];
 
   environment = {
-    
-    systemPackages = with pkgs; [
-    
-    ];
+
+    systemPackages = with pkgs; [ zfs ];
   };
 
   # nfs shit
   services.nfs.server = {
     enable = true;
-    exports = ''
-
-    '';
+    exports = "\n";
   };
 
   networking.firewall = {
@@ -41,7 +31,5 @@
   };
 
   # system.copySystemConfiguration = true; -> not supported with flakes
-
-  system.stateVersion = "25.05";
 
 }
