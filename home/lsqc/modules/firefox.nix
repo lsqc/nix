@@ -88,6 +88,27 @@
           definedAliases = [ "@np" ];
         };
 
+        nix-options = {
+          name = "Nix Options";
+          urls = [{
+            template = "https://search.nixos.org/options";
+            params = [
+              {
+                name = "type";
+                value = "options";
+              }
+              {
+                name = "query";
+                value = "{searchTerms}";
+              }
+            ];
+          }];
+
+          icon =
+            "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+          definedAliases = [ "@no" ];
+        };
+
         nixos-wiki = {
           name = "NixOS Wiki";
           urls = [{
