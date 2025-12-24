@@ -12,4 +12,13 @@ let
 in {
   # Note this might jump back and forth as kernels are added or removed.
   boot.kernelPackages = latestKernelPackage;
+
+  # mount points
+  fileSystems = {
+    "/mnt/uwu" = {
+      device = "uwu";
+      fsType = "zfs";
+      options = [ "zfsutil" ];
+    };
+  };
 }
