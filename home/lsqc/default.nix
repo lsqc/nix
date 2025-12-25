@@ -56,5 +56,7 @@
     killall
     dunst
     libnotify
+
+    asciiquarium-transparent
   ];
 }
