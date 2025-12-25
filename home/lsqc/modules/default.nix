@@ -12,5 +12,6 @@
     ./yazi.nix
     ./firefox.nix
     ./xdg.nix
+    ./dunst.nix
   ];
 }
