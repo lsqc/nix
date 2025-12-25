@@ -58,5 +58,6 @@
     libnotify
 
     asciiquarium-transparent
+    feh
   ];
 }
