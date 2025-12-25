@@ -34,6 +34,7 @@
           # firefox-color
 
           vimium
+          i-dont-care-about-cookies
         ];
 
       bookmarks = {
