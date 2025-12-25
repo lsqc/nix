@@ -55,5 +55,6 @@
     whois
     killall
     dunst
+    libnotify
   ];
 }
