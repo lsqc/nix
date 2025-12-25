@@ -13,5 +13,6 @@
     ./firefox.nix
     ./xdg.nix
     ./dunst.nix
+    ./i3status.nix
   ];
 }
