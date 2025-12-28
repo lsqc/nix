@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -19,6 +19,8 @@
 
   # time shit
   time.timeZone = "Europe/Berlin";
+
+  environment.systemPackages = with pkgs; [ clang ];
 
   programs = {
     nix-ld.enable = true;
