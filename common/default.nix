@@ -31,7 +31,10 @@
     };
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = lib.mkDefault [ 22 ];
+  };
   system.stateVersion = "25.11";
-
 }
 
