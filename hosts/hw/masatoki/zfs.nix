@@ -16,11 +16,11 @@ in {
   boot.zfs.extraPools = [ "uwu" ];
 
   # mount points
-  fileSystems = {
-    "/mnt/uwu" = {
-      device = "uwu";
-      fsType = "zfs";
-      options = [ "zfsutil" ];
-    };
-  };
+  # fileSystems = {
+  #   "/mnt/uwu" = {
+  #     device = "uwu";
+  #     fsType = "zfs";
+  #     options = [ "zfsutil" ];
+  #   };
+  # };
 }
