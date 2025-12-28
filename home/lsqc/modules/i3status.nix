@@ -26,20 +26,20 @@
         position = 3;
         settings = { format = "load %5min"; };
       };
-      "tztime local" = {
-        position = 4;
-        settings = {
-
-          format = "%Y-%m-%d %H:%M:%S";
-          hide_if_equals_localtime = false;
-        };
-      };
       "memory" = {
-        position = 5;
+        position = 4;
         settings = {
           format = "mem %used/%total";
           threshold_degraded = "10%";
           format_degraded = "MEMORY: %used/%total";
+        };
+      };
+      "tztime local" = {
+        position = 5;
+        settings = {
+
+          format = "%Y-%m-%d %H:%M:%S";
+          hide_if_equals_localtime = false;
         };
       };
     };

@@ -59,5 +59,6 @@
 
     asciiquarium-transparent
     feh
+    clang
   ];
 }

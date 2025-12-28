@@ -49,8 +49,16 @@
                 url = "https://uwu.nya.vodka";
               }
               {
+                name = "git";
+                url = "https://git.nya.vodka";
+              }
+              {
                 name = "jellyfin";
                 url = "https://jellyfin.nya.vodka";
+              }
+              {
+                name = "flood";
+                url = "https://torrent.nya.vodka";
               }
             ];
           }];
