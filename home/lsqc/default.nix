@@ -20,10 +20,12 @@
     calc
 
     # niri
+    swaybg
     scrcpy
 
     fuzzel
     swaylock
+    hyprlock
 
     prismlauncher
     cargo
