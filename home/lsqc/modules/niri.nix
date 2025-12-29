@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.niri = {
@@ -12,9 +12,23 @@
         "telegram" = { };
         "dmca-violation" = { };
       };
+
+      spawn-at-startup = [
+
+        {
+          command = [
+            "${lib.getExe pkgs.swaybg}"
+            "-i"
+            "~/.local/share/wallpapers/latest.png"
+            "-m"
+            "fill"
+          ];
+        }
+      ];
       binds = let actions = config.lib.niri.actions;
       in {
-        "Mod+Return".action = actions.spawn "alacritty";
+        "Mod+Return".action = actions.spawn "alacritty" "-e" "tmux";
+        "Mod+Shift+Return".action = actions.spawn "alacritty";
         "Mod+D".action = actions.spawn "rofi" "-show" "drun";
 
         "Mod+Shift+E".action.quit.skip-confirmation = false;
@@ -28,6 +42,10 @@
         "Mod+L".action = actions.focus-column-right;
         "Mod+J".action = actions.focus-window-or-workspace-down;
         "Mod+K".action = actions.focus-window-or-workspace-up;
+
+        "Mod+F".action = actions.fullscreen-window;
+        "Mod+O".action = actions.toggle-overview;
+        "Mod+Shift+Q".action = actions.close-window;
 
         "Print".action.screenshot = [ ];
 
@@ -48,6 +66,11 @@
             [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
           allow-when-locked = true;
         };
+
+        XF86AudioPlay = { action.spawn = [ "playerctl" "play-pause" ]; };
+        XF86AudioPause = { action.spawn = [ "playerctl" "play-pause" ]; };
+        XF86AudioNext = { action.spawn = [ "playerctl" "next" ]; };
+        XF86AudioPrev = { action.spawn = [ "playerctl" "previous" ]; };
       };
     };
   };
