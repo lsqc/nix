@@ -24,6 +24,7 @@
             "fill"
           ];
         }
+        { command = [ "${lib.getExe pkgs.waybar}" ]; }
       ];
       binds = let actions = config.lib.niri.actions;
       in {
@@ -32,7 +33,7 @@
         "Mod+D".action = actions.spawn "rofi" "-show" "drun";
 
         "Mod+Shift+E".action.quit.skip-confirmation = false;
-        "Mod+Shift+L".action = actions.spawn "hyprlock";
+        "Mod+Alt+L".action = actions.spawn "hyprlock";
 
         "Mod+1".action = actions.focus-workspace "browser";
         "Mod+2".action = actions.focus-workspace "terminal";
@@ -43,7 +44,8 @@
         "Mod+J".action = actions.focus-window-or-workspace-down;
         "Mod+K".action = actions.focus-window-or-workspace-up;
 
-        "Mod+F".action = actions.fullscreen-window;
+        "Mod+F".action = actions.maximize-column;
+        "Mod+Shift+F".action = actions.fullscreen-window;
         "Mod+O".action = actions.toggle-overview;
         "Mod+Shift+Q".action = actions.close-window;
 

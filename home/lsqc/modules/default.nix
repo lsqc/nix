@@ -15,5 +15,7 @@
     ./dunst.nix
     ./i3status.nix
     ./niri.nix
+    ./hyprlock.nix
+    ./waybar.nix
   ];
 }
