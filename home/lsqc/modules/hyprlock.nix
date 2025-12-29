@@ -4,6 +4,19 @@
   programs.hyprlock = {
     enable = true;
 
+    extraConfig = ''
+      label {
+          monitor =
+          text = cmd[update:1000] echo "<span>$(date +"%I:%M")</span>"
+          color = rgba(216, 222, 233, .75)
+          font_size = 40
+          font_family = SF Pro Display Bold
+          position = 0, 80
+          halign = center
+          valign = center
+      }
+    '';
+
     settings = {
       general = {
         hide_cursor = true;
