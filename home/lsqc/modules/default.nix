@@ -14,5 +14,6 @@
     ./xdg.nix
     ./dunst.nix
     ./i3status.nix
+    ./niri.nix
   ];
 }

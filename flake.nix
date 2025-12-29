@@ -223,7 +223,11 @@
 
       homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ { _module.args.inputs = inputs; } ./home/lsqc ];
+        modules = [
+          { _module.args.inputs = inputs; }
+          ./home/lsqc
+          niri.homeModules.niri
+        ];
       };
     };
 }
