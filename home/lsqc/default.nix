@@ -19,7 +19,7 @@
     ipcalc
     calc
 
-    niri
+    # niri
     scrcpy
 
     fuzzel
