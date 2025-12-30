@@ -17,5 +17,6 @@
     ./niri.nix
     ./hyprlock.nix
     ./waybar.nix
+    ./quickshell.nix
   ];
 }
