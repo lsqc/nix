@@ -10,18 +10,17 @@
         "terminal" = { };
         "signal" = { };
         "telegram" = { };
-        "dmca-violation" = { };
+        "dmca" = { };
       };
 
       spawn-at-startup = [
-
         {
           command = [
             "${lib.getExe pkgs.swaybg}"
             "-i"
             "~/.local/share/wallpapers/latest.png"
-            "-m"
-            "fill"
+            # "-m"
+            # "fill"
           ];
         }
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
@@ -37,7 +36,8 @@
 
         "Mod+1".action = actions.focus-workspace "browser";
         "Mod+2".action = actions.focus-workspace "terminal";
-        "Mod+F19".action = actions.focus-workspace "signal";
+        "Mod+9".action = actions.focus-workspace "signal";
+        "Mod+0".action = actions.focus-workspace "dmca";
 
         "Mod+H".action = actions.focus-column-left;
         "Mod+L".action = actions.focus-column-right;
@@ -74,6 +74,30 @@
         XF86AudioNext = { action.spawn = [ "playerctl" "next" ]; };
         XF86AudioPrev = { action.spawn = [ "playerctl" "previous" ]; };
       };
+
+      layout = {
+
+        gaps = 5;
+        border = {
+          enable = true;
+          width = 4;
+
+          active.gradient = {
+            angle = 90;
+            from = "oklch(0.8025 0.1203 226.51)";
+            to = "oklch(0.8118 0.0912 6.32)";
+          };
+          inactive.gradient = {
+            angle = 90;
+            from = "oklch(0.8025 0.1203 226.51 / 40%)";
+            to = "oklch(0.8118 0.0912 6.32 / 40%)";
+          };
+        };
+      };
+      layer-rules = [{
+        matches = [{ namespace = "^wallpaper$"; }];
+        # place-within-backdrop = true;
+      }];
     };
   };
 }
