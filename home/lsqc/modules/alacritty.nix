@@ -13,6 +13,27 @@
         mods = "Control";
         chars = "\\u000c";
       }];
+
+      font = {
+        size = 12;
+        normal = { family = "Comic Shanns Mono NerdFont"; };
+      };
+
+      colors = {
+        cursor = {
+          text = "#84c1db";
+          cursor = "#84c1db";
+        };
+      };
+
+      cursor = {
+        blink_interval = 500;
+        blink_timeout = 0;
+        style = {
+          blinking = "Always";
+          shape = "block";
+        };
+      };
     };
   };
 }
