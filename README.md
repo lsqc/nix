@@ -31,6 +31,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `IIvy`: replacement for original ivy host
         - `hydra`: a vm hosting my [Hydra](https://github.com/NixOS/hydra) instance.
         - `torrent`: transmission server w/ flood frontend
+        - `hachi`: forgejo instance
 
 ---
 
