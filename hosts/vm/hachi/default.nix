@@ -15,7 +15,8 @@
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 ];
+      # port 3000 required for reverse proxy
+      allowedTCPPorts = [ 22 80 443 3000 ];
     };
   };
 

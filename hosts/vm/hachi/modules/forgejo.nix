@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, config, ... }:
 
 let
   cfg = config.services.forgejo;
@@ -26,6 +26,7 @@ in {
         # You need to specify this to remove the port from URLs in the web UI.
         ROOT_URL = "https://${srv.DOMAIN}/";
         HTTP_PORT = 3000;
+        SSH_PORT = lib.head config.services.openssh.ports;
       };
       service.DISABLE_REGISTRATION = true;
       actions = {
@@ -45,7 +46,7 @@ in {
   };
 
   age.secrets.forgejo-mailer-password = {
-    file = ../secrets/forgejo-mailer-password.age;
+    file = ../../../../secrets/forgejo-mailer-password.age;
     mode = "400";
     owner = "forgejo";
   };
