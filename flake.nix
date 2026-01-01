@@ -126,6 +126,15 @@
           ];
         };
 
+        hachi = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+
+            ./hosts/vm/hachi
+            ./hosts/vm/hachi/disko-config.nix
+          ];
+        };
         #
         # Configurations for non-virtualized systems
         # 
