@@ -10,9 +10,15 @@ let
 
   hachi =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOjLW6Lac1Fz+AF6SHYuomvAY3Z0333Yoi4HAy1Ra47J";
+
+  # lxcs
+  postgres1 =
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIRjf6aP4hkuda6RbNV//Zzo7jiLFEoqEJaLSGVHDJXq";
 in {
   "immich-db.age".publicKeys = lsqc ++ [ immich ];
   "forgejo-mailer-password.age".publicKeys = lsqc ++ [ hachi ];
+  "postgres-immich-pw.age".publicKeys = lsqc ++ [ immich postgres1 ];
+  "postgres-postgres-pw.age".publicKeys = lsqc ++ [ immich postgres1 ];
 
   "armored-secret.age" = {
     publicKeys = [ lsqc ];

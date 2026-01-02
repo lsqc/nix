@@ -80,6 +80,12 @@
           modules = commonModules ++ [ ./hosts/lxc/immich ];
         };
 
+        postgres-1 = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [ ./hosts/lxc/db/postgres-1 ];
+        };
+
         cerberus = nixpkgs.lib.nixosSystem {
           inherit system;
 
