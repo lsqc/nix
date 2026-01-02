@@ -3,6 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./i3.nix
     ./helix.nix
     ./git.nix
     ./rofi.nix
