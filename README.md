@@ -32,6 +32,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `hydra`: a vm hosting my [Hydra](https://github.com/NixOS/hydra) instance.
         - `torrent`: transmission server w/ flood frontend
         - `hachi`: forgejo instance
+        - `prometheus`: prometheus scraper with grafana
 
 ---
 
