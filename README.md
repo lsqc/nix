@@ -25,6 +25,8 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `dns/`: parent directory for all dns servers
             - `dns-1`: primary dns server
             - `dns-{2-3}`: secondary dns server
+        - `db/`: databases
+            - `postgres-1`: postgres 1
     - `vm/`: configurations for Proxmox VMS
         - `cookie`: a minecraft server vm. 🍪
         - `cerberus`: (soon-to-be) configuration for `cerberus-v2.lsdevcloud.net`
