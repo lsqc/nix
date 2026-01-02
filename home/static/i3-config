@@ -182,28 +182,27 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'wanna quit i3?' -B 'yes senpai~ ' 'i3-msg exit'"
 
-mode "resize" {
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+# mode "resize" {
+#         bindsym $left       resize shrink width 10 px or 10 ppt
+#         bindsym $down       resize grow height 10 px or 10 ppt
+#         bindsym $up         resize shrink height 10 px or 10 ppt
+#         bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym a        resize shrink width 10 px or 10 ppt
-        bindsym s        resize grow height 10 px or 10 ppt
-        bindsym w          resize shrink height 10 px or 10 ppt
-        bindsym d       resize grow width 10 px or 10 ppt
+#         # same bindings, but for the arrow keys
+#         bindsym a        resize shrink width 10 px or 10 ppt
+#         bindsym s        resize grow height 10 px or 10 ppt
+#         bindsym w          resize shrink height 10 px or 10 ppt
+#         bindsym d       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or Mod1+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Mod1+r mode "default"
-}
+#         # back to normal: Enter or Escape or Mod1+r
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym Mod1+r mode "default"
+# }
 
 client.focused          #702ac7     #702ac7         #702ac7     #702ac7     #702ac7 
 
 # resize mode hotkey
-bindsym Mod4+r mode "resize"
 
 # placeholder for color
 set $fuchsia-color "#845EC2"
@@ -220,10 +219,10 @@ gaps inner 5px
 exec feh --bg-fill ~/.local/share/wallpapers/latest.png
 
 #window resize 
-bindsym $mod+Ctrl+d resize shrink width 2 px or 2 ppt
-bindsym $mod+Ctrl+w resize grow height 2 px or 2 ppt
-bindsym $mod+Ctrl+s resize shrink height 2 px or 2 ppt
-bindsym $mod+Ctrl+a resize grow width 2 px or 2 ppt
+# # bindsym $mod+Ctrl+d resize shrink width 2 px or 2 ppt
+# bindsym $mod+Ctrl+w resize grow height 2 px or 2 ppt
+# bindsym $mod+Ctrl+s resize shrink height 2 px or 2 ppt
+# bindsym $mod+Ctrl+a resize grow width 2 px or 2 ppt
 
 # set firefox notifications to floating mode
 for_window [class="Firefox" title="^Page Info"] floating enable
