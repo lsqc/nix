@@ -60,6 +60,38 @@
                 name = "flood";
                 url = "https://torrent.nya.vodka";
               }
+              {
+                name = "grafana";
+                url = "https://grafana.nya.vodka";
+              }
+              {
+                name = "influxdb";
+                url = "https://influxdb.nya.vodka";
+              }
+              {
+                name = "kuma";
+                url = "https://status.nya.vodka";
+              }
+              {
+                name = "pve-alpha";
+                url = "https://alpha.pc.nya.vodka";
+              }
+              {
+                name = "pve-beta";
+                url = "https://beta.pc.nya.vodka";
+              }
+              {
+                name = "pve-alpha";
+                url = "https://gamma.pc.nya.vodka";
+              }
+              {
+                name = "pve-delta";
+                url = "https://delta.pc.nya.vodka";
+              }
+              {
+                name = "oauth";
+                url = "https://auth.nya.vodka";
+              }
             ];
           }];
         }];
