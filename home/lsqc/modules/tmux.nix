@@ -27,6 +27,9 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
+
+      set-window-option -g xterm-keys on
+
     '';
   };
 }
