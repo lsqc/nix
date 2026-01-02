@@ -141,6 +141,15 @@
             ./hosts/vm/hachi/disko-config.nix
           ];
         };
+        prometheus = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+
+            ./hosts/vm/prometheus
+            ./hosts/vm/prometheus/disko-config.nix
+          ];
+        };
         #
         # Configurations for non-virtualized systems
         # 
