@@ -8,6 +8,8 @@
 
     ./bind.nix
     ../bind-common.nix
+
+    ../prometheus.nix
   ];
 
   nix.settings = { sandbox = false; };

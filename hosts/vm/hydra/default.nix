@@ -6,6 +6,7 @@
     ../../../common
     ../../../common/vm.nix
     ../../../common/grub-uefi.nix
+    ../../../common/prometheus-exporter.nix
 
     ./modules
   ];
@@ -18,6 +19,6 @@
       allowedTCPPorts = [ 3000 22 80 443 ];
     };
   };
-  system.stateVersion = lib.mkForce "25.05";
+  # system.stateVersion = lib.mkForce "25.05";
 }
 
