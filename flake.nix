@@ -33,7 +33,6 @@
     let
 
       system = "x86_64-linux";
-      hostPlatform = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
       commonModules = [ agenix.nixosModules.default disko.nixosModules.disko ];
@@ -91,6 +90,7 @@
 
           modules = commonModules ++ [
 
+            ./hosts/vm/cerberus/disko-config.nix
             ./hosts/vm/cerberus
           ];
         };
@@ -100,6 +100,7 @@
 
           modules = commonModules ++ [
 
+            ./hosts/vm/hydra/disko-config.nix
             ./hosts/vm/hydra
           ];
         };
@@ -119,6 +120,7 @@
 
           modules = commonModules ++ [
 
+            ./hosts/vm/IIvy/disko-config.nix
             ./hosts/vm/IIvy
           ];
         };
@@ -148,6 +150,17 @@
 
             ./hosts/vm/prometheus
             ./hosts/vm/prometheus/disko-config.nix
+          ];
+        };
+
+        ash = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+
+          modules = [
+            disko.nixosModules.disko
+
+            ./hosts/vm/hetzner/ash
+            ./hosts/vm/hetzner/ash/hardware-configuration.nix
           ];
         };
         #
