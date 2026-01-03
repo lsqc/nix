@@ -130,6 +130,7 @@
 
           modules = commonModules ++ [
 
+            ./hosts/vm/mail/disko-config.nix
             ./hosts/vm/mail
           ];
         };
@@ -153,16 +154,6 @@
           ];
         };
 
-        ash = nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-
-          modules = [
-            disko.nixosModules.disko
-
-            ./hosts/vm/hetzner/ash
-            ./hosts/vm/hetzner/ash/hardware-configuration.nix
-          ];
-        };
         #
         # Configurations for non-virtualized systems
         # 
