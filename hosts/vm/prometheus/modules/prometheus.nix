@@ -20,6 +20,10 @@
         job_name = "git";
         static_configs = [{ targets = [ "hachi.pc.ip.nya.vodka:9092" ]; }];
       }
+      {
+        job_name = "torrent";
+        static_configs = [{ targets = [ "torrent.pc.ip.nya.vodka:9092" ]; }];
+      }
     ];
   };
 }

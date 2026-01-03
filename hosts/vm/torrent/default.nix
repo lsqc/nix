@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   imports = [
@@ -6,6 +6,7 @@
     ../../../common
     ../../../common/vm.nix
     ../../../common/grub-uefi.nix
+    ../../../common/prometheus-exporter.nix
 
     ./modules
   ];
