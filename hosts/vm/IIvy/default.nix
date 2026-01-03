@@ -1,13 +1,12 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-      ../../../common
-      ../../../common/vm.nix
-      ../../../common/grub-uefi.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../../common
+    ../../../common/vm.nix
+    ../../../common/grub-uefi.nix
+  ];
 
   networking = {
     hostName = "IIvy";
@@ -18,6 +17,6 @@
     };
   };
 
-  system.stateVersion = lib.mkForce 25.05"; 
+  system.stateVersion = lib.mkForce "25.05";
 }
 
