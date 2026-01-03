@@ -6,15 +6,28 @@
       node = {
         enable = true;
         enabledCollectors = [
-          "ethtool"
           "sysctl"
-          "netdev"
+
           "filesystem"
           "systemd"
           "processes"
-          "os"
+          "pressure"
+          "stat"
+
+          "sockstat"
           "netstat"
           "netclass"
+          "arp"
+          "network_route"
+          "netdev"
+          "ethtool"
+          "tcpstat"
+          "ipvs"
+
+          "cpu"
+          "os"
+          "swap"
+          "meminfo"
         ];
         port = 9092;
       };
