@@ -28,6 +28,10 @@
         job_name = "hydra";
         static_configs = [{ targets = [ "hydra.pc.ip.nya.vodka:9092" ]; }];
       }
+      {
+        job_name = "mastodon";
+        static_configs = [{ targets = [ "ash.pc.ip.nya.vodka:9092" ]; }];
+      }
     ];
   };
 }
