@@ -154,6 +154,15 @@
           ];
         };
 
+        ash = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          modules = commonModules ++ [
+
+            ./hosts/vm/ash
+            ./hosts/vm/ash/disko-config.nix
+          ];
+        };
         #
         # Configurations for non-virtualized systems
         # 
