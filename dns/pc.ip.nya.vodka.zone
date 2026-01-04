@@ -50,6 +50,8 @@ immich   IN      A       10.42.0.55
 hachi    IN      A       10.42.0.66
 
 forgejo  IN      A       10.42.0.71
+prometheus  IN      A       10.42.0.72
+ash      IN      A       10.42.0.73
 hydra    IN      A       10.42.0.103
 
 mail     IN      A       10.42.1.58
