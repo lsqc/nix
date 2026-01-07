@@ -4,7 +4,7 @@
   programs.niri = {
     enable = true;
     settings = {
-      outputs."LVDS-1".scale = 1.0;
+      outputs."LVDS-1".scale = 1;
       workspaces = {
         "browser" = { };
         "terminal" = { };
@@ -15,14 +15,14 @@
 
       cursor = {
         theme = "default";
-        size = 10;
+        size = 7;
       };
 
       spawn-at-startup = [
         {
           command = [
-            "${lib.getExe pkgs.swaybg}"
-            "-i"
+            "swww"
+            "img"
             "~/.local/share/wallpapers/latest.png"
             # "-m"
             # "fill"
@@ -82,22 +82,8 @@
 
       layout = {
 
-        gaps = 5;
-        border = {
-          enable = true;
-          width = 4;
-
-          active.gradient = {
-            angle = 90;
-            from = "oklch(0.8025 0.1203 226.51)";
-            to = "oklch(0.8118 0.0912 6.32)";
-          };
-          inactive.gradient = {
-            angle = 90;
-            from = "oklch(0.8025 0.1203 226.51 / 40%)";
-            to = "oklch(0.8118 0.0912 6.32 / 40%)";
-          };
-        };
+        gaps = 10;
+        border = { enable = false; };
       };
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
