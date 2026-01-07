@@ -24,7 +24,7 @@
         format-muted = "muted: ({volume}%)";
       };
       cpu = { format = "cpu: {usage}%"; };
-      memory = { format = "mem: {total}/{used}"; };
+      memory = { format = "mem: {used}/{total}"; };
       battery = {
         format = "{capacity}%";
         format-charging = "CHR {capacity}%";
