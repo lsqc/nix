@@ -20,5 +20,6 @@
     ./hypridle.nix
     ./waybar.nix
     ./quickshell.nix
+    ./swww.nix
   ];
 }
