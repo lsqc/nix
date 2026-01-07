@@ -13,6 +13,11 @@
         "dmca" = { };
       };
 
+      cursor = {
+        theme = "default";
+        size = 10;
+      };
+
       spawn-at-startup = [
         {
           command = [

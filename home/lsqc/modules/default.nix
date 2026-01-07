@@ -17,6 +17,7 @@
     ./i3status.nix
     ./niri.nix
     ./hyprlock.nix
+    ./hypridle.nix
     ./waybar.nix
     ./quickshell.nix
   ];
