@@ -9,6 +9,7 @@
         "browser" = { };
         "terminal" = { };
         "signal" = { };
+        "uwu" = { };
         "telegram" = { };
         "dmca" = { };
       };
@@ -41,7 +42,9 @@
 
         "Mod+1".action = actions.focus-workspace "browser";
         "Mod+2".action = actions.focus-workspace "terminal";
-        "Mod+9".action = actions.focus-workspace "signal";
+        "Mod+9".action = actions.focus-workspace "telegram";
+        "Mod+6".action = actions.focus-workspace "uwu";
+        "Mod+F9".action = actions.focus-workspace "signal";
         "Mod+0".action = actions.focus-workspace "dmca";
 
         "Mod+H".action = actions.focus-column-left;
