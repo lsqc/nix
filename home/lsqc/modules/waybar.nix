@@ -21,10 +21,19 @@
       };
       pulseaudio = {
         format = "vol: {volume}%";
-        format-muted = "muted ({volume}%)";
+        format-muted = "muted: ({volume}%)";
       };
       cpu = { format = "cpu: {usage}%"; };
       memory = { format = "mem: {total}/{used}"; };
+      battery = {
+        format = "{capacity}%";
+        format-charging = "CHR {capacity}%";
+        format-plugged = "PLG {capacity}%";
+        states = {
+          critical = 15;
+          warning = 30;
+        };
+      };
     }];
   };
 }
