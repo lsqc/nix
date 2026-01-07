@@ -17,7 +17,7 @@ in {
       package = pkgs.paper-icon-theme;
     };
 
-    cursorTheme = { name = "default"; };
+    # cursorTheme = { name = "default"; };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
