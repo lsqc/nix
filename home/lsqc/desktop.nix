@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 let themeSettings = import ./theme-settings.nix;
 in {
@@ -17,7 +17,7 @@ in {
       package = pkgs.paper-icon-theme;
     };
 
-    # cursorTheme = { name = "default"; };
+    cursorTheme = { name = lib.mkForce ""; };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
