@@ -37,7 +37,10 @@
         "Mod+Shift+Return".action = actions.spawn "alacritty";
         "Mod+D".action = actions.spawn "rofi" "-show" "drun";
 
-        "Mod+Shift+E".action.quit.skip-confirmation = false;
+        "Mod+Shift+E" = {
+          allow-when-locked = false;
+          action.quit.skip-confirmation = false;
+        };
         "Mod+Alt+L".action = actions.spawn "hyprlock";
 
         "Mod+1".action = actions.focus-workspace "browser";
@@ -91,6 +94,11 @@
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
         # place-within-backdrop = true;
+      }];
+
+      window-rules = [{
+        matches = [{ app-id = "^firefox$"; }];
+        open-on-workspace = "browser";
       }];
     };
   };
