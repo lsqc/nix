@@ -63,5 +63,6 @@
     feh
     clang
     arandr
+    yt-dlp
   ];
 }
