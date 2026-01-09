@@ -21,5 +21,6 @@
     ./waybar.nix
     ./quickshell.nix
     ./swww.nix
+    ./zellij.nix
   ];
 }
