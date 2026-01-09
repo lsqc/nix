@@ -35,6 +35,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `torrent`: transmission server w/ flood frontend
         - `hachi`: forgejo instance
         - `prometheus`: prometheus scraper with grafana
+        - `ash`: vm for a mastodon instance
 
 ---
 
