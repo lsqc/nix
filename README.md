@@ -16,7 +16,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `t420`: my lenovo t420
         - `uwubox`: second installation on my Predator G3-710
         - `antlia`: my desktop
-        - `masatoki`: storage server
+        - ~`masatoki`: storage server~
         - `gemini`: an old Acer Predator G3-710 used to play around with AI
         - ~`ivy`: my r720 (old)~
         - `testbox`: a random thingy used for testing
