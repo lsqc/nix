@@ -197,6 +197,7 @@
           modules = commonModules ++ [
 
             ./hosts/hw/testbox
+            ./hosts/hw/testbox/disko-config.nix
           ];
         };
 
