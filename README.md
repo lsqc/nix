@@ -24,7 +24,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `atm`: a container for a ATM10 minecraft server instance.
         - `dns/`: parent directory for all dns servers
             - `dns-1`: primary dns server
-            - `dns-{2-3}`: secondary dns server
+            - `dns-{2-3}`: secondary dns servers
         - `db/`: databases
             - `postgres-1`: postgres 1
     - `vm/`: configurations for Proxmox VMS
