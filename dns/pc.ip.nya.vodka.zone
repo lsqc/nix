@@ -56,4 +56,4 @@ hydra    IN      A       10.42.0.103
 
 mail     IN      A       10.42.1.58
 
-git      IN      CNAME   forgejo
+git      IN      CNAME   docker-1
