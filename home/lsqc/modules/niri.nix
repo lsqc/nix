@@ -41,6 +41,7 @@
           allow-when-locked = false;
           action.quit.skip-confirmation = false;
         };
+
         "Mod+Alt+L".action = actions.spawn "hyprlock";
 
         "Mod+1".action = actions.focus-workspace "browser";
@@ -54,6 +55,12 @@
         "Mod+L".action = actions.focus-column-right;
         "Mod+J".action = actions.focus-window-or-workspace-down;
         "Mod+K".action = actions.focus-window-or-workspace-up;
+
+        "Mod+Shift+H".action = actions.move-column-left;
+        "Mod+Shift+L".action = actions.move-column-right;
+        "Mod+Shift+K".action = actions.move-column-to-workspace-up;
+        "Mod+Shift+J".action = actions.move-column-to-workspace-down;
+        "Mod+Shift+Space".action = actions.toggle-window-floating;
 
         "Mod+F".action = actions.maximize-column;
         "Mod+Shift+F".action = actions.fullscreen-window;
