@@ -47,6 +47,7 @@
 
     playerctl
     pamixer
+    vlc
 
     wireguard-tools
     traceroute
