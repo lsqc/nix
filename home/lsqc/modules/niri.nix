@@ -65,6 +65,7 @@
         "Mod+F".action = actions.maximize-column;
         "Mod+Shift+F".action = actions.fullscreen-window;
         "Mod+O".action = actions.toggle-overview;
+        "Mod+Space".action = actions.toggle-overview;
         "Mod+Shift+Q".action = actions.close-window;
 
         "Print".action.screenshot = [ ];
@@ -103,10 +104,17 @@
         # place-within-backdrop = true;
       }];
 
-      window-rules = [{
-        matches = [{ app-id = "^firefox$"; }];
-        open-on-workspace = "browser";
-      }];
+      window-rules = [
+        {
+          matches = [{ app-id = "^firefox$"; }];
+          open-on-workspace = "browser";
+        }
+        {
+          matches = [{ title = "Alacritty"; }];
+          # opacity = 0.1;
+
+        }
+      ];
     };
   };
 }
