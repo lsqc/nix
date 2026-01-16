@@ -65,5 +65,6 @@
     clang
     arandr
     yt-dlp
+    usbutils
   ];
 }
