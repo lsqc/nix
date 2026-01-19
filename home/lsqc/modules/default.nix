@@ -22,5 +22,6 @@
     ./quickshell.nix
     ./swww.nix
     ./zellij.nix
+    ./kitty.nix
   ];
 }
