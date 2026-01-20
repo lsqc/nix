@@ -23,5 +23,6 @@
     ./swww.nix
     ./zellij.nix
     ./kitty.nix
+    ./kickoff.nix
   ];
 }
