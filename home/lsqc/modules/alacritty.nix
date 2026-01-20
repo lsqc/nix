@@ -16,7 +16,10 @@
 
       font = {
         size = 12;
-        normal = { family = "Comic Shanns Mono NerdFont"; };
+        normal = {
+          #family = "Comic Shanns Mono NerdFont";
+          family = "Iosevka Nerd Font";
+        };
       };
 
       colors = {
