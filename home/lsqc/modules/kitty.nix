@@ -5,9 +5,9 @@
     enable = true;
 
     font = {
-      package = pkgs.cascadia-code;
-      name = "CaskaydiaCove Nerd Font";
-      size = 11;
+      package = pkgs.iosevka;
+      name = "Iosevka Nerd Font";
+      size = 13;
     };
   };
 }
