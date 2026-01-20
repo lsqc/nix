@@ -163,6 +163,49 @@
             definedAliases = [ "@no" ];
           };
 
+          nix-flakes = {
+            name = "Nix Flakes";
+            urls = [{
+              template = "https://search.nixos.org/flakes";
+              params = [
+                {
+                  name = "type";
+                  value = "flakes";
+                }
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }];
+
+            icon =
+              "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = [ "@nf" ];
+          };
+
+          github-repositories = {
+            name = "GitHub Repositories";
+            urls = [{
+              template = "https://github.com/search";
+              params = [
+                {
+                  name = "type";
+                  value = "repositories";
+                }
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+            }];
+
+            iconMapObj."16" = "https://github.com/favicon.ico";
+            iconUpdateUrl = "https://github.com/favicon.ico";
+
+            definedAliases = [ "@gr" ];
+          };
+
           nixos-wiki = {
             name = "NixOS Wiki";
             urls = [{
@@ -190,7 +233,7 @@
             name = "YouTube";
             urls =
               [{ template = "https://youtube.com/search?q={searchTerms}"; }];
-            # iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
+            iconMapObj."16" = "https://youtube.com/favicon.ico";
             iconUpdateUrl = "https://youtube.com/favicon.ico";
             definedAliases = [ "@yt" ];
           };
