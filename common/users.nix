@@ -1,9 +1,7 @@
-{ config, pkgs, ...}:
+{ ... }:
 
-let 
-  keys = import ./keys.nix;
-in
-{
+let keys = import ./keys.nix;
+in {
   users.users.lsqc = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
