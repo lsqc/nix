@@ -66,5 +66,8 @@
     arandr
     yt-dlp
     usbutils
+
+    just
+    fzf
   ];
 }
