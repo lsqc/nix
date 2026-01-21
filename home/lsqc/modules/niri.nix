@@ -14,6 +14,8 @@
         "dmca" = { };
       };
 
+      animations = { slowdown = 0.5; };
+
       cursor = {
         theme = "default";
         size = 7;
