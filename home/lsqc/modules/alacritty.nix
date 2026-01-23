@@ -18,7 +18,8 @@
         size = 12;
         normal = {
           #family = "Comic Shanns Mono NerdFont";
-          family = "Iosevka Nerd Font";
+          # family = "Iosevka Nerd Font";
+          family = "0xProto Nerd Font";
         };
       };
 
