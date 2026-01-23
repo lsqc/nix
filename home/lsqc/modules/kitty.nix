@@ -5,8 +5,8 @@
     enable = true;
 
     font = {
-      package = pkgs.iosevka;
-      name = "Iosevka Nerd Font";
+      package = pkgs.nerd-fonts._0xproto;
+      name = "0xProto Nerd Font";
       size = 13;
     };
   };
