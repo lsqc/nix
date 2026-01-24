@@ -216,6 +216,20 @@
             definedAliases = [ "@nw" ];
           };
 
+          docs-rs = {
+            name = "Docs.rs";
+            urls = [{
+              template = "https://docs.rs/releases/search";
+              params = [{
+                name = "query";
+                value = "{searchTerms}";
+              }];
+            }];
+
+            iconMapObj."16" = "https://docs.rs/favicon.ico";
+            definedAliases = [ "@rs" ];
+          };
+
           nix-dev = {
             urls = [{
               template = "https://nix.dev/search.html";
