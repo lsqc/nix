@@ -8,7 +8,8 @@
       format = "ssh";
       signByDefault = true;
 
-      key = "~/.ssh/gitkey";
+      # key = "~/.ssh/gitkey";
+      key = "~/.ssh/id_ed25519_sk";
     };
 
     settings = {
