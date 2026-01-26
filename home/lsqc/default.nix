@@ -69,5 +69,6 @@
 
     just
     fzf
+    libreoffice-qt-fresh
   ];
 }
