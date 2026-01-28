@@ -12,7 +12,7 @@
 
     forward = "only";
     # forwarders = [ "10.42.0.2" "10.42.0.3" "10.42.0.4" ];
-    forwarders = [ "9.9.9.9" "1.1.1.1" "1.0.0.1" ];
+    forwarders = [ "1.1.1.1" "1.0.0.1" ];
 
     zones = {
       "pc.ip.nya.vodka" = {
