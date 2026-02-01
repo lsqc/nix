@@ -1,6 +1,11 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, config, ... }:
 
-{
+let
+  lombok-jar = builtins.fetchurl {
+    url = "https://projectlombok.org/downloads/lombok.jar";
+    sha256 = "01h3aqxkqkc3nmrbxidfppim0snkr9cfxsyfm9mmj9jck7ls921l";
+  };
+in {
   programs.helix = {
     enable = true;
     settings = {
@@ -95,8 +100,10 @@
 
         typos = { command = "${lib.getExe pkgs.typos-lsp}"; };
 
-        jdtls = { command = "${lib.getExe pkgs.jdt-language-server}"; };
-
+        jdtls = {
+          command = "${lib.getExe pkgs.jdt-language-server}";
+          args = [ "--jvm-arg=-javaagent:${lombok-jar}" ];
+        };
       };
     };
 
