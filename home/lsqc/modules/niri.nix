@@ -58,6 +58,11 @@
         "Mod+J".action = actions.focus-window-or-workspace-down;
         "Mod+K".action = actions.focus-window-or-workspace-up;
 
+        "Mod+C".action = actions.center-visible-columns;
+
+        "Mod+Home".action = actions.focus-column-first;
+        "Mod+End".action = actions.focus-column-last;
+
         "Mod+Shift+H".action = actions.move-column-left;
         "Mod+Shift+L".action = actions.move-column-right;
         "Mod+Shift+K".action = actions.move-column-to-workspace-up;
@@ -100,11 +105,15 @@
 
         gaps = 10;
         border = { enable = false; };
+        center-focused-column = "always";
+        default-column-width = { proportion = 1.0; };
       };
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
         # place-within-backdrop = true;
       }];
+
+      hotkey-overlay = { skip-at-startup = true; };
 
       window-rules = [
         {
