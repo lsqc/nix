@@ -5,6 +5,18 @@
     enable = true;
     autocd = true;
 
+    autosuggestion.enable = true;
+
+    syntaxHighlighting = {
+      enable = true;
+      styles = {
+        command = "fg=#3bff96";
+        alias = "fg=#7e008a,bold";
+        path = "fg=#0fdb6e,italic";
+        unknown-token = "fg=#999999";
+      };
+    };
+
     shellAliases = {
 
       ls = "ls -lsa --color";
@@ -14,6 +26,8 @@
       vi = "hx";
       vim = "hx";
       nvim = "hx";
+
+      jj = "just";
 
       g = "git";
       cg = "cargo";
