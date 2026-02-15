@@ -3,8 +3,10 @@ font Hack 15
 set $mod Mod4
 
 exec xrdb ~/.Xresources
+
 exec dbus-update-activation-environment
 exec --no-startup-id dex --autostart --environment i3
+
 exec nm-applet
 
 exec_always ~/scripts/trackpadconfig.sh
@@ -38,8 +40,8 @@ floating_modifier Mod1
 
 tiling_drag modifier titlebar
 
-bindsym $mod+Shift+Return exec TERMINAL=ghostty i3-sensible-terminal
 bindsym $mod+Return exec TERMINAL=ghostty i3-sensible-terminal -e tmux
+bindsym $mod+Shift+Return exec TERMINAL=ghostty i3-sensible-terminal
 
 bindsym $mod+Shift+q kill
 
