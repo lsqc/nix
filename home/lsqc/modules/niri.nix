@@ -108,8 +108,8 @@
 
         gaps = 10;
         border = { enable = false; };
-        center-focused-column = "always";
-        default-column-width = { proportion = 1.0; };
+        # center-focused-column = "always";
+        default-column-width = { proportion = 0.9; };
       };
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
