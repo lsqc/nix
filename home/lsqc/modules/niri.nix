@@ -4,6 +4,9 @@
   programs.niri = {
     enable = true;
     settings = {
+
+      prefer-no-csd = true;
+
       outputs."LVDS-1".scale = 1;
       workspaces = {
         "browser" = { };
