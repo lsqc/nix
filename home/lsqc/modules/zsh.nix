@@ -20,6 +20,8 @@
     shellAliases = {
 
       ls = "ls -lsa --color";
+      ll = "ls -l";
+      la = "ls -a";
 
       zi = "EDITOR=hx yazi";
       ed = "hx";
