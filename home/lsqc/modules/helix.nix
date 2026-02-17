@@ -6,6 +6,10 @@ let
     sha256 = "01h3aqxkqkc3nmrbxidfppim0snkr9cfxsyfm9mmj9jck7ls921l";
   };
 in {
+
+  # language server packages
+  home.packages = with pkgs; [ nodePackages.svelte-language-server ];
+
   programs.helix = {
     enable = true;
     settings = {
@@ -86,6 +90,14 @@ in {
           auto-format = true;
           language-servers = [ "typos" ];
         }
+        {
+          name = "svelte";
+          scope = "source.svelte";
+          injection-regex = "svelte";
+          file-types = [ "svelte" ];
+          roots = [ "package.json" ];
+          language-servers = [ "svelteserver" ];
+        }
       ];
 
       language-server = {
@@ -103,6 +115,10 @@ in {
         jdtls = {
           command = "${lib.getExe pkgs.jdt-language-server}";
           args = [ "--jvm-arg=-javaagent:${lombok-jar}" ];
+        };
+        svelteserver = {
+          command = "svelteserver";
+          args = [ "--stdio" ];
         };
       };
     };
