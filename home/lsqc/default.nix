@@ -57,7 +57,7 @@
 
     whois
     killall
-    dunst
+    # dunst
     libnotify
 
     asciiquarium-transparent
