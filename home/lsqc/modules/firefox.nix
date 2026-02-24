@@ -63,11 +63,11 @@
                 }
                 {
                   name = "grafana";
-                  url = "https://grafana.nya.vodka";
+                  url = "https://grafana.pc.nya.vodka";
                 }
                 {
                   name = "influxdb";
-                  url = "https://influxdb.nya.vodka";
+                  url = "https://influxdb.pc.nya.vodka";
                 }
                 {
                   name = "kuma";
@@ -214,6 +214,16 @@
             }];
             iconMapObj."16" = "https://wiki.nixos.org/favicon.ico";
             definedAliases = [ "@nw" ];
+          };
+
+          freebsd-docs = {
+            name = "FreeBSD Docs";
+            urls = [{
+              template =
+                "https://docs.freebsd.org/search?DB=en&P={searchTerms}";
+            }];
+            iconMapObj."16" = "https://docs.freebsd.org/favicon.ico";
+            definedAliases = [ "@fd" ];
           };
 
           docs-rs = {
