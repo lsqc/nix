@@ -70,5 +70,7 @@
     just
     fzf
     libreoffice-qt-fresh
+    pandoc
+    texliveSmall
   ];
 }
