@@ -79,6 +79,12 @@
           modules = commonModules ++ [ ./hosts/lxc/immich ];
         };
 
+        ntfy = nixpkgs.lib.nixosSystem {
+          inherit system; # system = "x86_64-linux";
+
+          modules = commonModules ++ [ ./hosts/lxc/ntfy ];
+        };
+
         postgres-1 = nixpkgs.lib.nixosSystem {
           inherit system;
 
