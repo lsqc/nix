@@ -48,6 +48,7 @@ jellyfin IN      A       10.42.0.52
 
 immich   IN      A       10.42.0.55
 hachi    IN      A       10.42.0.66
+ntfy     IN      A       10.42.0.67
 
 forgejo  IN      A       10.42.0.71
 prometheus  IN      A       10.42.0.72
