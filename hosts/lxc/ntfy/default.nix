@@ -5,7 +5,8 @@
     (modulesPath + "/virtualisation/proxmox-lxc.nix")
 
     ../../../common
-    ./ntfy.sh
+    ./ntfy.nix
+    ./firewall.nix
 
   ];
 
