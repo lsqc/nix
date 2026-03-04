@@ -8,7 +8,7 @@ let
 in {
 
   # language server packages
-  home.packages = with pkgs; [ nodePackages.svelte-language-server ];
+  home.packages = with pkgs; [ nodePackages.svelte-language-server tofu-ls ];
 
   programs.helix = {
     enable = true;
@@ -98,6 +98,24 @@ in {
           roots = [ "package.json" ];
           language-servers = [ "svelteserver" ];
         }
+
+        {
+          name = "hcl";
+          language-id = "opentofu";
+          scope = "source.hcl";
+          file-types = [ "tf" "tofu" "tfvars" ];
+          auto-format = true;
+          comment-token = "#";
+          block-comment-tokens = {
+            start = "/*";
+            end = "*/";
+          };
+          indent = {
+            tab-width = 2;
+            unit = "  ";
+          };
+          language-servers = [ "tofu-ls" ];
+        }
       ];
 
       language-server = {
@@ -120,6 +138,11 @@ in {
           command = "svelteserver";
           args = [ "--stdio" ];
         };
+        tofu-ls = {
+          command = "${lib.getExe pkgs.tofu-ls}";
+          args = [ "serve" ];
+        };
+
       };
     };
 

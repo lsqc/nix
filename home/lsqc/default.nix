@@ -72,5 +72,7 @@
     libreoffice-qt-fresh
     pandoc
     texliveSmall
+    opentofu
+    wl-mirror
   ];
 }
