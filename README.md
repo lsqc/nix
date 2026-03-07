@@ -14,12 +14,13 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
     - `hw/`: configurations for non-virtual hosts
         - ~`w500`: a lenovo w500~ (so long, my friend)
         - `t420`: my lenovo t420
-        - `uwubox`: second installation on my Predator G3-710
         - `antlia`: my desktop
         - ~`masatoki`: storage server~
         - `gemini`: an old Acer Predator G3-710 used to play around with AI
         - ~`ivy`: my r720 (old)~
         - `testbox`: a random thingy used for testing
+        - `uwubox`: second installation on my Predator G3-710
+        - `cheese`: cheese.
     - `lxc/`: configurations for Proxmox LXC containers
         - `atm`: a container for a ATM10 minecraft server instance.
         - `dns/`: parent directory for all dns servers
@@ -33,7 +34,7 @@ flake for my personal NixOS hosts and infrastructure hosted in the `pc.nya.vodka
         - `IIvy`: replacement for original ivy host
         - `hydra`: a vm hosting my [Hydra](https://github.com/NixOS/hydra) instance.
         - `torrent`: transmission server w/ flood frontend
-        - `hachi`: forgejo instance
+        - `hachi`: [Forgejo](https://forgejo.org/) instance
         - `prometheus`: prometheus scraper with grafana
         - `ash`: vm for a mastodon instance
 
