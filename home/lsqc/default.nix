@@ -74,5 +74,6 @@
     texliveSmall
     opentofu
     wl-mirror
+    brightnessctl
   ];
 }
