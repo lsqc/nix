@@ -80,6 +80,7 @@
 
         "Print".action.screenshot = [ ];
 
+        # XF86
         XF86AudioRaiseVolume = {
           action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
           allow-when-locked = true;
@@ -102,6 +103,13 @@
         XF86AudioPause = { action.spawn = [ "playerctl" "play-pause" ]; };
         XF86AudioNext = { action.spawn = [ "playerctl" "next" ]; };
         XF86AudioPrev = { action.spawn = [ "playerctl" "previous" ]; };
+
+        XF86MonBrightnessUp = {
+          action.spawn = [ "brightnessctl" "set" "+10%" ];
+        };
+        XF86MonBrightnessDown = {
+          action.spawn = [ "brightnessctl" "set" "10%-" ];
+        };
       };
 
       layout = {
