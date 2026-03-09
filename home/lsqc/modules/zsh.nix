@@ -20,6 +20,7 @@
     shellAliases = {
 
       ls = "ls -lsa --color";
+      l = "ls -lsa --color";
       ll = "ls -l";
       la = "ls -a";
 
