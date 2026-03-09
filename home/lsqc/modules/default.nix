@@ -11,7 +11,6 @@
     ./hyprlock.nix
     ./i3.nix
     ./i3status.nix
-    ./kickoff.nix
     ./kitty.nix
     ./niri.nix
     ./nu.nix
