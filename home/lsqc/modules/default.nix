@@ -14,6 +14,7 @@
     ./kickoff.nix
     ./kitty.nix
     ./niri.nix
+    ./nu.nix
     ./rofi.nix
     ./zsh.nix
     ./tmux.nix
