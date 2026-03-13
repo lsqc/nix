@@ -24,5 +24,6 @@
     ./quickshell.nix
     ./swww.nix
     ./zellij.nix
+    ./zoxide.nix
   ];
 }

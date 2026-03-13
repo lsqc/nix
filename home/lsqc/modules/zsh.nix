@@ -24,7 +24,7 @@
       ll = "ls -l";
       la = "ls -a";
 
-      zi = "EDITOR=hx yazi";
+      zz = "EDITOR=hx yazi";
       ed = "hx";
       vi = "hx";
       vim = "hx";

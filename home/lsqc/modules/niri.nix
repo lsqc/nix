@@ -9,12 +9,13 @@
 
       outputs."LVDS-1".scale = 1;
       workspaces = {
-        "browser" = { };
-        "terminal" = { };
-        "signal" = { };
-        "uwu" = { };
-        "telegram" = { };
-        "dmca" = { };
+        "1" = { };
+        "2" = { };
+        "F" = { };
+        "6" = { };
+        "8" = { };
+        "9" = { };
+        "0" = { };
       };
 
       animations = { slowdown = 0.5; };
@@ -49,12 +50,13 @@
 
         "Mod+Alt+L".action = actions.spawn "hyprlock";
 
-        "Mod+1".action = actions.focus-workspace "browser";
-        "Mod+2".action = actions.focus-workspace "terminal";
-        "Mod+9".action = actions.focus-workspace "telegram";
-        "Mod+6".action = actions.focus-workspace "uwu";
-        "Mod+F9".action = actions.focus-workspace "signal";
-        "Mod+0".action = actions.focus-workspace "dmca";
+        "Mod+1".action = actions.focus-workspace "1";
+        "Mod+2".action = actions.focus-workspace "2";
+        "Mod+9".action = actions.focus-workspace "9";
+        "Mod+6".action = actions.focus-workspace "6";
+        "Mod+8".action = actions.focus-workspace "8";
+        "Mod+F9".action = actions.focus-workspace "F";
+        "Mod+0".action = actions.focus-workspace "0";
 
         "Mod+H".action = actions.focus-column-left;
         "Mod+L".action = actions.focus-column-right;
