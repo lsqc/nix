@@ -2,20 +2,20 @@
 
 let themeSettings = import ./theme-settings.nix;
 in {
-  home.packages = with pkgs; [ adapta-gtk-theme paper-icon-theme ];
+  # home.packages = with pkgs; [ adapta-gtk-theme paper-icon-theme ];
 
   gtk = {
     enable = true;
 
-    theme = {
-      name = "Adapta-Nokto";
-      package = pkgs.adapta-gtk-theme;
-    };
+    # theme = {
+    #   name = "Adapta-Nokto";
+    #   package = pkgs.adapta-gtk-theme;
+    # };
 
-    iconTheme = {
-      name = "Paper";
-      package = pkgs.paper-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Paper";
+    #   package = pkgs.paper-icon-theme;
+    # };
 
     cursorTheme = { name = lib.mkForce ""; };
 
