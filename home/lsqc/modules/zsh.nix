@@ -39,6 +39,7 @@
       cat = "bat";
 
       nef = "neofetch";
+      cd = "z";
     };
 
     initContent = ''
