@@ -13,5 +13,6 @@
     dig
     file
     nixos-anywhere
+    age
   ];
 }

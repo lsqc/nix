@@ -1,7 +1,6 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
-
   imports = [ ./desktop.nix ./programs.nix ./modules ];
 
   home.username = "lsqc";
@@ -9,6 +8,8 @@
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
+
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     htop
@@ -75,5 +76,7 @@
     opentofu
     wl-mirror
     brightnessctl
+
+    steam
   ];
 }

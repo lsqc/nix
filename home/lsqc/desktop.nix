@@ -17,7 +17,7 @@ in {
     #   package = pkgs.paper-icon-theme;
     # };
 
-    cursorTheme = { name = lib.mkForce ""; };
+    # cursorTheme = { name = lib.mkForce ""; };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
