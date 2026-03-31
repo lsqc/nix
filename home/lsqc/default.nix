@@ -78,5 +78,6 @@
     brightnessctl
 
     steam
+    mtr
   ];
 }
