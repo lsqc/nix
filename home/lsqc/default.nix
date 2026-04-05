@@ -79,5 +79,6 @@
 
     steam
     mtr
+    pv
   ];
 }
