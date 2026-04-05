@@ -20,7 +20,6 @@
     ./xdg.nix
     ./dunst.nix
     ./waybar.nix
-    ./quickshell.nix
     ./swww.nix
     ./zellij.nix
     ./zoxide.nix
