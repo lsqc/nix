@@ -1,20 +1,70 @@
 { config, lib, pkgs, ... }:
 
-{
+let
+  main = {
+
+    center = "Samsung Electric Company LC34G55T HNTX202231";
+    right = "Dell Inc. DELL P2415Q D8VXF03509FB";
+    left = "Dell Inc. DELL P2415Q D8VXF99J0DVB";
+  };
+in {
   programs.niri = {
     enable = true;
     settings = {
 
       prefer-no-csd = true;
 
-      outputs."LVDS-1".scale = 1;
+      outputs = {
+        "${main.center}" = {
+          mode = {
+            height = 1440;
+            width = 3440;
+            refresh = 164.998993;
+          };
+          scale = 1;
+          focus-at-startup = true;
+          position = {
+            x = 0;
+            y = 0;
+          };
+        };
+
+        # left
+        "${main.left}" = {
+          mode = {
+            height = 1440;
+            width = 2560;
+            refresh = 59.951;
+          };
+          scale = 1;
+          position = {
+            x = -2560;
+            y = 0;
+          };
+        };
+        # right
+        "${main.right}" = {
+          mode = {
+            height = 1440;
+            width = 2560;
+            refresh = 59.951;
+          };
+          scale = 1;
+          position = {
+            x = 3440;
+            y = 0;
+          };
+        };
+
+        "LVDS-1".scale = 1; # twinkpad
+      };
       workspaces = {
-        "1" = { };
-        "2" = { };
-        "F" = { };
-        "6" = { };
+        "1" = { open-on-output = "${main.center}"; };
+        "2" = { open-on-output = "${main.center}"; };
+        "F" = { open-on-output = "${main.right}"; };
+        "6" = { open-on-output = "${main.center}"; };
         "8" = { };
-        "9" = { };
+        "9" = { open-on-output = "${main.right}"; };
         "0" = { };
       };
 
