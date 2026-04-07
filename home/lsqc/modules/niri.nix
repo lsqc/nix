@@ -184,7 +184,7 @@ in {
           open-on-workspace = "browser";
         }
         {
-          matches = [{ title = "Alacritty"; }];
+          matches = [{ app-id = "Alacritty"; }];
           opacity = 0.84;
 
         }
