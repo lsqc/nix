@@ -24,6 +24,8 @@ dns-4    IN      A       10.42.0.5
 dns-5    IN      A       10.42.0.6
 dns-6    IN      A       10.42.0.7
 
+pxe      IN      A       10.42.0.8
+
 panel    IN      A       10.42.0.10
 
 alpha    IN      A       10.42.0.11
