@@ -24,6 +24,7 @@
         cp = "cherry-pick";
         b = "branch";
         co = "checkout";
+        shn = "show --name-only";
       };
       init = { defaultBranch = "main"; };
     };
