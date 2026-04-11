@@ -37,6 +37,9 @@
       cr = "cargo run";
 
       cat = "bat";
+      pat = "bat -p";
+
+      home = "home-manager";
 
       nef = "neofetch";
       cd = "z";
