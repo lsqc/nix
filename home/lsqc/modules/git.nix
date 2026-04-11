@@ -18,7 +18,7 @@
         name = "lsqc";
       };
       alias = {
-        st = "status";
+        st = "status -sb";
         c = "commit";
         me = "merge";
         cp = "cherry-pick";
