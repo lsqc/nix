@@ -22,7 +22,7 @@
         c = "commit";
         me = "merge";
         cp = "cherry-pick";
-        b = "branch";
+        b = "branch -v";
         co = "checkout";
         shn = "show --name-only";
       };
