@@ -2,7 +2,6 @@
 
 let
   main = {
-
     center = "Samsung Electric Company LC34G55T HNTX202231";
     right = "Dell Inc. DELL P2415Q D8VXF03509FB";
     left = "Dell Inc. DELL P2415Q D8VXF99J0DVB";
