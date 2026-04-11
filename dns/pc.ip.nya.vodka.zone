@@ -57,6 +57,8 @@ prometheus  IN      A       10.42.0.72
 ash      IN      A       10.42.0.73
 hydra    IN      A       10.42.0.103
 
+pbx      IN      A       10.42.0.198
+
 mail     IN      A       10.42.1.58
 
 git      IN      CNAME   docker-1
