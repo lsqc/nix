@@ -131,7 +131,7 @@ in {
 
         "Print".action.screenshot = [ ];
 
-        "Mod+Tab".action = actions.focus-workspace-previous;
+        "Alt+Tab".action = actions.focus-workspace-previous;
 
         # XF86
         XF86AudioRaiseVolume = {
@@ -187,7 +187,12 @@ in {
         {
           matches = [{ app-id = "Alacritty"; }];
           opacity = 0.84;
-
+        }
+        {
+          matches = [{
+            app-id = "^firefox$";
+            title = "^Picture-in-Picture$";
+          }];
         }
       ];
     };
