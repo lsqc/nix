@@ -4,6 +4,7 @@
   imports = [
     ./alacritty.nix
     ./firefox.nix
+    ./element-desktop.nix
     # ./fnott.nix
     ./git.nix
     ./helix.nix
