@@ -131,7 +131,7 @@ in {
 
         "Print".action.screenshot = [ ];
 
-        "Alt+Tab".action = actions.focus-workspace-previous;
+        "Mod+Tab".action = actions.focus-workspace-previous;
 
         # XF86
         XF86AudioRaiseVolume = {
