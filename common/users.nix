@@ -4,7 +4,7 @@ let keys = import ./keys.nix;
 in {
   users.users.lsqc = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" ];
     openssh.authorizedKeys.keys = keys.lsqc;
   };
 
