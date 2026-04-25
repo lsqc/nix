@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   services.prometheus = {
     enable = true;
     scrapeConfigs = [
@@ -31,6 +31,10 @@
       {
         job_name = "mastodon";
         static_configs = [{ targets = [ "ash.pc.ip.nya.vodka:9092" ]; }];
+      }
+      {
+        job_name = "paperless";
+        static_configs = [{ targets = [ "paperless.pc.ip.nya.vodka:9092" ]; }];
       }
     ];
   };
