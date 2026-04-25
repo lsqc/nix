@@ -87,6 +87,12 @@
           modules = commonModules ++ [ ./hosts/lxc/db/postgres-1 ];
         };
 
+        paperless = nixpkgs.lib.nixosSystem {
+
+          inherit system;
+          modules = commonModules ++ [ ./hosts/lxc/paperless ];
+        };
+
         cerberus = nixpkgs.lib.nixosSystem {
           inherit system;
 
