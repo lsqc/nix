@@ -53,6 +53,8 @@
             bindkey "^[[1;5D" backward-word
             bindkey "^[[3~" delete-char
             bindkey "^[[3;5~" kill-word
+            autoload -U select-word-style
+            select-word-style bash
     '';
   };
 }
