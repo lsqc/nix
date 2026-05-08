@@ -43,6 +43,7 @@
 
       nef = "neofetch";
       cd = "z";
+      psh = "nix-shell -p";
     };
 
     initContent = ''
