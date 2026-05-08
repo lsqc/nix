@@ -46,7 +46,7 @@ docker-2        IN      A       10.42.0.32
 mc-prod         IN      A       10.42.0.40
 mc-test         IN      A       10.42.0.41
 
-jellyfin        IN      A       10.42.0.52
+jellyfin        IN      A       10.42.0.70
 
 immich          IN      A       10.42.0.55
 hachi           IN      A       10.42.0.66
