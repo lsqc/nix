@@ -1,6 +1,8 @@
 { config, lib, inputs, pkgs, ... }:
 
-{
+let config = import ../../../common/config.nix;
+in {
+
   services.bind = {
     enable = true;
 
@@ -15,7 +17,7 @@
     forwarders = [ "1.1.1.1" "1.0.0.1" ];
 
     zones = {
-      "pc.ip.nya.vodka" = {
+      "${config.domains.lab}" = {
         master = true;
         slaves = [ "10.42.0.6" "10.42.0.7 " ];
         file = let
@@ -32,7 +34,7 @@
 
           finalZone = updatedZone + "\n";
 
-        in pkgs.writeText "pc.ip.nya.vodka.zone" finalZone;
+        in pkgs.writeText "${config.domains.lab}" finalZone;
       };
     };
     extraOptions = ''
