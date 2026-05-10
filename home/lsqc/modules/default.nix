@@ -15,6 +15,7 @@
     ./niri.nix
     ./nu.nix
     ./rofi.nix
+    ./ssh.nix
     ./zsh.nix
     ./tmux.nix
     ./yazi.nix
