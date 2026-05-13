@@ -195,6 +195,7 @@ in {
           }];
         }
       ];
+      input.touchpad.enable = false;
     };
   };
 }
