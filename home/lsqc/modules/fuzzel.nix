@@ -7,8 +7,9 @@
     settings = {
       colors = {
         text = "ffffffff";
-        background = "000000ff";
+        background = "000000cc";
       };
+      border = { radius = 0; };
     };
   };
 }
