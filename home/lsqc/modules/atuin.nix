@@ -8,5 +8,7 @@
 
     enableZshIntegration = true;
     enableNushellIntegration = true;
+
+    settings = { auto_sync = false; };
   };
 }
