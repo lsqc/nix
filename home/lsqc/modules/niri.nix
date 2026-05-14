@@ -90,7 +90,8 @@ in {
       in {
         "Mod+Return".action = actions.spawn "alacritty" "-e" "tmux";
         "Mod+Shift+Return".action = actions.spawn "alacritty";
-        "Mod+D".action = actions.spawn "rofi" "-show" "drun";
+        # "Mod+D".action = actions.spawn "rofi" "-show" "drun";
+        "Mod+D".action = actions.spawn "fuzzel";
 
         "Mod+Shift+E" = {
           allow-when-locked = false;
