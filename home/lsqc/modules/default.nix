@@ -3,8 +3,10 @@
 {
   imports = [
     ./alacritty.nix
+    ./atuin.nix
     ./firefox.nix
     ./element-desktop.nix
+    ./fuzzel.nix
     # ./fnott.nix
     ./git.nix
     ./helix.nix
