@@ -60,7 +60,7 @@
       image = [{
         monitor = "";
         size = 100;
-        path = "~/repos/nix/assets/hyprlock-img.jpg";
+        path = "~/.local/share/pfp.png";
         position = "0, 100";
 
       }];
