@@ -96,6 +96,24 @@
               ];
             }
             {
+              name = "piracy";
+              bookmarks = [
+                {
+                  name = "flood";
+                  url = "https://flood.legacy-v4.nya.vodka";
+                }
+                {
+                  name = "transmission ru";
+                  url = "https://transmission.artemis.nya.vodka";
+
+                }
+                {
+                  name = "transmission bg";
+                  url = "https://transmission.parzival.nya.vodka";
+                }
+              ];
+            }
+            {
               name = "youtube";
               url = "https://youtube.com";
             }
