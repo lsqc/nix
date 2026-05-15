@@ -75,19 +75,19 @@
                 }
                 {
                   name = "pve-alpha";
-                  url = "https://alpha.pc.nya.vodka";
+                  url = "https://alpha.lab.nya.vodka";
                 }
                 {
                   name = "pve-beta";
-                  url = "https://beta.pc.nya.vodka";
+                  url = "https://beta.lab.nya.vodka";
                 }
                 {
                   name = "pve-alpha";
-                  url = "https://gamma.pc.nya.vodka";
+                  url = "https://gamma.lab.nya.vodka";
                 }
                 {
                   name = "pve-delta";
-                  url = "https://delta.pc.nya.vodka";
+                  url = "https://delta.lab.nya.vodka";
                 }
                 {
                   name = "oauth";
