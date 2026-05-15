@@ -46,15 +46,18 @@ docker-2        IN      A       10.42.0.32
 mc-prod         IN      A       10.42.0.40
 mc-test         IN      A       10.42.0.41
 
-jellyfin        IN      A       10.42.0.70
-
+postgres        IN      A       10.42.0.50
 immich          IN      A       10.42.0.55
+
 hachi           IN      A       10.42.0.66
 ntfy            IN      A       10.42.0.67
+
+jellyfin        IN      A       10.42.0.70
 
 forgejo         IN      A       10.42.0.71
 prometheus      IN      A       10.42.0.72
 ash             IN      A       10.42.0.73
+
 hydra           IN      A       10.42.0.103
 
 pbx             IN      A       10.42.0.198
