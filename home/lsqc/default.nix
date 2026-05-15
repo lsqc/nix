@@ -80,5 +80,6 @@
     steam
     mtr
     pv
+    jameica
   ];
 }
