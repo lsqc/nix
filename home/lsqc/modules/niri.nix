@@ -81,7 +81,7 @@ in {
       spawn-at-startup = [
         {
           command = [
-            "swww"
+            "${lib.getExe pkgs.swww}"
             "img"
             "~/.local/share/wallpapers/latest.png"
             # "-m"
