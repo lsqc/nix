@@ -71,7 +71,7 @@ in {
         "0" = { };
       };
 
-      animations = { slowdown = 0.5; };
+      animations = { slowdown = 0.4; };
 
       cursor = {
         theme = "default";
