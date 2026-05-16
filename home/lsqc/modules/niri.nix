@@ -90,9 +90,21 @@ in {
         }
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
       ];
-      binds = let actions = config.lib.niri.actions;
+      binds = let
+        actions = config.lib.niri.actions;
+        terminalCommand = if config.host == "antlia" then [
+          "/usr/bin/alacritty"
+          "-e"
+          "tmux"
+        ] else [
+          "alacritty"
+          "-e"
+          "tmux"
+        ];
+        lockCommand =
+          if config.host == "antlia" then "/usr/bin/hyprlock" else "hyprlock";
       in {
-        "Mod+Return".action = actions.spawn "alacritty" "-e" "tmux";
+        "Mod+Return".action = actions.spawn terminalCommand;
         "Mod+Shift+Return".action = actions.spawn "alacritty";
         # "Mod+D".action = actions.spawn "rofi" "-show" "drun";
         "Mod+D".action = actions.spawn "fuzzel";
@@ -102,7 +114,7 @@ in {
           action.quit.skip-confirmation = false;
         };
 
-        "Mod+Alt+L".action = actions.spawn "hyprlock";
+        "Mod+Alt+L".action = actions.spawn [ lockCommand ];
 
         "Mod+1".action = actions.focus-workspace "1";
         "Mod+2".action = actions.focus-workspace "2";
