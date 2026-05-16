@@ -33,6 +33,9 @@
 
       commonModules = [ agenix.nixosModules.default disko.nixosModules.disko ];
 
+      commonHomeManagerModules =
+        [ { _module.args.inputs = inputs; } ./home/lsqc niri.homeModules.niri ];
+
     in {
       nixosConfigurations = {
 
@@ -272,13 +275,19 @@
         '');
       };
 
-      homeConfigurations."lsqc" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [
-          { _module.args.inputs = inputs; }
-          ./home/lsqc
-          niri.homeModules.niri
-        ];
+      homeConfigurations = {
+        "antlia" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = commonHomeManagerModules ++ [{ host = "antlia"; }];
+        };
+        "t420" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = commonHomeManagerModules ++ [{
+
+            host = "t420";
+          }];
+        };
       };
+
     };
 }

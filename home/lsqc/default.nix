@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./desktop.nix ./modules ];
+  imports = [ ./desktop.nix ./modules ./host.nix ];
 
   home.username = "lsqc";
   home.homeDirectory = "/home/lsqc";
