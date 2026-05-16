@@ -13,6 +13,10 @@ in {
 
       prefer-no-csd = true;
 
+      input = {
+        focus-follows-mouse.enable = true;
+        touchpad.enable = false;
+      };
       outputs = {
         "${main.center}" = {
           mode = {
@@ -169,9 +173,28 @@ in {
       layout = {
 
         gaps = 10;
-        border = { enable = false; };
+        border = {
+          enable = true;
+          width = 3;
+          active.gradient = {
+            angle = 45;
+            from = "oklch(0.72 0.18 160)";
+            to = "oklch(0.78 0.14 195)";
+            in' = "oklab";
+          };
+          inactive.gradient = {
+            angle = 45;
+            from = "oklch(0.45 0.01 240)";
+            to = "oklch(0.55 0.015 220)";
+            in' = "oklab";
+          };
+        };
         # center-focused-column = "always";
         default-column-width = { proportion = 0.9; };
+
+        focus-ring.enable = false;
+
+        background-color = "transparent";
       };
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
@@ -196,7 +219,6 @@ in {
           }];
         }
       ];
-      input.touchpad.enable = false;
     };
   };
 }
