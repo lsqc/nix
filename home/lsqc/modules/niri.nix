@@ -81,11 +81,11 @@ in {
       spawn-at-startup = [
         {
           command = [
-            "${lib.getExe pkgs.swww}"
-            "img"
+            "${lib.getExe pkgs.swaybg}"
+            "-i"
             "~/.local/share/wallpapers/latest.png"
-            # "-m"
-            # "fill"
+            "-m"
+            "fill"
           ];
         }
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
@@ -210,7 +210,7 @@ in {
       };
       layer-rules = [{
         matches = [{ namespace = "^wallpaper$"; }];
-        # place-within-backdrop = true;
+        place-within-backdrop = true;
       }];
 
       hotkey-overlay = { skip-at-startup = true; };
