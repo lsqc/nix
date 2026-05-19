@@ -1,22 +1,35 @@
 { pkgs, ... }: {
 
-  services.xserver = {
+  programs.niri.enable = true;
+  services = {
 
-    enable = true;
+    displayManager = {
 
-    xkb.layout = "eu";
-    displayManager.startx.enable = true;
+      defaultSession = "niri";
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
+    };
 
-    videoDrivers = [ "modesetting" ];
+    xserver = {
 
-    windowManager.i3 = {
       enable = true;
-      extraPackages = with pkgs; [
-        i3status
-        i3blocks
-        networkmanagerapplet
-        rofi
-      ];
+
+      xkb.layout = "eu";
+      displayManager.startx.enable = true;
+
+      videoDrivers = [ "modesetting" ];
+
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          i3status
+          i3blocks
+          networkmanagerapplet
+          rofi
+        ];
+      };
     };
   };
 }
