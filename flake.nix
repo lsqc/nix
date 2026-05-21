@@ -277,7 +277,10 @@
       homeConfigurations = {
         "antlia" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = commonHomeManagerModules ++ [{ host = "antlia"; }];
+          modules = commonHomeManagerModules ++ [{
+            host = "antlia";
+            theme = import ./home/lsqc/theme-settings.nix;
+          }];
         };
 
         "t420" = home-manager.lib.homeManagerConfiguration {
