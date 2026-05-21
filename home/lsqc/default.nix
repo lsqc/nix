@@ -51,12 +51,12 @@
     vlc
 
     wireguard-tools
-    traceroute
 
     scrcpy
     openvpn
 
     whois
+    wlr-randr
     killall
     # dunst
     libnotify
@@ -81,5 +81,6 @@
     mtr
     pv
     jameica
+
   ];
 }

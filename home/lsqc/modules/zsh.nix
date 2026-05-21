@@ -44,6 +44,8 @@
       nef = "neofetch";
       cd = "z";
       psh = "nix-shell -p";
+
+      traceroute = "mtr";
     };
 
     initContent = ''
