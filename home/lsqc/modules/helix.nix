@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ lib, pkgs, ... }:
 
 let
   lombok-jar = builtins.fetchurl {
@@ -13,7 +13,7 @@ in {
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccin_frappe_transparent";
+      theme = "custom";
 
       editor = {
 
@@ -147,12 +147,11 @@ in {
     };
 
     themes = {
-      catppuccin_frappe_transparent = {
-        "inherits" = "catppuccin_frappe";
+      custom = {
+        "inherits" = "fleet_dark";
         "ui.background" = { };
-        "ui.linenr.selected" = { fg = "#FB508F"; };
+        "ui.linenr.selected" = { fg = "#00ff95"; };
       };
     };
   };
-
 }
