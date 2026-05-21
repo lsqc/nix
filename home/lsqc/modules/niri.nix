@@ -79,6 +79,7 @@ in {
       };
 
       spawn-at-startup = [
+        { command = [ "gnome-keyring-daemon" ]; }
         {
           command = [
             "${lib.getExe pkgs.swaybg}"
@@ -90,6 +91,7 @@ in {
         }
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
       ];
+
       binds = let
         actions = config.lib.niri.actions;
         terminalCommand = if config.host == "antlia" then [
