@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.alacritty = {
@@ -17,7 +17,7 @@
       font = {
         size = 11;
         normal = {
-          family = "Comic Shanns Mono NerdFont";
+          family = config.theme.font.family;
           # family = "Iosevka Nerd Font";
           # family = "0xProto Nerd Font";
         };

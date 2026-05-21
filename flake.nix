@@ -32,7 +32,6 @@
       pkgs = import nixpkgs { inherit system; };
 
       commonModules = [ agenix.nixosModules.default disko.nixosModules.disko ];
-
       commonHomeManagerModules =
         [ { _module.args.inputs = inputs; } ./home/lsqc niri.homeModules.niri ];
 
@@ -280,14 +279,15 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = commonHomeManagerModules ++ [{ host = "antlia"; }];
         };
+
         "t420" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = commonHomeManagerModules ++ [{
 
             host = "t420";
+            theme = import ./home/lsqc/theme-settings.nix;
           }];
         };
       };
-
     };
 }

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
 
@@ -75,10 +75,7 @@
   fonts.packages = with pkgs; [
     dejavu_fonts
 
-    nerd-fonts.fantasque-sans-mono
     nerd-fonts.comic-shanns-mono
-    nerd-fonts.caskaydia-cove
-    nerd-fonts.iosevka
-    nerd-fonts._0xproto
+    nerd-fonts.hasklug
   ];
 }
