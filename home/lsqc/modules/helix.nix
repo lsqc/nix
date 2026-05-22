@@ -23,8 +23,8 @@ in {
         line-number = "relative";
 
         inline-diagnostics = {
-          cursor-line = "hint";
-          other-lines = "hint";
+          cursor-line = "warning";
+          other-lines = "disable";
         };
 
         cursor-shape = {
@@ -151,6 +151,13 @@ in {
         "inherits" = "fleet_dark";
         "ui.background" = { };
         "ui.linenr.selected" = { fg = "#00ff95"; };
+        # diagnostics
+        "diagnostic.hint" = { "underline" = { "style" = "curl"; }; };
+        "diagnostic.info" = { "underline" = { "style" = "curl"; }; };
+        "diagnostic.warning" = { "underline" = { "style" = "curl"; }; };
+        "diagnostic.error" = { "underline" = { "style" = "curl"; }; };
+        "diagnostic.unnecessary" = { "underline" = { "style" = "curl"; }; };
+        "diagnostic.deprecated" = { "underline" = { "style" = "curl"; }; };
       };
     };
   };
