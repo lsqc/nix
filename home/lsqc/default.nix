@@ -82,5 +82,6 @@
     pv
     jameica
 
+    xwayland-satellite
   ];
 }

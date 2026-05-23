@@ -78,6 +78,12 @@ in {
         size = 7;
       };
 
+      environment = {
+        DISPLAY = ":0";
+        GDK_BACKEND = "wayland,x11";
+        MOZ_ENABLE_WAYLAND = "1";
+      };
+
       spawn-at-startup = [
         { command = [ "gnome-keyring-daemon" ]; }
         {
@@ -90,6 +96,13 @@ in {
           ];
         }
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
+        {
+          command = [
+            "${
+              if config.host == "antlia" then "/usr/bin" else ""
+            }xwayland-satellite"
+          ];
+        }
       ];
 
       binds = let
