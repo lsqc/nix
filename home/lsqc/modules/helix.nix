@@ -45,6 +45,7 @@ in {
         bufferline = "multiple";
         cursorline = true;
         auto-save = true;
+        color-modes = true;
 
         whitespace = { render = "all"; };
       };
@@ -149,8 +150,11 @@ in {
     themes = {
       custom = {
         "inherits" = "fleet_dark";
-        "ui.background" = { };
-        "ui.linenr.selected" = { fg = "#00ff95"; };
+        "ui.background" = { bg = "#000000"; };
+        "ui.linenr.selected" = {
+          fg = "#00ff95";
+          modifiers = [ "bold" ];
+        };
         # diagnostics
         "diagnostic.hint" = { "underline" = { "style" = "curl"; }; };
         "diagnostic.info" = { "underline" = { "style" = "curl"; }; };
@@ -158,6 +162,24 @@ in {
         "diagnostic.error" = { "underline" = { "style" = "curl"; }; };
         "diagnostic.unnecessary" = { "underline" = { "style" = "curl"; }; };
         "diagnostic.deprecated" = { "underline" = { "style" = "curl"; }; };
+
+        "ui.statusline.normal" = {
+          fg = "#ffffff";
+          bg = "#a245ff";
+          modifiers = [ "bold" ];
+        };
+        "ui.statusline.insert" = {
+          fg = "#ffffff";
+          bg = "#6b10cc";
+        };
+        "ui.statusline.select" = {
+          fg = "#ffffff";
+          bg = "#cc10aa";
+        };
+        "ui.statusline.inactive" = {
+          fg = "#ffffff";
+          bg = "#1e1e2e";
+        };
       };
     };
   };
