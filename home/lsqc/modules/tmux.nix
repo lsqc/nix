@@ -18,10 +18,11 @@
       bind-key C-s send-prefix
 
       # window splitting
-      bind | split-window -h
-      bind - split-window -v
       unbind '"'
       unbind %
+
+      bind | split-window -h -c "#{pane_current_path}"
+      bind - split-window -v -c "#{pane_current_path}"
 
       bind h select-pane -L
       bind j select-pane -D
