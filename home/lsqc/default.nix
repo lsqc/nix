@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [ ./desktop.nix ./modules ./host.nix ];
@@ -83,5 +83,6 @@
     jameica
 
     xwayland-satellite
+    inputs.helium.packages.${system}.default
   ];
 }
