@@ -18,7 +18,6 @@
     };
 
     shellAliases = {
-
       ls = "ls -lsa --color";
       l = "ls -lsa --color";
       ll = "ls -l";
@@ -50,7 +49,7 @@
 
     initContent = ''
       #      PROMPT="%F{147}%n%F{122}::%F{61}%m %F{255}∈ %F{69}%~%F{14}%f %F{166}λ %F{255}"
-            PROMPT=" %B%F{47}%F{45}%~%f%F{57} λ %f"
+            PROMPT=" %B%F{47}%F{45}%~%f%F{57}> %F{162}λ %f"
 
             bindkey "^[[1;5C" forward-word
             bindkey "^[[1;5D" backward-word
