@@ -60,6 +60,7 @@ in {
           space.w = ":w";
           space.q = ":q";
           space.Q = ":q!";
+          space.x = [ ":buffer-close" ];
         };
 
         insert = {
