@@ -83,6 +83,6 @@
     jameica
 
     xwayland-satellite
-    inputs.helium.packages.${system}.default
+    inputs.helium.packages.x86_64-linux.default
   ];
 }
