@@ -25,6 +25,8 @@
         b = "branch -v";
         co = "checkout";
         shn = "show --name-only";
+        pl = "pull";
+        ps = "push";
       };
       init = { defaultBranch = "main"; };
     };
