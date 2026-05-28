@@ -83,15 +83,19 @@
     };
 
     initContent = ''
-      #      PROMPT="%F{147}%n%F{122}::%F{61}%m %F{255}∈ %F{69}%~%F{14}%f %F{166}λ %F{255}"
-            PROMPT=" %B%F{47}%F{45}%~%f%F{57}> %F{162}λ %f"
 
-            bindkey "^[[1;5C" forward-word
-            bindkey "^[[1;5D" backward-word
-            bindkey "^[[3~" delete-char
-            bindkey "^[[3;5~" kill-word
-            autoload -U select-word-style
-            select-word-style bash
+      if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" || -n "$SSH_CONNECTION" ]]; then
+        PROMPT=" %B%F{197}(%m)%f %F{47}%F{45}%~%f%F{57}> %F{162}λ %f"
+      else
+        PROMPT=" %B%F{47}%F{45}%~%f%F{57}> %F{162}λ %f"
+      fi
+
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
+      bindkey "^[[3~" delete-char
+      bindkey "^[[3;5~" kill-word
+      autoload -U select-word-style
+      select-word-style bash
     '';
   };
 }
