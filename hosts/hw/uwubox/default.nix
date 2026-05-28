@@ -101,8 +101,6 @@
       clang
       rustc
 
-      xfce.thunar
-
       libreoffice
 
       openjdk21

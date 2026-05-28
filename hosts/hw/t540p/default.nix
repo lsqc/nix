@@ -7,7 +7,7 @@
     ../../../common
     ../../../common/desktop.nix
   ];
-  
+
   networking = {
     hostName = "t540p";
     networkmanager.enable = true;
@@ -94,8 +94,6 @@
       nfs-utils
       clang
       rustc
-
-      xfce.thunar
 
       libreoffice
 
