@@ -31,24 +31,45 @@
       url = "github:amaanq/helium-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, agenix, disko, home-manager, niri, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      agenix,
+      disko,
+      home-manager,
+      niri,
+      nixos-hardware,
+      ...
+    }:
     let
 
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
-      commonModules = [ agenix.nixosModules.default disko.nixosModules.disko ];
-      commonHomeManagerModules =
-        [ { _module.args.inputs = inputs; } ./home/lsqc niri.homeModules.niri ];
+      commonModules = [
+        agenix.nixosModules.default
+        disko.nixosModules.disko
+      ];
+      commonHomeManagerModules = [
+        { _module.args.inputs = inputs; }
+        ./home/lsqc
+        niri.homeModules.niri
+      ];
 
-    in {
+    in
+    {
       nixosConfigurations = {
 
         #
         # Configurations for vms and lxcs
-        # 
+        #
         cookie = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
@@ -183,12 +204,14 @@
         };
         #
         # Configurations for non-virtualized systems
-        # 
+        #
         masatoki = nixpkgs.lib.nixosSystem {
           inherit system; # system = "x86_64-linux";
 
-          modules = commonModules
-            ++ [ ./hosts/hw/masatoki ./hosts/hw/masatoki/disko-config.nix ];
+          modules = commonModules ++ [
+            ./hosts/hw/masatoki
+            ./hosts/hw/masatoki/disko-config.nix
+          ];
         };
 
         ivy = nixpkgs.lib.nixosSystem {
@@ -244,6 +267,8 @@
 
             ./hosts/hw/t420
             ./hosts/hw/t420/disko-config.nix
+
+            nixos-hardware.nixosModules.lenovo-thinkpad-t420
           ];
         };
         # t540p = nixpkgs.lib.nixosSystem {
@@ -263,12 +288,11 @@
 
         #
         # Configuration for the custom live cd
-        # 
+        #
         liveIso = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
-            (nixpkgs
-              + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
 
             ./hosts/live/iso
           ];
@@ -277,27 +301,33 @@
 
       apps.x86_64-linux.buildIso = {
         type = "app";
-        program = toString (pkgs.writeShellScript "build-iso" ''
-          nix build .#nixosConfigurations.liveIso.config.system.build.isoImage
-        '');
+        program = toString (
+          pkgs.writeShellScript "build-iso" ''
+            nix build .#nixosConfigurations.liveIso.config.system.build.isoImage
+          ''
+        );
       };
 
       homeConfigurations = {
         "antlia" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = commonHomeManagerModules ++ [{
-            host = "antlia";
-            theme = import ./home/lsqc/theme-settings.nix;
-          }];
+          modules = commonHomeManagerModules ++ [
+            {
+              host = "antlia";
+              theme = import ./home/lsqc/theme-settings.nix;
+            }
+          ];
         };
 
         "t420" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = commonHomeManagerModules ++ [{
+          modules = commonHomeManagerModules ++ [
+            {
 
-            host = "t420";
-            theme = import ./home/lsqc/theme-settings.nix;
-          }];
+              host = "t420";
+              theme = import ./home/lsqc/theme-settings.nix;
+            }
+          ];
         };
       };
     };
