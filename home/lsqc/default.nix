@@ -1,7 +1,11 @@
 { inputs, pkgs, ... }:
 
 {
-  imports = [ ./desktop.nix ./modules ./host.nix ];
+  imports = [
+    ./desktop.nix
+    ./modules
+    ./host.nix
+  ];
 
   home.username = "lsqc";
   home.homeDirectory = "/home/lsqc";
@@ -84,5 +88,7 @@
 
     xwayland-satellite
     inputs.helium.packages.x86_64-linux.default
+
+    tldr
   ];
 }
