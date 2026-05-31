@@ -8,7 +8,7 @@
       defaultSession = "niri";
       gdm = {
         enable = true;
-        wayland = true;
+        # wayland = true;
       };
     };
 

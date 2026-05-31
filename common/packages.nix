@@ -9,7 +9,7 @@
     tmux
     bat
     btop
-    neofetch
+    hyfetch
     dig
     file
     nixos-anywhere
