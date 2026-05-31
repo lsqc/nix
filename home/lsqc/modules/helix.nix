@@ -8,7 +8,7 @@ let
 in {
 
   # language server packages
-  home.packages = with pkgs; [ nodePackages.svelte-language-server tofu-ls ];
+  home.packages = with pkgs; [ svelte-language-server tofu-ls ];
 
   programs.helix = {
     enable = true;
@@ -75,7 +75,7 @@ in {
         {
           name = "nix";
           auto-format = true;
-          formatter.command = "${pkgs.nixfmt-classic}/bin/nixfmt";
+          formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
         }
         {
           name = "java";

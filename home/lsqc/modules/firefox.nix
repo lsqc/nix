@@ -1,7 +1,9 @@
-{ pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.firefox = {
+
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
 
     enable = true;
 
@@ -280,6 +282,13 @@
             definedAliases = [ "@yt" ];
           };
 
+          noogle = {
+            name = "Noogle";
+            urls = [{ template = "https://noogle.dev/q/?term={searchTerms}"; }];
+            iconMapObj."16" = "https://noogle.dev/favicon.ico";
+            iconUpdateUrl = "https://noogle.dev/favicon.ico";
+            definedAliases = [ "@ng" ];
+          };
           google.metaData.alias = "@g";
         };
       };

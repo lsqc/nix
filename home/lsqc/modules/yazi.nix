@@ -5,7 +5,9 @@
     enable = true;
 
     # https://github.com/stepbrobd/nord.yazi
-    plugins = with pkgs.yaziPlugins; { inherit nord yatline full-border; };
+    plugins = with pkgs.yaziPlugins; {
+      inherit nord yatline full-border;
+    };
 
     flavors = { inherit (pkgs.yaziPlugins) nord; };
 
@@ -23,6 +25,8 @@
         	type = ui.Border.ROUNDED,
         }
       '';
+
+    shellWrapperName = "yy";
 
     settings = {
       # log = { enabled = false; };

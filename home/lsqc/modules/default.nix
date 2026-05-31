@@ -24,7 +24,6 @@
     ./xdg.nix
     ./dunst.nix
     ./waybar.nix
-    ./swww.nix
     ./zellij.nix
     ./zoxide.nix
   ];

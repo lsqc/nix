@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # TODO: move matchBlocks to programs.ssh.settings
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
