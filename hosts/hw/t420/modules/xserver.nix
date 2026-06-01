@@ -1,16 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
-  programs.niri.enable = true;
+  # programs.niri.enable = true;
   services = {
 
-    displayManager = {
+    # displayManager = {
 
-      defaultSession = "niri";
-      gdm = {
-        enable = true;
-        # wayland = true;
-      };
-    };
+    #   defaultSession = "niri";
+    #   gdm = {
+    #     enable = true;
+    #     # wayland = true;
+    #   };
+    # };
 
     xserver = {
 
