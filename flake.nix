@@ -271,11 +271,6 @@
             nixos-hardware.nixosModules.lenovo-thinkpad-t420
           ];
         };
-        # t540p = nixpkgs.lib.nixosSystem {
-        #   inherit system;
-
-        #   modules = [ ./hosts/hw/t540p ./hosts/hw/t540p/disko-config.nix ];
-        # };
 
         antlia = nixpkgs.lib.nixosSystem {
           inherit system;
