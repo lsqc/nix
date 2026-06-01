@@ -116,7 +116,7 @@ in
         { command = [ "${lib.getExe pkgs.waybar}" ]; }
         {
           command = [
-            "${if config.host == "antlia" then "/usr/bin" else ""}xwayland-satellite"
+            "${if config.host == "antlia" then "/usr/bin/" else ""}xwayland-satellite"
           ];
         }
       ];
