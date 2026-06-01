@@ -81,7 +81,7 @@
 
       traceroute = "mtr";
 
-      neofetch = "hyfetch";
+      neofetch = "neowofetch";
       clipboard = "wl-copy";
     };
 

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -29,9 +34,13 @@
       lidSwitchExternalPower = "ignore";
     };
 
-    printing = { enable = true; };
+    printing = {
+      enable = true;
+    };
 
-    resolved = { enable = true; };
+    resolved = {
+      enable = true;
+    };
 
     xserver = {
 
@@ -128,7 +137,6 @@
   environment = {
     systemPackages = with pkgs; [
       wget
-      hyfetch
       scrot
       wireshark
       tcpdump
