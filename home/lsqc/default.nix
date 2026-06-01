@@ -90,5 +90,6 @@
     inputs.helium.packages.x86_64-linux.default
 
     tldr
+    yubioath-flutter
   ];
 }
