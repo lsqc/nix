@@ -80,6 +80,8 @@
       psh = "nix-shell -p";
 
       traceroute = "mtr";
+
+      neofetch = "hyfetch";
     };
 
     initContent = ''
