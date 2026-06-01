@@ -91,5 +91,6 @@
 
     tldr
     yubioath-flutter
+    wl-clipboard
   ];
 }
