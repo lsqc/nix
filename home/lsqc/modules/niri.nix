@@ -108,7 +108,7 @@ in
           command = [
             "${lib.getExe pkgs.swaybg}"
             "-i"
-            "~/.local/share/wallpapers/latest.png"
+            "${config.home.homeDirectory}/.local/share/wallpapers/latest.png"
             "-m"
             "fill"
           ];
