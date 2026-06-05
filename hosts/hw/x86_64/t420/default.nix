@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../../common
-    ../../../common/desktop.nix
+    ../../../../common
+    ../../../../common/desktop.nix
 
     ./modules
 

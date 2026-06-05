@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../../common
-    ../../../common/grub-uefi.nix
+    ../../../../common
+    ../../../../common/grub-uefi.nix
 
     ./modules
   ];
@@ -18,7 +18,13 @@
 
     firewall = {
       enable = false;
-      allowedTCPPorts = [ 22 80 443 8080 5201 ];
+      allowedTCPPorts = [
+        22
+        80
+        443
+        8080
+        5201
+      ];
     };
   };
 

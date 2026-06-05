@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../../common
-    ../../../common/desktop.nix
+    ../../../../common
+    ../../../../common/desktop.nix
 
     ./modules
   ];
@@ -35,9 +35,13 @@
       };
     };
 
-    printing = { enable = true; };
+    printing = {
+      enable = true;
+    };
 
-    resolved = { enable = true; };
+    resolved = {
+      enable = true;
+    };
 
     xserver = {
 

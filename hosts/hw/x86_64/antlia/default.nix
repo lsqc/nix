@@ -1,20 +1,29 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
     #    ./hardware-configuration.nix
 
-    ../../../common
-    ../../../common/desktop.nix
+    ../../../../common
+    ../../../../common/desktop.nix
 
     ./modules
   ];
 
   services = {
 
-    printing = { enable = true; };
+    printing = {
+      enable = true;
+    };
 
-    resolved = { enable = true; };
+    resolved = {
+      enable = true;
+    };
 
     xserver = {
 

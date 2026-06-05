@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -22,6 +27,5 @@
 
   # time.timeZone = "Europe/Berlin";
 
-  # system.stateVersion = "25.05"; 
+  # system.stateVersion = "25.05";
 }
-

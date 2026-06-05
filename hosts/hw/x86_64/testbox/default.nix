@@ -4,8 +4,8 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../../common
-    ../../../common/grub-uefi.nix
+    ../../../../common
+    ../../../../common/grub-uefi.nix
 
     ./modules
   ];

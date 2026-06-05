@@ -1,24 +1,39 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./minecraft-server.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./minecraft-server.nix
 
-      ../../../common
-    ];
+    ../../../../common
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking = {
     hostName = "ivy";
-    nameservers = [ "10.42.101.1" "10.42.0.2" ];
+    nameservers = [
+      "10.42.101.1"
+      "10.42.0.2"
+    ];
 
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 443 6969 80 2049 25565 ]; 
+      allowedTCPPorts = [
+        22
+        443
+        6969
+        80
+        2049
+        25565
+      ];
     };
   };
 
@@ -30,16 +45,16 @@
   services.nfs.server = {
     enable = true;
     exports = ''
-        /mnt/nya 10.42.100.0/22(rw,sync,no_subtree_check,no_root_squash)
+      /mnt/nya 10.42.100.0/22(rw,sync,no_subtree_check,no_root_squash)
     '';
   };
 
   services.nginx = {
     enable = true;
-    
+
     virtualHosts."_" = {
       root = "/mnt/nya/public";
-      
+
       forceSSL = true; # security is nice i guess
       sslCertificate = "/etc/ssl/nginx-cert.pem";
       sslCertificateKey = "/etc/ssl/private/nginx-key.pem";
@@ -51,6 +66,5 @@
     };
   };
 
-  system.stateVersion = "25.05"; 
+  system.stateVersion = "25.05";
 }
-

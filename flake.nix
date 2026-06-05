@@ -164,16 +164,6 @@
           ];
         };
 
-        mail = nixpkgs.lib.nixosSystem {
-          inherit system;
-
-          modules = commonModules ++ [
-
-            ./hosts/vm/mail/disko-config.nix
-            ./hosts/vm/mail
-          ];
-        };
-
         hachi = nixpkgs.lib.nixosSystem {
           inherit system;
 
@@ -205,21 +195,13 @@
         #
         # Configurations for non-virtualized systems
         #
-        masatoki = nixpkgs.lib.nixosSystem {
-          inherit system; # system = "x86_64-linux";
-
-          modules = commonModules ++ [
-            ./hosts/hw/masatoki
-            ./hosts/hw/masatoki/disko-config.nix
-          ];
-        };
 
         ivy = nixpkgs.lib.nixosSystem {
           inherit system;
 
           modules = commonModules ++ [
 
-            ./hosts/hw/ivy
+            ./hosts/hw/x86_64/ivy
           ];
         };
 
@@ -228,7 +210,7 @@
 
           modules = commonModules ++ [
 
-            ./hosts/hw/gemini
+            ./hosts/hw/x86_64/gemini
           ];
         };
 
@@ -237,8 +219,8 @@
 
           modules = commonModules ++ [
 
-            ./hosts/hw/testbox
-            ./hosts/hw/testbox/disko-config.nix
+            ./hosts/hw/x86_64/testbox
+            ./hosts/hw/x86_64/testbox/disko-config.nix
           ];
         };
 
@@ -247,7 +229,7 @@
 
           modules = commonModules ++ [
 
-            ./hosts/hw/cheese
+            ./hosts/hw/x86_64/cheese
           ];
         };
         uwubox = nixpkgs.lib.nixosSystem {
@@ -256,7 +238,7 @@
           modules = commonModules ++ [
             niri.nixosModules.niri
 
-            ./hosts/hw/uwubox
+            ./hosts/hw/x86_64/uwubox
           ];
         };
 
@@ -265,8 +247,8 @@
 
           modules = commonModules ++ [
 
-            ./hosts/hw/t420
-            ./hosts/hw/t420/disko-config.nix
+            ./hosts/hw/x86_64/t420
+            ./hosts/hw/x86_64/t420/disko-config.nix
 
             nixos-hardware.nixosModules.lenovo-thinkpad-t420
           ];
@@ -277,7 +259,7 @@
 
           modules = commonModules ++ [
 
-            ./hosts/hw/antlia
+            ./hosts/hw/x86_64/antlia
           ];
         };
 
