@@ -3,6 +3,8 @@
 {
   imports = [
     ./hardware.nix
+    ./display.nix
+    ./users.nix
 
     ../../../../common
   ];
