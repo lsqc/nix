@@ -1,40 +1,49 @@
-{ config, lib, inputs, pkgs, ... }:
+{ lib, pkgs, ... }:
 
-let config = import ../../../common/config.nix;
-in {
+let
+  config = import ../../../common/config.nix;
+in
+{
 
   services.bind = {
     enable = true;
 
-    cacheNetworks = [ "127.0.0.0/8" "10.42.0.0/16" ];
-    # zones = {
-    #   "pc.ip.nya.vodka" = { allowQuery = [ "10.0.0.0/8" ]; };
-    #   "nya.vodka" = { allowQuery = [ "10.0.0.0/8" ]; };
-    # };
+    cacheNetworks = [
+      "127.0.0.0/8"
+      "10.42.0.0/16"
+    ];
 
     forward = "only";
-    # forwarders = [ "10.42.0.2" "10.42.0.3" "10.42.0.4" ];
-    forwarders = [ "1.1.1.1" "1.0.0.1" ];
+    forwarders = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
 
     zones = {
       "${config.domains.lab}" = {
         master = true;
-        slaves = [ "10.42.0.6" "10.42.0.7 " ];
-        file = let
-          zoneTemplate = ../../../dns/pc.ip.nya.vodka.zone;
-          serialTimestamp = lib.strings.trim (builtins.readFile
-            (pkgs.runCommand "zone-serial" { } ''
-              date +%s > $out
-            ''));
+        slaves = [
+          "10.42.0.6"
+          "10.42.0.7 "
+        ];
+        file =
+          let
+            zoneTemplate = ../../../dns/pc.ip.nya.vodka.zone;
+            serialTimestamp = lib.strings.trim (
+              builtins.readFile (
+                pkgs.runCommand "zone-serial" { } ''
+                  date +%s > $out
+                ''
+              )
+            );
 
-          content = builtins.readFile zoneTemplate;
-          updatedZone =
-            builtins.replaceStrings [ "serial-number" ] [ serialTimestamp ]
-            content;
+            content = builtins.readFile zoneTemplate;
+            updatedZone = builtins.replaceStrings [ "serial-number" ] [ serialTimestamp ] content;
 
-          finalZone = updatedZone + "\n";
+            finalZone = updatedZone + "\n";
 
-        in pkgs.writeText "${config.domains.lab}" finalZone;
+          in
+          pkgs.writeText "${config.domains.lab}" finalZone;
       };
     };
     extraOptions = ''
@@ -54,8 +63,10 @@ in {
   };
 
   networking.firewall = {
-    allowedTCPPorts = [ 22 53 ];
+    allowedTCPPorts = [
+      22
+      53
+    ];
     allowedUDPPorts = [ 53 ];
   };
 }
-

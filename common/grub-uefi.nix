@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ ... }:
 
 {
   boot.loader = {
@@ -7,8 +7,8 @@
       efiSysMountPoint = "/boot/efi";
     };
     grub = {
-       efiSupport = true;
-       device = "nodev";
+      efiSupport = true;
+      device = "nodev";
     };
   };
 }
