@@ -268,6 +268,7 @@
           system = "aarch64-linux";
 
           modules = [
+            agenix.nixosModules.default
             ./hosts/hw/aarch64/pi
           ];
         };
