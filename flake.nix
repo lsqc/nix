@@ -263,6 +263,15 @@
           ];
         };
 
+        # aarch64 systems
+        pi = nixpkgs.lib.nixosSystem {
+          system = "aarch64-linux";
+
+          modules = [
+            ./hosts/hw/aarch64/pi
+          ];
+        };
+
         #
         # Configuration for the custom live cd
         #
