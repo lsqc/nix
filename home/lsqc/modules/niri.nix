@@ -84,7 +84,12 @@ in
         "9" = {
           open-on-output = "${main.right}";
         };
-        "0" = { };
+        "0" = {
+          open-on-output = "${main.right}";
+        };
+        "!" = {
+          open-on-output = "${main.center}";
+        };
       };
 
       animations = {
@@ -142,7 +147,6 @@ in
         {
           "Mod+Return".action = actions.spawn terminalCommand;
           "Mod+Shift+Return".action = actions.spawn "alacritty";
-          # "Mod+D".action = actions.spawn "rofi" "-show" "drun";
           "Mod+D".action = actions.spawn "fuzzel";
 
           "Mod+Shift+E" = {
@@ -159,6 +163,7 @@ in
           "Mod+8".action = actions.focus-workspace "8";
           "Mod+F9".action = actions.focus-workspace "F";
           "Mod+0".action = actions.focus-workspace "0";
+          "Mod+F1".action = actions.focus-workspace "!";
 
           "Mod+H".action = actions.focus-column-or-monitor-left;
           "Mod+L".action = actions.focus-column-or-monitor-right;
@@ -284,7 +289,6 @@ in
             in' = "oklab";
           };
         };
-        # center-focused-column = "always";
         default-column-width = {
           proportion = 0.9;
         };
