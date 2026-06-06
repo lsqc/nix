@@ -7,7 +7,7 @@
     shell = "${lib.getExe pkgs.zsh}";
     terminal = "tmux-256color";
     historyLimit = 1000000;
-    plugins = with pkgs; [ tmuxPlugins.catppuccin ];
+    plugins = with pkgs; [ ];
 
     extraConfig = ''
       setw -g mode-keys vi
@@ -31,6 +31,16 @@
 
       set-window-option -g xterm-keys on
 
+      # theme
+      set -g pane-active-border-style 'fg=#E91E63'
+      set -g pane-border-style 'fg=#000000'
+
+      # status line
+      set -g status-style 'bg=#000000,fg=#3dd9a4'
+      set -g status-left-style 'bg=#000000,fg=#3dd9a4'
+      set -g status-right-style 'bg=#000000,fg=#3dd9a4'
+      set -g window-status-style 'bg=#000000,fg=#3dd9a4'
+      set -g window-status-current-style 'bg=#000000,fg=#3dd9a4'
     '';
   };
 }
