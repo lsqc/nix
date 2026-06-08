@@ -1,20 +1,24 @@
-{ config, lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  ...
+}:
 
 {
 
-  # boot = {
+  boot = {
+    plymouth = {
+      enable = true;
 
-  #   # show shonk on boot :3
-  #   plymouth = {
-  #     enable = true;
-
-  #     theme = "blahaj";
-  #     themePackages = with pkgs; [ plymouth-blahaj-theme ];
-  #   };
-  # };
+      theme = "blahaj";
+      themePackages = with pkgs; [ plymouth-blahaj-theme ];
+    };
+  };
 
   programs = {
-    seahorse = { enable = true; };
+    seahorse = {
+      enable = true;
+    };
 
     gnupg.agent = {
       enable = true;
@@ -66,7 +70,11 @@
   };
 
   # keyring
-  services = { gnome.gnome-keyring = { enable = true; }; };
+  services = {
+    gnome.gnome-keyring = {
+      enable = true;
+    };
+  };
 
   security.pam.services.login.enableGnomeKeyring = true;
 
