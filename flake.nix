@@ -284,6 +284,14 @@
             ./hosts/live/iso
           ];
         };
+
+        lxcTemplate = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/live/lxc
+            agenix.nixosModules.default
+          ];
+        };
       };
 
       apps.x86_64-linux.buildIso = {
