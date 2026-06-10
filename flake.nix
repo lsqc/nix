@@ -285,22 +285,13 @@
           ];
         };
 
-        lxcTemplate = nixpkgs.lib.nixosSystem {
+        lxc-template = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./hosts/live/lxc
             agenix.nixosModules.default
           ];
         };
-      };
-
-      apps.x86_64-linux.buildIso = {
-        type = "app";
-        program = toString (
-          pkgs.writeShellScript "build-iso" ''
-            nix build .#nixosConfigurations.liveIso.config.system.build.isoImage
-          ''
-        );
       };
 
       homeConfigurations = {
