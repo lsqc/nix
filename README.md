@@ -8,12 +8,17 @@ flake containing my home manager configurations and personal infrastructure host
 
 ---
 
-## Custom ISO
+## live ISO
 
+- configuration: `hosts/live/iso`
 - latest pre-built file: https://files.nya.vodka/pub/nix/iso/latest.iso
 - build: `nix build .#nixosConfigurations.live.config.system.build.isoImage` *or* `nix run .#buildIso`
 
-**TODO: create lxc template**
+## LXC template
+
+- configuration: `hosts/live/lxc`
+- latest pre-built file: https://files.nya.vodka/pub/nix/lxc-template/latest.tar.xz
+- build: `nixos-rebuild build-image --image-variant proxmox-lxc --flake .#lxcTemplate`
 
 ---
 
