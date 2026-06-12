@@ -33,7 +33,7 @@
 
       # theme
       set -g pane-active-border-style 'fg=#E91E63'
-      set -g pane-border-style 'fg=#000000'
+      set -g pane-border-style 'fg=#2C2C2C'
 
       # status line
       set -g status-style 'bg=#000000,fg=#3dd9a4'
