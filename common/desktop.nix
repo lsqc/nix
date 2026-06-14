@@ -29,7 +29,7 @@
   environment = {
 
     variables = {
-      BROWSER = "librewolf";
+      BROWSER = "firefox";
       TERMINAL = "alacritty";
     };
 
