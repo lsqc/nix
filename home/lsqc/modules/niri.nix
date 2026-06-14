@@ -22,6 +22,10 @@ in
       input = {
         focus-follows-mouse.enable = true;
         touchpad.enable = false;
+        mouse = {
+          accel-profile = "flat";
+          accel-speed = 0.9;
+        };
       };
       outputs = {
         "${main.center}" = {
