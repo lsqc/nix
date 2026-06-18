@@ -1,3 +1,5 @@
+# This repository as well as my github mirrors are deprecated. The new repositories can be found at https://git.nya.vodka/lsqc.
+---
 # nix
 
 flake containing my home manager configurations and personal infrastructure hosted in the `pc.nya.vodka` and `catbox.nya.vodka` clusters
